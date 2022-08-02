@@ -17,15 +17,24 @@ body {
     background-color: #212228;
 }
 
-/* --------------- Header --------------- */
+/* --------------- Font Weights --------------- */
 
-.main-header {
-    background-color: #212228;
+.fw-3 {
+    font-weight: 300;
+}
+
+.fw-5 {
     font-weight: 500;
 }
 
-#gg-navbar a:hover {
-    text-decoration: underline;
+.fw-6 {
+    font-weight: 600;
+}
+
+/* --------------- Header --------------- */
+
+.underline-hov:hover {
+    text-decoration: underline !important;
 }
 
 .focus-0 {
@@ -47,6 +56,10 @@ body {
     border-top: 1px solid white;
     margin: 0;
 }
+
+/* --------------- Footer --------------- */
+
+
 
 /* --------------- Media Queries --------------- */
 

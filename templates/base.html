@@ -39,14 +39,15 @@
     <title>Gamers Ground</title>
 </head>
 
-<body>
+<body class="d-flex flex-column vh-100">
 
-    <header class="main-header">
+    <header class="bg-grey fw-5">
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-lg container-fluid">
                 <a class="navbar-brand py-3" href="{% url 'home' %}">
-                    <img src="{% static 'images/logo-image.png' %}" alt="Gamers Ground Logo">
+                    <!-- Logo image generated with: https://www.freelogodesign.org/ -->
+                    <img src="{% static 'images/logo-image.png' %}" alt="Gamers Ground Logo" title="Gamers Ground">
                 </a>
                 <button class="navbar-toggler collapsed order-2" type="button" data-bs-toggle="collapse"
                     data-bs-target="#gg-navbar" aria-controls="gg-navbar" aria-expanded="false"
@@ -56,10 +57,10 @@
                 <div class="navbar-collapse collapse order-3" id="gg-navbar">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-end">
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == home %} active {% endif %}" href="{% url 'home' %}">Home</a>
+                            <a class="nav-link underline-hov {% if request.path == home %} active {% endif %}" href="{% url 'home' %}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link underline-hov" href="#">Link</a>
                         </li>
                     </ul>
                     <form method="GET" action="">
@@ -116,6 +117,102 @@
 
     {% block content %}
     {% endblock %}
+
+    <footer class="bg-grey text-white mt-auto">
+        <div class="row gx-0">
+            <div class="col-10 offset-1">
+                <div class="row text-center">
+                    <div class="col-12">
+                        <h3 class="pt-4 fw-6">Newsletter For Gamers</h3>
+                        <p class="text-muted">Sign up to our newletter and get exclusive news, offers and much more!</p>
+                    </div>
+                    <div class="col-12">
+                        <input type="text" name="mail" id="mailchimp-placeholder" placeholder="mailchimp placeholder">
+                    </div>
+                </div>
+                <hr>
+                <div class="row justify-content-between">
+                    <div class="col-12 col-md-3 text-center text-md-start">
+                        <h5 class="text-uppercase my-3">Customer Service</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a class="text-white text-decoration-none underline-hov" href="#">FAQ</a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="text-white text-decoration-none underline-hov" href="#">Terms & Conditions</a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="text-white text-decoration-none underline-hov" href="#">Privacy Policy</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-3 text-center text-md-start">
+                        <h5 class="text-uppercase my-3">Popular categories</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a class="text-white text-decoration-none underline-hov" href="#">Category 1</a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="text-white text-decoration-none underline-hov" href="#">Category 2</a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="text-white text-decoration-none underline-hov" href="#">Category 3</a>
+                            </li>
+                            <li>
+                                <a class="text-white text-decoration-none underline-hov" href="#">Category 4</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-3 text-center text-md-start">
+                        <h5 class="text-uppercase my-3">Contact information</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fa-solid fa-house"></i> Malmo, Sweden</li>
+                            <li class="mb-2"><i class="fa-solid fa-envelope"></i> Hello@email.com</li>
+                            <li><i class="fa-solid fa-phone"></i> +46 123 456 789</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="row justify-content-between mb-3">
+                    <div class="col-md-4 d-flex align-items-center justify-content-center justify-content-md-start">
+                        <span>&copy; <span id="copyright"></span> Gamers Ground</span>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-md-end justify-content-center">
+                        <ul class="list-inline mt-3">
+                            <li class="list-inline-item">
+                                <a href="https://www.facebook.com/" target="_blank" rel="noopener"
+                                    aria-label="Visit Facebook (opens in a new tab)">
+                                    <i class="fa-brands fa-facebook-square text-white fs-3"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://twitter.com/" target="_blank" rel="noopener"
+                                    aria-label="Visit Twitter (opens in a new tab)">
+                                    <i class="fa-brands fa-twitter-square text-white fs-3"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.instagram.com/" target="_blank" rel="noopener"
+                                    aria-label="Visit Instagram (opens in a new tab)">
+                                    <i class="fa-brands fa-instagram text-white fs-3"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.youtube.com/" target="_blank" rel="noopener"
+                                    aria-label="Visit YouTube (opens in a new tab)">
+                                    <i class="fa-brands fa-youtube text-white fs-3"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('copyright').innerText = new Date().getFullYear();
+    </script>
 
 </body>
 
