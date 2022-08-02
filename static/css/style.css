@@ -1,5 +1,72 @@
+/* --------------- General styling --------------- */
+
 body {
-    background-color: blue;
     font-family: 'rubik', sans-serif;
+    font-weight: 400;
+}
+
+.btn-green {
+    background-color: #35C71E;
+}
+
+.active {
+    text-decoration: underline;
+}
+
+.bg-grey {
+    background-color: #212228;
+}
+
+/* --------------- Header --------------- */
+
+.main-header {
+    background-color: #212228;
+    font-weight: 500;
+}
+
+#gg-navbar a:hover {
+    text-decoration: underline;
+}
+
+.focus-0 {
+    outline: none;
+}
+
+.list-group-item a,
+.list-group-item a:focus,
+.list-group-item a:hover {
     color: white;
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+    background-color: #212228;
+}
+
+.dropdown-divider  {
+    border-top: 1px solid white;
+    margin: 0;
+}
+
+/* --------------- Media Queries --------------- */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1600px) {
+    .container-lg {
+      max-width: 80%;
+    }
+  }
+
+/* --------------- Header --------------- */
+
+@media (max-width: 400px) {
+    .navbar-brand {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-icons {
+        margin-left: 0 !important;
+    }
 }
