@@ -57,9 +57,14 @@ body {
     margin: 0;
 }
 
-/* --------------- Footer --------------- */
+/* --------------- Home page --------------- */
 
-
+.carousel-item img {
+    height: 100vw;
+    max-height: 600px;
+    object-fit: cover;
+    opacity: .7;
+}
 
 /* --------------- Media Queries --------------- */
 
