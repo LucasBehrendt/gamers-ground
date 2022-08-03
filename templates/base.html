@@ -39,10 +39,9 @@
     <title>Gamers Ground</title>
 </head>
 
-<body class="d-flex flex-column vh-100">
-
+<body class="d-flex flex-column vh-100 bg-lt-grey text-white">
+    <!-- Header / Navbar -->
     <header class="bg-grey fw-5">
-        <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-lg container-fluid">
                 <a class="navbar-brand py-3" href="{% url 'home' %}">
@@ -55,7 +54,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse order-3" id="gg-navbar">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-end">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-end text-uppercase">
                         <li class="nav-item">
                             <a class="nav-link underline-hov {% if request.path == home %} active {% endif %}" href="{% url 'home' %}">Home</a>
                         </li>
@@ -93,7 +92,7 @@
                                 </ul>
                             </li>
                         {% else %}
-                            <li class="list-group-item bg-transparent border-0t">
+                            <li class="list-group-item bg-transparent border-0">
                                 <a class="nav-link px-2" title="Log in" href="" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa-regular fa-user fs-4"></i>
                                 </a>
@@ -118,7 +117,8 @@
     {% block content %}
     {% endblock %}
 
-    <footer class="bg-grey text-white mt-auto">
+    <!-- Footer -->
+    <footer class="bg-grey mt-auto">
         <div class="row gx-0">
             <div class="col-10 offset-1">
                 <div class="row text-center">
@@ -132,20 +132,6 @@
                 </div>
                 <hr>
                 <div class="row justify-content-between">
-                    <div class="col-12 col-md-3 text-center text-md-start">
-                        <h5 class="text-uppercase my-3">Customer Service</h5>
-                        <ul class="list-unstyled">
-                            <li class="mb-2">
-                                <a class="text-white text-decoration-none underline-hov" href="#">FAQ</a>
-                            </li>
-                            <li class="mb-2">
-                                <a class="text-white text-decoration-none underline-hov" href="#">Terms & Conditions</a>
-                            </li>
-                            <li class="mb-2">
-                                <a class="text-white text-decoration-none underline-hov" href="#">Privacy Policy</a>
-                            </li>
-                        </ul>
-                    </div>
                     <div class="col-12 col-md-3 text-center text-md-start">
                         <h5 class="text-uppercase my-3">Popular categories</h5>
                         <ul class="list-unstyled">
@@ -163,7 +149,21 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-12 col-md-3 text-center text-md-start">
+                    <div class="col-12 col-md-3 text-center">
+                        <h5 class="text-uppercase my-3">Customer Service</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a class="text-white text-decoration-none underline-hov" href="#">FAQ</a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="text-white text-decoration-none underline-hov" href="#">Terms & Conditions</a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="text-white text-decoration-none underline-hov" href="#">Privacy Policy</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-3 text-center text-md-end">
                         <h5 class="text-uppercase my-3">Contact information</h5>
                         <ul class="list-unstyled">
                             <li class="mb-2"><i class="fa-solid fa-house"></i> Malmo, Sweden</li>

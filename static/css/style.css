@@ -9,12 +9,25 @@ body {
     background-color: #35C71E;
 }
 
+.btn-green:hover {
+    background-color: #212228;
+    color: #35C71E;
+}
+
 .active {
     text-decoration: underline;
 }
 
 .bg-grey {
     background-color: #212228;
+}
+
+.bg-lt-grey {
+    background-color: #33363f;
+}
+
+.rounded-lg {
+    border-radius: .5rem;
 }
 
 /* --------------- Font Weights --------------- */
@@ -64,6 +77,25 @@ body {
     max-height: 600px;
     object-fit: cover;
     opacity: .7;
+}
+
+.img-fluid {
+    height: 100%;
+    min-height: 260px;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.img-container {
+    position: relative;
+}
+
+.img-container .btn {
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
 }
 
 /* --------------- Media Queries --------------- */

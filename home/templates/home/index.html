@@ -3,6 +3,7 @@
 
 {% block content %}
     <main>
+        <!-- Hero Image / Carousel -->
         <div id="carouselHome" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="0" class="active"
@@ -49,5 +50,61 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+        <!-- Components section -->
+        <section>
+            <div class="row gx-0">
+                <div class="col-10 offset-1">
+                    <div class="row">
+                        <div class="col-md-6 py-sm-5 py-3 text-center">
+                            <a href="">
+                                <!-- Image source: https://unsplash.com/photos/KV2vFOYItcY -->
+                                <img src="{% static 'images/gaming-pc.png' %}" class="img-fluid rounded-lg" alt="Image of gaming pc components">
+                            </a>
+                        </div>
+                        <div class="col-md-6 order-md-first py-5 d-flex flex-column align-items-center justify-content-center">
+                            <h2 class="text-uppercase">PC Components</h2>
+                            <p class="text-center">
+                                Interested in building your own PC? We have a variety of components in different price ranges. 
+                                Want to build the best gaming rig possible? Need a more basic setup? We got you covered!
+                            </p>
+                            <a href="" class="btn btn-green fw-6 my-3 text-uppercase">Find components</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Peripherals section -->
+        <section>
+            <div class="row gx-0 bg-grey">
+                <div class="col-10 offset-1 text-center">
+                    <h3 class="text-uppercase mt-5">Peripherals</h3>
+                    <p class="mt-4 mb-5">
+                        A powerful rig needs high-performance gear to match. 
+                        Understand what it means to wield the unfair advantage as you 
+                        experience the best gaming peripherals on the market.
+                    </p>
+                </div>
+            </div>
+            <div class="row gx-0">
+                <div class="col-10 offset-1">
+                    <div class="row text-center">
+                        <div class="col-md-6 py-sm-5 py-3 img-container">
+                            <a href="">
+                                <!-- Image source: https://pixabay.com/photos/keyboard-technology-office-internet-4759500/ -->
+                                <img src="{% static 'images/keyboard.jpg' %}" class="img-fluid rounded-lg" alt="Image of gaming pc components">
+                                <a href="" class="btn btn-green fw-6 my-3 text-uppercase">Shop keyboards</a>
+                            </a>
+                        </div>
+                        <div class="col-md-6 py-sm-5 py-3 img-container">
+                            <a href="">
+                                <!-- Image source: https://unsplash.com/photos/xo-MJALGPrI -->
+                                <img src="{% static 'images/mouse.jpg' %}" class="img-fluid rounded-lg" alt="Image of gaming pc components">
+                                <a href="" class="btn btn-green fw-6 my-3 text-uppercase">Shop mice</a>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 {% endblock %}
