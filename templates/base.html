@@ -64,8 +64,8 @@
                     </ul>
                     <form method="GET" action="">
                         <div class="input-group justify-content-end my-3">
-                            <input class="border-0 focus-0" type="text" name="q" placeholder="Search Products">
-                            <div class="btn-green">
+                            <input class="border-0 focus-0 rounded-start ps-2" type="text" name="q" placeholder="Search Products">
+                            <div class="btn-green rounded-end">
                                 <button class="btn" type="submit">
                                     <span class="text-white">
                                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -93,11 +93,11 @@
                             </li>
                         {% else %}
                             <li class="list-group-item bg-transparent border-0">
-                                <a class="nav-link px-2" title="Log in" href="" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link px-2" title="Sign in" href="" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa-regular fa-user fs-4"></i>
                                 </a>
                                 <ul class="dropdown-menu bg-grey" aria-labelledby="dropdown">
-                                    <li><a class="dropdown-item" href="{% url 'account_login' %}">Log In</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'account_login' %}">Sign In</a></li>
                                     <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
                                 </ul>
                             </li>

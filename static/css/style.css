@@ -26,8 +26,14 @@ body {
     background-color: #33363f;
 }
 
-.rounded-lg {
-    border-radius: .5rem;
+.text-link {
+    color: #35C71E;
+    text-decoration: none;
+}
+
+.text-link:hover {
+    color: #35C71E;
+    text-decoration: underline;
 }
 
 /* --------------- Font Weights --------------- */
@@ -96,6 +102,33 @@ body {
     left: 50%;
     transform: translate(-50%, 0);
     -ms-transform: translate(-50%, 0);
+}
+
+/* --------------- Allauth Forms --------------- */
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.form-control {
+    border: none;
+}
+
+.form-control:focus {
+    border: none;
+    box-shadow: none;
+}
+
+.allauth-form-inner-content {
+    margin: 100px 0 150px;
+}
+
+.allauth-form-inner-content div:not(:last-of-type) {
+    margin-bottom: 40px !important;
+}
+
+#div_id_password {
+    margin-bottom: 20px !important;
 }
 
 /* --------------- Media Queries --------------- */
