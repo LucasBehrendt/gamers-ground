@@ -7,6 +7,7 @@ body {
 
 .btn-green {
     background-color: #35C71E;
+    font-weight: 600;
 }
 
 .btn-green:hover {
