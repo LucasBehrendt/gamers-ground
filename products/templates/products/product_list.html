@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <main>
+        <div class="container-fluid">
+            <div class="row"></div>
+            <div class="row"></div>
+            <!-- Products cards -->
+            <div class="row">
+                <div class="product-container col-10 offset-1">
+                    <div class="row">
+                        {% for product in product_list %}
+                            <div class="col-sm-6 col-lg-4 my-3">
+                                <div class="card product-card bg-grey border-0 h-100 ">
+                                    {% if product.image %}
+                                        <a href="">
+                                            <img class="card-img-top p-3" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                        </a>
+                                    {% else %}
+                                        <a href="">
+                                            <img class="card-img-top p-3" src="{{ MEDIA_URL }}noimage.png"
+                                            alt="{{ product.name }}">
+                                        </a>
+                                    {% endif %}
+                                    <div class="card-body">
+                                        {% if product.brand %}
+                                            <p class="text-muted mb-0">{{ product.brand }}</p>
+                                        {% endif %}
+                                        <a class="text-link" href="">
+                                            <h4 class="card-title">{{ product.name }}</h4>
+                                        </a>
+                                        <!-- Rating goes here -->
+                                        <p class="fw-6">
+                                            ${{ product.price }}
+                                        </p>
+                                        <a class="btn btn-green btn-sm fw-4" href="">
+                                            <i class="fa-solid fa-tag"></i> {{ product.category }}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

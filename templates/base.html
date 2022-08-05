@@ -1,5 +1,7 @@
 {% load static %}
 {% url 'home' as home %}
+{% url 'products' as products %}
+
 <!doctype html>
 <html lang="en">
 
@@ -56,7 +58,7 @@
                 <div class="navbar-collapse collapse order-3" id="gg-navbar">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-end text-uppercase">
                         <li class="nav-item">
-                            <a class="nav-link underline-hov {% if request.path == home %} active {% endif %}" href="{% url 'home' %}">Home</a>
+                            <a class="nav-link underline-hov {% if request.path == products %} active {% endif %}" href="{% url 'products' %}">Shop</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link underline-hov" href="#">Link</a>
@@ -84,7 +86,7 @@
                                 </a>
                                 <ul class="dropdown-menu bg-grey" aria-labelledby="dropdown">
                                     <li><a class="dropdown-item" href="#">Profile</a></li>
-                                    <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'account_logout' %}">Sign Out</a></li>
                                     {% if request.user.is_superuser %}
                                         <li><hr class="dropdown-divider"></li>
                                         <li><a class="dropdown-item" href="#">Admin</a></li>
