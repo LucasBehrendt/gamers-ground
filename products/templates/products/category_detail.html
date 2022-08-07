@@ -10,17 +10,29 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a class="underline-link" href="{% url 'home' %}">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">All products</li>
+                            <li class="breadcrumb-item"><a class="underline-link" href="{% url 'products' %}">All products</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ category.name }}</li>
                         </ol>
                     </nav>
                 </div>
             </div>
             <div class="row"></div>
+            <div class="row text-center my-3">
+                <h2>{{ category }}</h2>
+            </div>
+            <!-- If no products found -->
+            {% if not category.products.all %}
+            <div class="row my-5">
+                <div class="col text-center">
+                    <p>There are no products here yet.<br>Try widening your search and make sure to keep an eye out for new products!</p>
+                </div>
+            </div>
+            {% endif %}
             <!-- Products cards -->
             <div class="row">
                 <div class="product-container col-10 offset-1">
                     <div class="row">
-                        {% for product in product_list %}
+                        {% for product in category.products.all %}
                             <div class="col-sm-6 col-lg-4 my-3">
                                 <div class="card product-card bg-grey border-0 h-100 ">
                                     {% if product.image %}
@@ -43,7 +55,7 @@
                                         <p class="fw-6">
                                             ${{ product.price }}
                                         </p>
-                                        <a class="btn btn-green btn-sm fw-4" href="{% url 'category' product.category.slug %}">
+                                        <a class="btn btn-green btn-sm fw-4" href="">
                                             <i class="fa-solid fa-tag"></i> {{ product.category }}
                                         </a>
                                     </div>

@@ -9,7 +9,7 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a class="underline-link" href="{% url 'home' %}">Home</a></li>
                         <li class="breadcrumb-item"><a class="underline-link" href="{% url 'products' %}">All products</a></li>
-                        <li class="breadcrumb-item"><a class="underline-link" href="#">{{ product.category }}</a></li>
+                        <li class="breadcrumb-item"><a class="underline-link" href="{% url 'category' product.category.slug %}">{{ product.category }}</a></li>
                         <li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
                     </ol>
                 </nav>
