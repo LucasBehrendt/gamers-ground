@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <div class="row breadcrumb-row mt-2">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a class="underline-link" href="{% url 'home' %}">Home</a></li>
+                        <li class="breadcrumb-item"><a class="underline-link" href="{% url 'products' %}">All products</a></li>
+                        <li class="breadcrumb-item"><a class="underline-link" href="#">{{ product.category }}</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    {% if product.image %}
+                        <a href="{{ product.image.url }}">
+                            <img class="img-fluid fit-scale p-3" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </a>
+                    {% else %}
+                        <a href="{{ product.image.url }}">
+                            <img class="img-fluid fit-scale p-3" src="{{ MEDIA_URL }}noimage.png"
+                            alt="{{ product.name }}">
+                        </a>
+                    {% endif %}
+                </div>
+                <div class="col-md-6 my-3">
+                    {% if product.brand %}
+                        <p class="text-muted mb-0">{{ product.brand }}</p>
+                    {% endif %}
+                    <h4 class="card-title">{{ product.name }}</h4>
+                    <!-- Rating goes here -->
+                    <p>{{ product.description }}</p>
+                    <p class="fw-6">
+                        ${{ product.price }}
+                    </p>
+                    <!-- Add to card here -->
+                </div>
+            </div>
+            <!-- Related / popular products row? -->
+        </div>
+    </main>
+{% endblock %}
