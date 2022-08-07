@@ -1,0 +1,23 @@
+<section class="category-wrapper">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <div class="container-lg container-fluid">
+            <button class="navbar-toggler border-0 my-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="text-white text-uppercase">Categories <i class="ms-2 fa-solid fa-caret-down"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav w-100 justify-content-between">
+                    {% for category in categories %}
+                        <li>
+                            <a class="dropdown-item text-link fs-6 {% if category.slug == current_slug %}active{% endif %}"
+                            href="{% url 'category' category.slug %}">{{ category.name }}</a>
+                        </li>
+                        {% if not forloop.last %}
+                            <hr class="d-block d-lg-none my-2">
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</section>

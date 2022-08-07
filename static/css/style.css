@@ -89,8 +89,8 @@ body {
     color: white;
 }
 
-.dropdown-item:focus,
-.dropdown-item:hover {
+header .dropdown-item:focus,
+header .dropdown-item:hover {
     background-color: #212228;
 }
 
@@ -99,7 +99,22 @@ body {
     margin: 0;
 }
 
-/* --------------- Home page --------------- */
+/* --------------- Category Nav --------------- */
+
+.category-wrapper .dropdown-item:focus,
+.category-wrapper .dropdown-item:active,
+.category-wrapper .dropdown-item.active,
+.category-wrapper .dropdown-item:hover {
+    background-color: transparent;
+    text-decoration: underline;
+    color: #35C71E;
+}
+
+.category-wrapper .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* --------------- Home Page --------------- */
 
 .carousel-item img {
     height: 100vw;

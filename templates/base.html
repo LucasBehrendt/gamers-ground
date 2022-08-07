@@ -46,7 +46,7 @@
     <header class="bg-grey fw-5">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-lg container-fluid">
-                <a class="navbar-brand py-3" href="{% url 'home' %}">
+                <a class="navbar-brand py-3 me-lg-3 me-0" href="{% url 'home' %}">
                     <!-- Logo image generated with: https://www.freelogodesign.org/ -->
                     <img src="{% static 'images/logo-image.png' %}" alt="Gamers Ground Logo" title="Gamers Ground">
                 </a>
@@ -85,11 +85,11 @@
                                     <i class="fa-solid fa-user fs-4"></i>
                                 </a>
                                 <ul class="dropdown-menu bg-grey" aria-labelledby="dropdown">
-                                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                                    <li><a class="dropdown-item" href="{% url 'account_logout' %}">Sign Out</a></li>
+                                    <li><a class="dropdown-item underline-link" href="#">Profile</a></li>
+                                    <li><a class="dropdown-item underline-link" href="{% url 'account_logout' %}">Sign Out</a></li>
                                     {% if request.user.is_superuser %}
                                         <li><hr class="dropdown-divider"></li>
-                                        <li><a class="dropdown-item" href="#">Admin</a></li>
+                                        <li><a class="dropdown-item underline-link" href="#">Admin</a></li>
                                     {% endif %}
                                 </ul>
                             </li>
@@ -99,8 +99,8 @@
                                     <i class="fa-regular fa-user fs-4"></i>
                                 </a>
                                 <ul class="dropdown-menu bg-grey" aria-labelledby="dropdown">
-                                    <li><a class="dropdown-item" href="{% url 'account_login' %}">Sign In</a></li>
-                                    <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
+                                    <li><a class="dropdown-item underline-link" href="{% url 'account_login' %}">Sign In</a></li>
+                                    <li><a class="dropdown-item underline-link" href="{% url 'account_signup' %}">Register</a></li>
                                 </ul>
                             </li>
                         {% endif %}

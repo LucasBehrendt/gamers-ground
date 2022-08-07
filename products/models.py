@@ -19,7 +19,8 @@ class Product(models.Model):
     """
     Main model for products listed on the store.
     """
-    category = models.ForeignKey('Category', on_delete=models.CASCADE)
+    category = models.ForeignKey(
+        'Category', on_delete=models.CASCADE, related_name='products')
     name = models.CharField(max_length=254)
     slug = models.SlugField(max_length=254)
     brand = models.CharField(max_length=254, null=True, blank=True)
