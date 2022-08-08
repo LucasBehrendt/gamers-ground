@@ -15,7 +15,28 @@
                     </nav>
                 </div>
             </div>
-            <div class="row"></div>
+            {% if not query %}
+            <div class="row text-center my-3">
+                <h2>All products</h2>
+            </div>
+            {% endif %}
+            <!-- If a search is performed -->
+            {% if query %}
+            <div class="row my-3">
+                <div class="col text-center fs-5">
+                    <span>Search results for: "{{ query }}" ({{ object_list.count }} products) | </span>
+                    <a class="text-link d-inline" href="{% url 'products' %}">Clear</a>
+                </div>
+            </div>
+            {% endif %}
+            <!-- If no products found -->
+            {% if not object_list %}
+            <div class="row my-5">
+                <div class="col text-center">
+                    <p>There are no products here yet.<br>Try widening your search and make sure to keep an eye out for new products!</p>
+                </div>
+            </div>
+            {% endif %}
             <!-- Products cards -->
             <div class="row">
                 <div class="product-container col-10 offset-1">
