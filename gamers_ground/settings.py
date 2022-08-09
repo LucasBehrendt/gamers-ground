@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     # Apps
     'home',
     'products',
+    'cart',
 
     # Other
     'crispy_forms',
@@ -105,14 +106,12 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1
-# SITE_NAME =
 
 # move to smtp config
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Allauth configuration
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
-# ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = None
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
