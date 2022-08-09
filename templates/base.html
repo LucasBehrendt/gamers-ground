@@ -106,7 +106,7 @@
                             </li>
                         {% endif %}
                         <li class="list-group-item bg-transparent border-0">
-                            <a class="nav-link px-2" title="Cart: {{ product_count }}" href="">
+                            <a class="nav-link px-2" title="Cart: {{ product_count }}" href="{% url 'cart' %}">
                                 <i class="fa-solid fa-cart-shopping fs-4"></i>
                                 <!-- <sup>&nbsp;{{product_count}}</sup> -->
                             </a>
