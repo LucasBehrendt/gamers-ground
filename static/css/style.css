@@ -55,6 +55,26 @@ body {
     object-fit: scale-down;
 }
 
+.form-select {
+    max-width: 260px;
+    background-color: transparent;
+    color: #35C71E;
+    border: none;
+    border-bottom: 1px solid #35C71E;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.form-select:focus {
+    border: none;
+    border-bottom: 1px solid #35C71E;
+    box-shadow: none;
+}
+
+.form-select option {
+    background-color: #212228;
+}
+
 /* --------------- Font Weights --------------- */
 
 .fw-3 {
@@ -168,7 +188,7 @@ header .dropdown-item:hover {
     margin-bottom: 20px !important;
 }
 
-/* --------------- Product cards --------------- */
+/* --------------- Products List --------------- */
 
 .card-img-top {
     height: 300px;
@@ -182,17 +202,7 @@ header .dropdown-item:hover {
     box-shadow: -2px 2px 10px rgba(239, 239, 239, 0.2);
 }
 
-/* .product-title {
-    color: white;
-    text-decoration: none;
-}
-
-.product-title:hover {
-    color: white;
-    text-decoration: underline;
-} */
-
-/* --------------- Product Detail --------------- */
+/* --------------- Breadcrumb Navigation --------------- */
 
 .breadcrumb-row {
     overflow-x: auto;
@@ -229,7 +239,7 @@ header .dropdown-item:hover {
     }
 }
 
-/* --------------- Product cards --------------- */
+/* --------------- Products List --------------- */
 
 @media (max-width: 400px) {
     .card-img-top {
