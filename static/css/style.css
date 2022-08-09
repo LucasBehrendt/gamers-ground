@@ -75,6 +75,14 @@ body {
     background-color: #212228;
 }
 
+/* --------------- Margins & Paddings --------------- */
+
+.px-6 {
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+
 /* --------------- Font Weights --------------- */
 
 .fw-3 {
@@ -117,6 +125,11 @@ header .dropdown-item:hover {
 .dropdown-divider  {
     border-top: 1px solid white;
     margin: 0;
+}
+
+sup {
+    top: -1em;
+    font-size: 1em;
 }
 
 /* --------------- Category Nav --------------- */

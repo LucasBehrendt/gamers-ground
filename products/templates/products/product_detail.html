@@ -40,7 +40,16 @@
                     <p class="fw-6">
                         ${{ product.price }}
                     </p>
-                    <!-- Add to cart here -->
+                    <!-- Add to cart form -->
+                    <form method="POST" action="{% url 'add_to_cart' product.id %}">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col">
+                                <input type="submit" class="btn btn-green py-2 px-6 mt-3 mb-5" value="Add to Cart">
+                            </div>
+                        </div>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    </form>
                 </div>
             </div>
             <!-- Related / popular products row? -->

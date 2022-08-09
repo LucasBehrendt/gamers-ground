@@ -39,7 +39,11 @@
                             </select>
                         </div>
                         <div class="col-12 col-sm-6 d-flex align-items-center justify-content-center justify-content-sm-start my-3">
-                            <p class="mb-0">{{ object_list.count }} products</p>
+                            {% if object_list.count == 1 %}
+                                <p class="mb-0">{{ object_list.count }} product</p>
+                            {% else %}
+                                <p class="mb-0">{{ object_list.count }} products</p>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

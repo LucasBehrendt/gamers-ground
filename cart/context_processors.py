@@ -1,10 +1,11 @@
-from django.conf import settings
 from decimal import Decimal
+from django.conf import settings
+
 
 def cart_contents(request):
-
-    cart_items = [3]
-    total = 200
+    """Context processor for cart data"""
+    cart_items = [0]
+    total = 0
     product_count = 0
     standard_delivery = Decimal(7.99)
 
