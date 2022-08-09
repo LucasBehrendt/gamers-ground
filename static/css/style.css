@@ -214,6 +214,16 @@ header .dropdown-item:hover {
     width: auto;
 }
 
+/* --------------- Back to top Button --------------- */
+
+.btt-link {
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    bottom: 20px;
+    right: 20px;
+}
+
 /* ********************************************* */
 /* --------------- Media Queries --------------- */
 /* ********************************************* */
