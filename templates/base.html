@@ -106,7 +106,7 @@
                             </li>
                         {% endif %}
                         <li class="list-group-item bg-transparent border-0">
-                            <a class="nav-link px-2" title="Cart: {{ product_count }}" href="{% url 'cart' %}">
+                            <a class="nav-link px-2" title="Cart: {{ product_count }}" href="{% url 'view_cart' %}">
                                 <i class="fa-solid fa-cart-shopping fs-4"></i>
                                 <!-- <sup>&nbsp;{{product_count}}</sup> -->
                             </a>
@@ -124,6 +124,7 @@
     <footer class="bg-grey mt-auto">
         <div class="row gx-0">
             <div class="col-10 offset-1">
+                <!-- Newsletter signup form -->
                 <div class="row text-center">
                     <div class="col-12">
                         <h3 class="pt-4 fw-6">Newsletter For Gamers</h3>
@@ -134,6 +135,7 @@
                     </div>
                 </div>
                 <hr>
+                <!-- Footer links & contact info -->
                 <div class="row justify-content-between">
                     <div class="col-12 col-md-3 text-center text-md-start">
                         <h5 class="text-uppercase my-3">Popular categories</h5>
@@ -176,6 +178,7 @@
                     </div>
                 </div>
                 <hr>
+                <!-- Social media links & copyright -->
                 <div class="row justify-content-between mb-3">
                     <div class="col-md-4 d-flex align-items-center justify-content-center justify-content-md-start">
                         <span>&copy; <span id="copyright"></span> Gamers Ground</span>

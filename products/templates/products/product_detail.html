@@ -2,8 +2,10 @@
 {% load static %}
 
 {% block content %}
+    <!-- Something to match the category banner? -->
     <main>
         <div class="container">
+            <!-- Breadcrumb navigation -->
             <div class="row breadcrumb-row mt-2">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -14,6 +16,7 @@
                     </ol>
                 </nav>
             </div>
+            <!-- Product details section -->
             <div class="row">
                 <div class="col-md-6">
                     {% if product.image %}
@@ -37,7 +40,7 @@
                     <p class="fw-6">
                         ${{ product.price }}
                     </p>
-                    <!-- Add to card here -->
+                    <!-- Add to cart here -->
                 </div>
             </div>
             <!-- Related / popular products row? -->
