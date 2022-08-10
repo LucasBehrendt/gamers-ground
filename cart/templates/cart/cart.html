@@ -65,24 +65,24 @@
                             </div>
                             <!-- Loop over each product in cart -->
                             <div class="col-12 col-md-8">
-                                {% for product in cart_items %}
+                                {% for item in cart_items %}
                                     <div class="row bg-grey rounded my-5">
                                         <div class="col-12 col-sm-6">
-                                            {% if product.product.image %}
-                                                <a href="{% url 'product_detail' product.product.category.slug product.product.slug %}">
-                                                    <img class="cart-img w-100 fit-scale py-3" src="{{ product.product.image.url }}" alt="{{ product.product.name }}">
+                                            {% if item.product.image %}
+                                                <a href="{% url 'product_detail' item.product.category.slug item.product.slug %}">
+                                                    <img class="cart-img w-100 fit-scale py-3" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                                 </a>
                                             {% else %}
-                                                <a href="{% url 'product_detail' product.product.category.slug product.product.slug %}">
-                                                    <img class="cart-img w-100 fit-scale py-3" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.product.name }}">
+                                                <a href="{% url 'product_detail' item.product.category.slug item.product.slug %}">
+                                                    <img class="cart-img w-100 fit-scale py-3" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
                                                 </a>
                                             {% endif %}
                                         </div>
                                         <div class="col-12 col-sm-6 my-3 pe-sm-4 d-flex flex-column">
                                             <div class="row">
                                                 <div class="col-6">
-                                                    {% if product.product.brand %}
-                                                        <p class="text-muted mb-0">{{ product.product.brand }}</p>
+                                                    {% if item.product.brand %}
+                                                        <p class="text-muted mb-0">{{ item.product.brand }}</p>
                                                     {% endif %}
                                                 </div>
                                                 <div class="col-6 text-end">
@@ -91,8 +91,8 @@
                                                     </a>
                                                 </div>
                                             </div>
-                                            <a class="text-link" href="{% url 'product_detail' product.product.category.slug product.product.slug %}">
-                                                <h4>{{ product.product.name }}</h4>
+                                            <a class="text-link" href="{% url 'product_detail' item.product.category.slug item.product.slug %}">
+                                                <h4>{{ item.product.name }}</h4>
                                             </a>
                                             <!-- Rating goes here -->
                                             <!-- order item info -->
@@ -101,7 +101,7 @@
                                                     Price:
                                                 </div>
                                                 <div class="col-6 text-end">
-                                                    ${{ product.product.price }}
+                                                    ${{ item.product.price }}
                                                 </div>
                                             </div>
                                             <div class="row my-2">
@@ -109,16 +109,34 @@
                                                     Quantity:
                                                 </div>
                                                 <div class="col-6 text-end">
-                                                    <!-- update quantity form -->
-                                                    {{ product.quantity }}
+                                                    <form action="">
+                                                        <div class="input-group justify-content-end">
+                                                            <div class="input-group-prepend">
+                                                                <button class="btn btn-sm decrement-qty btn-green" id="decrement-qty_{{ item.item_id }}"
+                                                                    data-item_id="{{ item.item_id }}" aria-label="Decrement item quantity">
+                                                                    <i class="fa-solid fa-minus"></i>
+                                                                </button>
+                                                            </div>
+                                                            <input class="form-control qty-input" type="number" name="quantity" value="{{ item.quantity }}"
+                                                                min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}" aria-label="Item quantity input">
+                                                            <div class="input-group-append">
+                                                                <button class="btn btn-sm increment-qty btn-green" id="increment-qty_{{ item.item_id }}"
+                                                                    data-item_id="{{ item.item_id }}" aria-label="Increment item quantity">
+                                                                    <i class="fa-solid fa-plus"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </form>
+                                                    <!-- {{ item.quantity }} -->
                                                 </div>
                                             </div>
-                                            <div class="row">
+                                            <div class="row fw-6">
                                                 <div class="col-6">
                                                     Total:
                                                 </div>
                                                 <div class="col-6 text-end">
-                                                    ${{ product.item_total }}
+                                                    ${{ item.item_total }}
                                                 </div>
                                             </div>
                                         </div>

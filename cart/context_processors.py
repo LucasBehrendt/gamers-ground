@@ -1,4 +1,4 @@
-from decimal import Decimal
+from decimal import Decimal, ROUND_DOWN
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
@@ -9,8 +9,9 @@ def cart_contents(request):
     cart_items = []
     total = 0
     product_count = 0
-    standard_delivery = 7.99
-    # standard_delivery = Decimal(7.99)
+    # Quantize source: https://docs.python.org/3/library/decimal.html
+    standard_delivery = Decimal(7.99).quantize(
+        Decimal('.01'), rounding=ROUND_DOWN)
     cart = request.session.get('cart', {})
 
     for item_id, quantity in cart.items():
