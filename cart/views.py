@@ -20,5 +20,4 @@ class AddToCart(generic.View):
             cart[item_id] = 1
 
         request.session['cart'] = cart
-        print(request.session['cart'])
         return redirect(redirect_url)
