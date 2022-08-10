@@ -9,7 +9,8 @@ def cart_contents(request):
     cart_items = []
     total = 0
     product_count = 0
-    standard_delivery = Decimal(7.99)
+    standard_delivery = 7.99
+    # standard_delivery = Decimal(7.99)
     cart = request.session.get('cart', {})
 
     for item_id, quantity in cart.items():

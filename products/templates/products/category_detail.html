@@ -71,7 +71,7 @@
                                         {% if product.brand %}
                                             <p class="text-muted mb-0">{{ product.brand }}</p>
                                         {% endif %}
-                                        <a class="text-link" href="">
+                                        <a class="text-link" href="{% url 'product_detail' product.category.slug product.slug %}">
                                             <h4 class="card-title">{{ product.name }}</h4>
                                         </a>
                                         <!-- Rating goes here -->

@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-10 offset-1">
+                <div class="cart-container col-10 offset-1">
                     {% if cart_items %}
                         <!-- Delivery info -->
                         <div class="row my-3">
@@ -30,11 +30,100 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-12 col-md-8">
-                                
+                            <!-- Order information -->
+                            <div class="col-12 col-md-4 order-md-last my-5 px-0 ps-md-3">
+                                <h5 class="text-center mb-5">Order Info ({{ product_count }} items)</h5>
+                                <div class="row">
+                                    <div class="col-6">
+                                        Cart Total:
+                                    </div>
+                                    <div class="col-6 text-end">
+                                        ${{ total }}
+                                    </div>
+                                </div>
+                                <div class="row my-2">
+                                    <div class="col-6">
+                                        Delivery:
+                                    </div>
+                                    <div class="col-6 text-end">
+                                        {% if free_delivery_delta == 0 %}
+                                            <del>${{ standard_delivery }}</del> <span class="ms-1">${{ delivery }}</span>
+                                        {% else %}
+                                            ${{ delivery }}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="row fw-6">
+                                    <div class="col-7">
+                                        Grand Total:
+                                    </div>
+                                    <div class="col-5 text-end">
+                                        ${{ grand_total }}
+                                    </div>
+                                </div>
+                                <a class="btn btn-green text-uppercase mt-5" href="#">Proceed to checkout</a>
                             </div>
-                            <div class="col-12 col-md-4">
-                                
+                            <!-- Loop over each product in cart -->
+                            <div class="col-12 col-md-8">
+                                {% for product in cart_items %}
+                                    <div class="row bg-grey rounded my-5">
+                                        <div class="col-12 col-sm-6">
+                                            {% if product.product.image %}
+                                                <a href="{% url 'product_detail' product.product.category.slug product.product.slug %}">
+                                                    <img class="cart-img w-100 fit-scale py-3" src="{{ product.product.image.url }}" alt="{{ product.product.name }}">
+                                                </a>
+                                            {% else %}
+                                                <a href="{% url 'product_detail' product.product.category.slug product.product.slug %}">
+                                                    <img class="cart-img w-100 fit-scale py-3" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.product.name }}">
+                                                </a>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-12 col-sm-6 my-3 pe-sm-4 d-flex flex-column">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    {% if product.product.brand %}
+                                                        <p class="text-muted mb-0">{{ product.product.brand }}</p>
+                                                    {% endif %}
+                                                </div>
+                                                <div class="col-6 text-end">
+                                                    <a class="text-white" href="">
+                                                        <i class="fa-solid fa-trash-can"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <a class="text-link" href="{% url 'product_detail' product.product.category.slug product.product.slug %}">
+                                                <h4>{{ product.product.name }}</h4>
+                                            </a>
+                                            <!-- Rating goes here -->
+                                            <!-- order item info -->
+                                            <div class="row mt-auto">
+                                                <div class="col-6">
+                                                    Price:
+                                                </div>
+                                                <div class="col-6 text-end">
+                                                    ${{ product.product.price }}
+                                                </div>
+                                            </div>
+                                            <div class="row my-2">
+                                                <div class="col-6">
+                                                    Quantity:
+                                                </div>
+                                                <div class="col-6 text-end">
+                                                    <!-- update quantity form -->
+                                                    {{ product.quantity }}
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    Total:
+                                                </div>
+                                                <div class="col-6 text-end">
+                                                    ${{ product.item_total }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
                             </div>
                         </div>
                     {% else %}

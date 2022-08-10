@@ -30,6 +30,8 @@ body {
 .text-link {
     color: #35C71E;
     text-decoration: none;
+    display: inline-block;
+    width: fit-content;
 }
 
 .text-link:hover {
@@ -237,6 +239,12 @@ sup {
     right: 20px;
 }
 
+/* --------------- Cart Page --------------- */
+
+.cart-img {
+    max-height: 320px;
+}
+
 /* ********************************************* */
 /* --------------- Media Queries --------------- */
 /* ********************************************* */
@@ -271,6 +279,15 @@ sup {
 
     .product-container {
         width: 100%;
+        margin: auto;
+    }
+}
+
+/* --------------- Cart Page --------------- */
+
+@media (max-width: 450px) {
+    .cart-container {
+        width: 92%;
         margin: auto;
     }
 }
