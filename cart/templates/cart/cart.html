@@ -3,6 +3,45 @@
 
 {% block content %}
     <main>
-        <h2>Cart page</h2>
+        <div class="container-fluid">
+            <div class="row mt-4">
+                <div class="col-10 offset-1">
+                    <p class="">
+                        <a class="text-link" href="{% url 'products' %}"><i class="fa-solid fa-arrow-left"></i> Continue shopping</a>
+                    </p>
+                </div>
+            </div>
+            <div class="row text-uppercase text-center mt-3">
+                <div class="col">
+                    <h2>Shopping cart</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-10 offset-1">
+                    {% if cart_items %}
+                        <!-- Delivery info -->
+                        <div class="row my-3">
+                            <div class="col">
+                                {% if free_delivery_delta == 0 %}
+                                    <p class="text-center"><i class="fa-solid fa-truck"></i> You have qualified for free delivery!</p>
+                                {% else %}
+                                    <p class="text-center"><i class="fa-solid fa-truck"></i> Spend ${{ free_delivery_delta }} more to get free delivery!</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-8">
+                                
+                            </div>
+                            <div class="col-12 col-md-4">
+                                
+                            </div>
+                        </div>
+                    {% else %}
+                        <p class="text-center mt-5">Your cart is currently empty.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
     </main>
 {% endblock %}
