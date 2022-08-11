@@ -109,7 +109,9 @@
                                                     Quantity:
                                                 </div>
                                                 <div class="col-6 text-end">
-                                                    <form id="update-qty-form" action="">
+                                                    <!-- Form for updating item quantity -->
+                                                    <form id="update-qty-form" method="POST" action="">
+                                                        {% csrf_token %}
                                                         <div class="input-group justify-content-end">
                                                             <div class="input-group-prepend">
                                                                 <button class="btn btn-sm decrement-qty btn-green" id="decrement-qty_{{ item.item_id }}"
@@ -126,9 +128,7 @@
                                                                 </button>
                                                             </div>
                                                         </div>
-                                                        
                                                     </form>
-                                                    <!-- {{ item.quantity }} -->
                                                 </div>
                                             </div>
                                             <div class="row fw-6">
