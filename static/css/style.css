@@ -262,6 +262,11 @@ input[type='number'].qty-input {
     padding: 0 0.3rem;
 }
 
+.increment-qty:focus,
+.decrement-qty:focus {
+    box-shadow: none;
+}
+
 /* ********************************************* */
 /* --------------- Media Queries --------------- */
 /* ********************************************* */

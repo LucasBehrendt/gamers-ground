@@ -109,7 +109,7 @@
                                                     Quantity:
                                                 </div>
                                                 <div class="col-6 text-end">
-                                                    <form action="">
+                                                    <form id="update-qty-form" action="">
                                                         <div class="input-group justify-content-end">
                                                             <div class="input-group-prepend">
                                                                 <button class="btn btn-sm decrement-qty btn-green" id="decrement-qty_{{ item.item_id }}"
@@ -151,4 +151,6 @@
             </div>
         </div>
     </main>
+
+    <script src="{% static 'js/itemQuantityInput.js' %}"></script>
 {% endblock %}
