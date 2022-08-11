@@ -110,7 +110,7 @@
                                                 </div>
                                                 <div class="col-6 text-end">
                                                     <!-- Form for updating item quantity -->
-                                                    <form id="update-qty-form" method="POST" action="">
+                                                    <form id="update-qty-form-{{ item.item_id }}" method="POST" action="{% url 'edit_cart' item.item_id %}">
                                                         {% csrf_token %}
                                                         <div class="input-group justify-content-end">
                                                             <div class="input-group-prepend">

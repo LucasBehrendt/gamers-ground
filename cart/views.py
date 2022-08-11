@@ -21,3 +21,19 @@ class AddToCart(generic.View):
 
         request.session['cart'] = cart
         return redirect(redirect_url)
+
+
+class EditCart(generic.View):
+    """Edits product in cart"""
+    def post(self, request, item_id):
+
+        quantity = int(request.POST.get('quantity'))
+        cart = request.session.get('cart', {})
+
+        if quantity > 0:
+            cart[item_id] = quantity
+        else:
+            del cart[item_id]
+
+        request.session['cart'] = cart
+        return redirect('view_cart')
