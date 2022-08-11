@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
+from products.models import Product
 
 
 class ViewCart(generic.TemplateView):
@@ -37,3 +38,19 @@ class EditCart(generic.View):
 
         request.session['cart'] = cart
         return redirect('view_cart')
+
+
+class DeleteFromCart(generic.View):
+    """Delete product from cart"""
+    def get(self, request, item_id):
+
+        try:
+            deleted_item = get_object_or_404(Product, pk=item_id)
+            cart = request.session.get('cart', {})
+
+            del cart[item_id]
+
+            request.session['cart'] = cart
+            return redirect('view_cart')
+        except Exception as e:
+            return redirect('view_cart')
