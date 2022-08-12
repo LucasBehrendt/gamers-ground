@@ -1,17 +1,73 @@
 <div class="toast bg-grey" role="status" aria-live="polite" aria-atomic="true" data-bs-autohide="false">
-    <!-- <div class="container"> -->
-        <div class="toast-header justify-content-between text-white bg-black">
-            <strong class="fs-6">Success</strong>
-            <button type="button" class="btn-close opacity-100 text-white h-100" data-bs-dismiss="toast" aria-label="Close">
-                <i class="fa-solid fa-xmark fs-6"></i>
-            </button>
-        </div>
-        <div class="toast-body">
-            <div class="row">
-                <div class="col">
-                    {{ message }}
-                </div>
+    <!-- Toast header with message type -->
+    <div class="toast-header justify-content-between text-white bg-black">
+        <strong class="fs-6">Success!</strong>
+        <button type="button" class="btn-close opacity-100 text-white h-100" data-bs-dismiss="toast" aria-label="Close">
+            <i class="fa-solid fa-xmark fs-6"></i>
+        </button>
+    </div>
+    <!-- Toast body -->
+    <div class="toast-body m-2">
+        <div class="row mb-4">
+            <div class="col fs-6">
+                {{ message }}
             </div>
         </div>
-    <!-- </div> -->
+        <!-- Loop for each item in cart -->
+        {% if product_count %}
+            <p class="fs-6 fw-5">Your cart ({{ product_count }} items)</p>
+            {% for item in cart_items %}
+                <div class="row my-2">
+                    <div class="col-4">
+                        <img class="w-100 fit-scale toast-img" src="{{ item.product.image.url }}" alt="">
+                    </div>
+                    <div class="col-8">
+                        <div class="row mb-2">
+                            <div class="col d-flex">
+                                <span>{{ item.product.brand }} {{ item.product.name }}</span>
+                                <a class="text-white ms-auto" href="{% url 'delete_from_cart' item.item_id %}">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p>Quantity: {{ item.quantity }}</p>
+                        <strong>Total: ${{ item.item_total }}</strong>
+                    </div>
+                </div>
+                <hr>
+            {% endfor %}
+            <!-- Totals -->
+            <div class="row mx-2">
+                <div class="col d-flex">
+                    <span>Total:</span>
+                    <span class="ms-auto">${{ total }}</span>
+                </div>
+            </div>
+            <div class="row m-2">
+                <div class="col d-flex">
+                    <span>Delivery:</span>
+                    {% if free_delivery_delta == 0 %}
+                        <del class="ms-auto">${{ standard_delivery }}</del> <span class="ms-1">${{ delivery }}</span>
+                    {% else %}
+                        <span class="ms-auto">${{ delivery }}</span>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row mx-2">
+                <div class="col d-flex">
+                    <span>Grand Total:</span>
+                    <span class="ms-auto">${{ grand_total }}</span>
+                </div>
+            </div>
+            <!-- Buttons to cart & checkout -->
+            <div class="row text-center mt-3">
+                <div class="col-6 toast-btn mb-xs-3">
+                    <a class="btn btn-green text-uppercase w-100" href="{% url 'view_cart' %}"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+                </div>
+                <div class="col-6 toast-btn">
+                    <a class="btn btn-green text-uppercase w-100" href="#"><i class="fa-solid fa-lock"></i> Checkout</a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
 </div>
