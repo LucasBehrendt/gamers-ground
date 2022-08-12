@@ -14,7 +14,7 @@
             </div>
         </div>
         <!-- Loop for each item in cart -->
-        {% if product_count %}
+        {% if product_count and message.extra_tags == 'show-cart' %}
             <p class="fs-6 fw-5">Your cart ({{ product_count }} items)</p>
             {% for item in cart_items %}
                 <div class="row my-2">

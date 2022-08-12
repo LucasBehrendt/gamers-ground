@@ -21,10 +21,12 @@ class AddToCart(generic.View):
             cart[item_id] += 1
             messages.success(
                 request, f'Updated {item.name} quantity to \
-                {cart[item_id]} in your cart!')
+                {cart[item_id]} in your cart!', extra_tags='show-cart')
         else:
             cart[item_id] = 1
-            messages.success(request, f'Added {item.name} to your cart!')
+            messages.success(
+                request, f'Added {item.name} to your cart!',
+                extra_tags='show-cart')
 
         request.session['cart'] = cart
         return redirect(redirect_url)
@@ -42,10 +44,12 @@ class EditCart(generic.View):
             cart[item_id] = quantity
             messages.success(
                 request, f'Updated {item.name} quantity to \
-                {cart[item_id]} in your cart!')
+                {cart[item_id]} in your cart!', extra_tags='show-cart')
         else:
             del cart[item_id]
-            messages.success(request, f'Removed {item.name} from your cart!')
+            messages.success(
+                request, f'Removed {item.name} from your cart!',
+                extra_tags='show-cart')
 
         request.session['cart'] = cart
         return redirect('view_cart')
@@ -60,10 +64,13 @@ class DeleteFromCart(generic.View):
             cart = request.session.get('cart', {})
 
             del cart[item_id]
-            messages.success(request, f'Removed {item.name} from your cart!')
+            messages.success(
+                request, f'Removed {item.name} from your cart!',
+                extra_tags='show-cart')
 
             request.session['cart'] = cart
             return redirect('view_cart')
         except Exception as e:
-            messages.error(request, f'Error removing item: {e}')
+            messages.error(
+                request, f'Error removing item: {e}', extra_tags='show-cart')
             return redirect('view_cart')
