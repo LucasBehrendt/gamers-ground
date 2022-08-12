@@ -119,6 +119,24 @@
         </nav>
     </header>
 
+    {% if messages %}
+        <div class="message-container">
+            {% for message in messages %}
+                {% with message.level as level %}
+                    {% if level == 40 %}
+                        {% include 'includes/toasts/toast_error.html' %}
+                    {% elif level == 30 %}
+                        {% include 'includes/toasts/toast_warning.html' %}
+                    {% elif level == 25 %}
+                        {% include 'includes/toasts/toast_success.html' %}
+                    {% else %}
+                        {% include 'includes/toasts/toast_info.html' %}
+                    {% endif %}
+                {% endwith %}
+            {% endfor %}
+        </div>
+    {% endif %}
+
     {% block content %}
     {% endblock %}
 
@@ -143,16 +161,16 @@
                         <h5 class="text-uppercase my-3">Popular categories</h5>
                         <ul class="list-unstyled">
                             <li class="mb-2">
-                                <a class="underline-link" href="#">Category 1</a>
+                                <a class="underline-link" href="{% url 'category' 'keyboards' %}">Keyboards</a>
                             </li>
                             <li class="mb-2">
-                                <a class="underline-link" href="#">Category 2</a>
+                                <a class="underline-link" href="{% url 'category' 'mice' %}">Mice</a>
                             </li>
                             <li class="mb-2">
-                                <a class="underline-link" href="#">Category 3</a>
+                                <a class="underline-link" href="{% url 'category' 'laptops' %}">Laptops</a>
                             </li>
                             <li>
-                                <a class="underline-link" href="#">Category 4</a>
+                                <a class="underline-link" href="{% url 'category' 'audio' %}">Audio</a>
                             </li>
                         </ul>
                     </div>
@@ -219,7 +237,15 @@
     </footer>
 
     <script>
+        // Copyright year in footer
         document.getElementById('copyright').innerText = new Date().getFullYear();
+
+        // Create toast for any message notification, from bootstrap docs
+        var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+        var toastList = toastElList.map(function(toastEl) {
+            return new bootstrap.Toast(toastEl)
+        })
+        toastList.forEach(toast => toast.show())
     </script>
 
 </body>

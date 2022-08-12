@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 from django.views import generic
 from products.models import Product
 
@@ -12,6 +13,7 @@ class AddToCart(generic.View):
     """Adds product to cart"""
     def post(self, request, item_id):
 
+        item = get_object_or_404(Product, pk=item_id)
         redirect_url = request.POST.get('redirect_url')
         cart = request.session.get('cart', {})
 
@@ -19,6 +21,7 @@ class AddToCart(generic.View):
             cart[item_id] += 1
         else:
             cart[item_id] = 1
+            messages.success(request, f'Added {item.name} to your cart!')
 
         request.session['cart'] = cart
         return redirect(redirect_url)
