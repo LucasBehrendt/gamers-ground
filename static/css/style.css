@@ -284,7 +284,22 @@ input::-webkit-inner-spin-button {
     max-width: 93vw;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+.toast-success {
     border: 1px solid black;
+}
+
+.toast-error {
+    border: 1px solid red;
+}
+
+.toast-info {
+    border: 1px solid blue;
+}
+
+.toast-warning {
+    border: 1px solid yellow;
 }
 
 .toast-img {
