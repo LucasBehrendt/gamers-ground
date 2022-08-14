@@ -3,11 +3,11 @@
 
 {% block content %}
     <main>
-        <div class="container-fluid">
+        <div class="container">
             <div class="row mt-4">
                 <div class="col-10 offset-1">
-                    <p class="">
-                        <a class="text-link" href="{% url 'products' %}"><i class="fa-solid fa-arrow-left"></i> Continue shopping</a>
+                    <p>
+                        <a class="text-link" href="{% url 'view_cart' %}"><i class="fa-solid fa-arrow-left"></i> Back to cart</a>
                     </p>
                 </div>
             </div>
@@ -16,16 +16,130 @@
                     <h2>Checkout</h2>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 col-12">
-                    <form method="POST" action="#">
-                        {% csrf_token %}
-                        {{ form|crispy }}
-                    </form>
+            <div class="row my-5">
+                <div class="checkout-details col-md-6 col-12 mx-auto order-md-last">
+                    <!-- Totals -->
+                    <h4>Order Totals</h4>
+                    <div class="row">
+                        <div class="col d-flex">
+                            <span>Total:</span>
+                            <span class="ms-auto">${{ total }}</span>
+                        </div>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col d-flex">
+                            <span>Delivery:</span>
+                            {% if free_delivery_delta == 0 %}
+                            <del class="ms-auto">${{ standard_delivery }}</del> <span
+                                class="ms-1">${{ delivery }}</span>
+                            {% else %}
+                            <span class="ms-auto">${{ delivery }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="row mb-4 fw-6">
+                        <div class="col d-flex">
+                            <span>Grand Total:</span>
+                            <span class="ms-auto">${{ grand_total }}</span>
+                        </div>
+                    </div>
+                    <!-- Loop for each item in cart -->
+                    <h4>Order Items</h4>
+                    {% for item in cart_items %}
+                        <hr class="my-2">
+                        <div class="row">
+                            <div class="col-4">
+                                <img class="w-100 fit-scale toast-img" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                            </div>
+                            <div class="col-8">
+                                <div class="row mb-2">
+                                    <div class="col d-flex">
+                                        <span>{{ item.product.brand }} {{ item.product.name }}</span>
+                                        <a class="text-white ms-auto" href="{% url 'delete_from_cart' item.item_id %}">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <p>Quantity: {{ item.quantity }}</p>
+                                <strong>Total: ${{ item.item_total }}</strong>
+                            </div>
+                        </div>
+                        {% if forloop.last %}
+                        <hr class="my-2">
+                        {% endif %}
+                    {% endfor %}
                 </div>
-                <div class="col-md-6 col-12">
-                   products
+                <div class="checkout-form col-md-6 col-12 mx-auto">
+                    <div>
+                        <form class="" method="POST" action="#">
+                            {% csrf_token %}
+                            <fieldset>
+                                <legend class="fs-5">Details</legend>
+                                <div class="mb-4">
+                                    {{ form.first_name }}
+                                </div>
+                                <div class="mb-4">
+                                    {{ form.last_name }}
+                                </div>
+                                <div class="mb-4">
+                                    {{ form.email_address }}
+                                </div>
+                                <div class="mb-4">
+                                    {{ form.phone_number }}
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend class="fs-5">Delivery Info</legend>
+                                <div class="mb-4">
+                                    {{ form.street_address_1 }}
+                                </div>
+                                <div class="mb-4">
+                                    {{ form.street_address_2 }}
+                                </div>
+                                <div class="mb-4">
+                                    {{ form.postcode }}
+                                </div>
+                                <div class="mb-4">
+                                    {{ form.city }}
+                                </div>
+                                <div class="mb-4">
+                                    {{ form.country }}
+                                </div>
+                                {% if user.is_authenticated %}
+                                    <div class="form-check mb-4">
+                                        <input class="form-check-input" type="checkbox" id="save-info">
+                                        <label class="form-check-label" for="save-info">
+                                        Save delivery information to my profile
+                                        </label>
+                                    </div>
+                                {% else %}
+                                <div>
+                                    <p>To save this info, please
+                                        <a class="text-link" href="{% url 'account_signup' %}">create an account</a> or
+                                        <a class="text-link" href="{% url 'account_login' %}">sign in</a>.
+                                    </p>
+                                </div>
+                                {% endif %}
+                            </fieldset>
+                            <fieldset>
+                                <legend class="fs-5">Payment Info</legend>
+                                <!-- Stripe element goes here -->
+                                <div class="form-control mb-3" id="card-element"></div>
+                                <!-- Used to display stripe form errors -->
+                                <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                            </fieldset>
+                            <div>
+                                <button type="submit" class="btn btn-green my-3">
+                                    <i class="fa-solid fa-lock"></i> Complete Order
+                                </button>
+                                <p>
+                                    <small>Your card will be charged <strong>${{ grand_total }}</strong></small>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
                 </div>
+                
             </div>
         </div>
     </main>

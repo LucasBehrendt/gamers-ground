@@ -306,6 +306,12 @@ input::-webkit-inner-spin-button {
     height: 90px;
 }
 
+/* --------------- Checkout Page --------------- */
+
+.checkout-form {
+    max-width: 450px;
+}
+
 /* ********************************************* */
 /* --------------- Media Queries --------------- */
 /* ********************************************* */
@@ -315,11 +321,19 @@ input::-webkit-inner-spin-button {
     .container-lg {
       max-width: 80%;
     }
-  }
+}
 
-/* --------------- Header --------------- */
-
+/*  Same width checkout page details & form on smaller screens */
+@media (max-width: 768px) {
+    .checkout-details {
+        max-width: 450px;
+    }
+}
+  
 @media (max-width: 400px) {
+
+    /* --------------- Header --------------- */
+
     .navbar-brand {
         width: 100%;
         display: flex;
