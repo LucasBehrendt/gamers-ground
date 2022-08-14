@@ -2,14 +2,12 @@ from django.shortcuts import render, redirect
 from django.views import generic
 from django.contrib import messages
 from .models import Order
+from .forms import OrderForm
 
 
 class Checkout(generic.CreateView):
     """Renders checkout page with payment form"""
-    model = Order
-    fields = (
-        'first_name', 'last_name', 'email', 'phone', 'address1',
-        'address2', 'postcode', 'city', 'country')
+    form_class = OrderForm
     template_name = 'checkout/checkout.html'
     success_url = '/'
 
