@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <main>
+        <div class="container-fluid">
+            <div class="row mt-4">
+                <div class="col-10 offset-1">
+                    <p class="">
+                        <a class="text-link" href="{% url 'products' %}"><i class="fa-solid fa-arrow-left"></i> Continue shopping</a>
+                    </p>
+                </div>
+            </div>
+            <div class="row text-uppercase text-center mt-3">
+                <div class="col">
+                    <h2>Checkout</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <form method="POST" action="#">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                    </form>
+                </div>
+                <div class="col-md-6 col-12">
+                   products
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
