@@ -44,7 +44,7 @@
                         </div>
                     </div>
                     <!-- Loop for each item in cart -->
-                    <h4>Order Items</h4>
+                    <h4>Order Items ({{ product_count }})</h4>
                     {% for item in cart_items %}
                         <hr class="my-2">
                         <div class="row">
@@ -143,4 +143,8 @@
             </div>
         </div>
     </main>
+
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'js/stripeElements.js' %}"></script>
 {% endblock %}

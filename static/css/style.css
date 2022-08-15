@@ -312,6 +312,15 @@ input::-webkit-inner-spin-button {
     max-width: 450px;
 }
 
+.checkout-form select:invalid,
+.checkout-form select option[value=""] {
+    color: gray;
+}
+
+.checkout-form input::placeholder {
+    color: gray;
+}
+
 /* ********************************************* */
 /* --------------- Media Queries --------------- */
 /* ********************************************* */
