@@ -77,6 +77,10 @@ body {
     background-color: #212228;
 }
 
+.border-black {
+    border: 1px solid black !important;
+}
+
 /* --------------- Margins & Paddings --------------- */
 
 .px-6 {

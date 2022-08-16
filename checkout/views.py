@@ -90,10 +90,10 @@ class CheckoutSuccess(generic.View):
     def get(self, request, order_number):
         save_info = request.session.get('save_info')
         order = get_object_or_404(Order, order_number=order_number)
-        messages.success(
-            request, f'Your order has been successfully processed.\
-                Thank you for shopping with us! A confirmation email was sent\
-                to {order.email_address}. Order number: {order_number}')
+        # messages.success(
+        #     request, f'Your order has been successfully processed.\
+        #         Thank you for shopping with us! A confirmation email was sent\
+        #         to {order.email_address}. Order number: {order_number}')
 
         if 'cart' in request.session:
             del request.session['cart']

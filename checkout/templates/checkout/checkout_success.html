@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <div class="row text-center mt-5">
+                <div class="col">
+                    <h2 class="text-uppercase my-3">Thank you for your order!</h2>
+                    <p>Please find your order summary below. A confirmation email was sent to <strong>{{ order.email_address }}</strong></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-7 mx-auto">
+                    <div class="card border border-black bg-grey mb-5">
+                        <div class="card-body">
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
