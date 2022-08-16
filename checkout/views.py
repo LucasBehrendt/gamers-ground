@@ -82,3 +82,25 @@ class Checkout(generic.CreateView):
         # context['client_secret'] = 'test'
 
         return context
+
+
+class CheckoutSuccess(generic.View):
+    """Renders checkout success page with order details"""
+
+    def get(self, request, order_number):
+        save_info = request.session.get('save_info')
+        order = get_object_or_404(Order, order_number=order_number)
+        messages.success(
+            request, f'Your order has been successfully processed.\
+                Thank you for shopping with us! A confirmation email was sent\
+                to {order.email_address}. Order number: {order_number}')
+
+        if 'cart' in request.session:
+            del request.session['cart']
+
+        context = {
+            'order': order,
+        }
+
+        template_name = 'checkout/checkout_success.html'
+        return render(request, template_name, context)
