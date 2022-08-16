@@ -71,7 +71,7 @@
                 </div>
                 <div class="checkout-form col-md-6 col-12 mx-auto">
                     <div>
-                        <form class="" method="POST" action="#">
+                        <form class="" id="payment-form" method="POST" action="#">
                             {% csrf_token %}
                             <fieldset>
                                 <legend class="fs-5">Details</legend>
@@ -124,12 +124,12 @@
                             <fieldset>
                                 <legend class="fs-5">Payment Info</legend>
                                 <!-- Stripe element goes here -->
-                                <div class="form-control mb-3" id="card-element"></div>
+                                <div class="form-control" id="card-element"></div>
                                 <!-- Used to display stripe form errors -->
-                                <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                                <div class="text-danger" id="card-errors" role="alert"></div>
                             </fieldset>
                             <div>
-                                <button type="submit" class="btn btn-green my-3">
+                                <button type="submit" class="btn btn-green mt-5" id="checkout-submit">
                                     <i class="fa-solid fa-lock"></i> Complete Order
                                 </button>
                                 <p>
@@ -144,7 +144,7 @@
         </div>
     </main>
 
-    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
-    {{ client_secret|json_script:"id_client_secret" }}
+    <!-- {{ stripe_publishable_key|json_script:"id_stripe_publishable_key" }} -->
+    <!-- {{ client_secret|json_script:"id_client_secret" }} -->
     <script src="{% static 'js/stripeElements.js' %}"></script>
 {% endblock %}
