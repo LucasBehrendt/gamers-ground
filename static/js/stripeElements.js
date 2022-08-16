@@ -34,7 +34,38 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
     });
 
-    
+    // Handle payment form submit
+    const form = document.getElementById('payment-form');
+    form.addEventListener('submit', async (event) => {
+        handleFormSubmit(event, form, stripeData)
+    });
+    async function handleFormSubmit(event, form, stripeData) {
+        event.preventDefault();
+
+        card.update({'disabled': true});
+        document.getElementById('checkout-submit').disabled = true;
+
+        const response = await stripe.confirmCardPayment(stripeData.client_secret, {
+            payment_method: {
+                card: card,
+                billing_details: {
+                    name: 'Jenny Rosen',
+                },
+            },
+        }).then(function(result) {
+            if (result.error) {
+                const errorDiv = document.getElementById('card-errors');
+                let errorMessage = `${result.error.message}`;
+                errorDiv.innerHTML = errorMessage;
+                card.update({'disabled': false});
+                document.getElementById('checkout-submit').disabled = false;
+            } else {
+                if (result.paymentIntent.status === 'succeeded') {
+                    form.submit();
+                }
+            }
+        });
+    }
 });
 
 
