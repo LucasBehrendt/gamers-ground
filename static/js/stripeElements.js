@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 });
 
+// Toggle overlay when processing payment
 function toggleLoadingOverlay(value) {
     const overlay = document.getElementById('loading-overlay')
 
@@ -81,7 +82,7 @@ function toggleLoadingOverlay(value) {
     }
 }
 
-
+// Fetch client secret & publishable key
 async function FetchData() {
     const response = await fetch('/checkout/secret');
     const stripeData = await response.json();
