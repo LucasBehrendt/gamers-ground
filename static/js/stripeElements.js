@@ -45,6 +45,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         card.update({'disabled': true});
         document.getElementById('checkout-submit').disabled = true;
 
+        toggleLoadingOverlay(true);
+
         const response = await stripe.confirmCardPayment(stripeData.client_secret, {
             payment_method: {
                 card: card,
@@ -59,6 +61,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 errorDiv.innerHTML = errorMessage;
                 card.update({'disabled': false});
                 document.getElementById('checkout-submit').disabled = false;
+                toggleLoadingOverlay(false);
             } else {
                 if (result.paymentIntent.status === 'succeeded') {
                     form.submit();
@@ -67,6 +70,16 @@ document.addEventListener('DOMContentLoaded', async function() {
         });
     }
 });
+
+function toggleLoadingOverlay(value) {
+    const overlay = document.getElementById('loading-overlay')
+
+    if (value) {
+        overlay.style.display = 'block'
+    } else {
+        overlay.style.display = 'none'
+    }
+}
 
 
 async function FetchData() {
