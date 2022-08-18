@@ -1,5 +1,9 @@
+import json
 import stripe
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse
+)
+from django.views.decorators.http import require_POST
 from django.views import generic
 from django.contrib import messages
 from django.http import JsonResponse
@@ -8,6 +12,30 @@ from cart.context_processors import cart_contents
 from products.models import Product
 from .models import Order, OrderLineItem
 from .forms import OrderForm
+
+
+@require_POST
+def cache_checkout_data(request):
+    """
+    Modify payment intent with metadata.
+    Taken from Boutique Ado walkthrough project.
+    """
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid, metadata={
+            'cart': json.dumps(request.session.get('cart', {})),
+            'save_info': request.POST.get('save_info'),
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(
+            request,
+            'Sorry, your payment cannot be processed right now.\
+            Please try again later.'
+        )
+        return HttpResponse(content=e, status=400)
 
 
 def create_payment_intent(request):
@@ -90,10 +118,9 @@ class CheckoutSuccess(generic.View):
     def get(self, request, order_number):
         save_info = request.session.get('save_info')
         order = get_object_or_404(Order, order_number=order_number)
-        # messages.success(
-        #     request, f'Your order has been successfully processed.\
-        #         Thank you for shopping with us! A confirmation email was sent\
-        #         to {order.email_address}. Order number: {order_number}')
+        messages.success(
+            request, 'Your order has been successfully processed.\
+                Thank you for shopping with us!')
 
         if 'cart' in request.session:
             del request.session['cart']

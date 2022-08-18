@@ -8,4 +8,6 @@ urlpatterns = [
         ), name='checkout_success'),
     path('secret/', views.create_payment_intent, name='stripe_secret'),
     path('webhook/', webhook, name='webhook'),
+    path('cache_checkout_data/', views.cache_checkout_data,
+         name='cache_checkout_data'),
 ]
