@@ -102,6 +102,12 @@ document.addEventListener('DOMContentLoaded', async function() {
                         toggleLoadingOverlay(false);
                     } else {
                         if (result.paymentIntent.status === 'succeeded') {
+                            // add client secret input to form & pass to view  
+                            let csrfInput = document.createElement('input');
+                            csrfInput.setAttribute('type', 'hidden');
+                            csrfInput.setAttribute('value', stripeData.client_secret);
+                            csrfInput.setAttribute('name', 'client_secret');
+                            form.appendChild(csrfInput);
                             form.submit();
                         }
                     }
