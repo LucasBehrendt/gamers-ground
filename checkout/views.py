@@ -66,7 +66,10 @@ class Checkout(generic.CreateView):
 
     def form_valid(self, form):
         cart = self.request.session.get('cart', {})
-        order = form.save()
+        order = form.save(commit=False)
+        pid = self.request.POST.get('client_secret').split('_secret')[0]
+        order.stripe_pid = pid
+        order.save()
         for item_id, quantity in cart.items():
             try:
                 product = get_object_or_404(Product, pk=item_id)
