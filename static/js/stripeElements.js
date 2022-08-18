@@ -42,32 +42,74 @@ document.addEventListener('DOMContentLoaded', async function() {
     async function handleFormSubmit(event, form, stripeData) {
         event.preventDefault();
 
+        // Disable card input & submit button. Enable loading overlay
         card.update({'disabled': true});
         document.getElementById('checkout-submit').disabled = true;
-
         toggleLoadingOverlay(true);
 
-        const response = await stripe.confirmCardPayment(stripeData.client_secret, {
-            payment_method: {
-                card: card,
-                billing_details: {
-                    name: 'Jenny Rosen',
-                },
-            },
-        }).then(function(result) {
-            if (result.error) {
-                const errorDiv = document.getElementById('card-errors');
-                let errorMessage = `${result.error.message}`;
-                errorDiv.innerHTML = errorMessage;
-                card.update({'disabled': false});
-                document.getElementById('checkout-submit').disabled = false;
-                toggleLoadingOverlay(false);
+        // Retrieve metadata & add to new form, post to cache_checkout_data
+        // view & modify payment intent to hold metadata.
+        // If response is OK, confirm card payment & submit form with data from customer.
+        // If an error occurs, disable loading overlay, enable card 
+        // input & buttons, and display error message to customer.
+        const csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
+        const saveInfo = document.getElementById('save-info').checked;
+        const url = '/checkout/cache_checkout_data/';
+
+        const cachedData = new FormData();
+        cachedData.set('csrfmiddlewaretoken', csrfToken);
+        cachedData.set('save_info', saveInfo);
+        cachedData.set('client_secret', stripeData.client_secret);
+
+        await fetch(url, {
+            method: 'POST',
+            body: cachedData,
+        }).then(function(response) {
+            if (response.status == 200) {
+                stripe.confirmCardPayment(stripeData.client_secret, {
+                    payment_method: {
+                        card: card,
+                        billing_details: {
+                            name: `${form.first_name.value.trim()} ${form.last_name.value.trim()}`,
+                            email: form.email_address.value.trim(),
+                            phone: form.phone_number.value.trim(),
+                            address: {
+                                line1: form.street_address_1.value.trim(),
+                                line2: form.street_address_2.value.trim(),
+                                city: form.city.value.trim(),
+                                country: form.country.value.trim(),
+                            }
+                        },
+                    },
+                    shipping: {
+                        name: `${form.first_name.value.trim()} ${form.last_name.value.trim()}`,
+                        phone: form.phone_number.value.trim(),
+                        address: {
+                            line1: form.street_address_1.value.trim(),
+                            line2: form.street_address_2.value.trim(),
+                            postal_code: form.postcode.value.trim(),
+                            city: form.city.value.trim(),
+                            country: form.country.value.trim(),
+                        }
+                    }
+                }).then(function(result) {
+                    if (result.error) {
+                        const errorDiv = document.getElementById('card-errors');
+                        let errorMessage = `${result.error.message}`;
+                        errorDiv.innerHTML = errorMessage;
+                        card.update({'disabled': false});
+                        document.getElementById('checkout-submit').disabled = false;
+                        toggleLoadingOverlay(false);
+                    } else {
+                        if (result.paymentIntent.status === 'succeeded') {
+                            form.submit();
+                        }
+                    }
+                });
             } else {
-                if (result.paymentIntent.status === 'succeeded') {
-                    form.submit();
-                }
+                location.reload();
             }
-        });
+        })
     }
 });
 
