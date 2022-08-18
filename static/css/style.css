@@ -316,6 +316,10 @@ input::-webkit-inner-spin-button {
     max-width: 450px;
 }
 
+.checkout-form select option {
+    color: #212529;
+}
+
 .checkout-form select:invalid,
 .checkout-form select option[value=""] {
     color: gray;

@@ -10,7 +10,10 @@ from checkout.webhook_handler import StripeWebhookHandler
 @require_POST
 @csrf_exempt
 def webhook(request):
-    """Listen for Stripe webhooks"""
+    """
+    Listen for Stripe webhooks
+    Taken from Stripe docs
+    """
     # Get stripe keys
     # webhook_secret = settings.STRIPE_WH_SECRET
     stripe.api_key = settings.STRIPE_SECRET_KEY
