@@ -87,7 +87,7 @@
                                     <i class="fa-solid fa-user fs-4"></i>
                                 </a>
                                 <ul class="dropdown-menu bg-grey" aria-labelledby="dropdown">
-                                    <li><a class="dropdown-item underline-link" href="#">Profile</a></li>
+                                    <li><a class="dropdown-item underline-link" href="{% url 'profile' %}">Profile</a></li>
                                     <li><a class="dropdown-item underline-link" href="{% url 'account_logout' %}">Sign Out</a></li>
                                     {% if request.user.is_superuser %}
                                         <li><hr class="dropdown-divider"></li>
