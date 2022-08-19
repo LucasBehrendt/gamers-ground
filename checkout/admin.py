@@ -20,18 +20,19 @@ class OrderAdmin(admin.ModelAdmin):
         'order_total', 'grand_total', 'stripe_pid')
 
     fields = (
-        'order_number', 'date', 'first_name', 'last_name', 'email_address',
-        'phone_number', 'street_address_1', 'street_address_2', 'postcode',
-        'city', 'country', 'delivery_cost', 'order_total', 'grand_total',
-        'stripe_pid')
+        'order_number', 'user_profile', 'date', 'first_name', 'last_name',
+        'email_address', 'phone_number', 'street_address_1',
+        'street_address_2', 'postcode', 'city', 'country', 'delivery_cost',
+        'order_total', 'grand_total', 'stripe_pid')
 
     list_display = (
         'order_number', 'date', 'first_name', 'last_name', 'email_address',
         'delivery_cost', 'order_total', 'grand_total')
 
     search_fields = (
-        'order_number', 'date', 'first_name', 'last_name', 'email_address',
-        'street_address_1', 'street_address_2', 'postcode', 'city', 'country',
-        'delivery_cost', 'order_total', 'grand_total', 'stripe_pid')
+        'order_number', 'user_profile', 'date', 'first_name', 'last_name',
+        'email_address', 'street_address_1', 'street_address_2', 'postcode',
+        'city', 'country', 'delivery_cost', 'order_total', 'grand_total',
+        'stripe_pid')
 
     ordering = ('-date',)
