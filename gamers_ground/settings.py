@@ -122,6 +122,9 @@ ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/accounts/login/'
+ACCOUNT_FORMS = {
+    'signup': 'gamers_ground.forms.CustomSignupForm',
+}
 
 WSGI_APPLICATION = 'gamers_ground.wsgi.application'
 
