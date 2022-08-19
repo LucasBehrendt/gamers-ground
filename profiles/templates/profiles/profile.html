@@ -9,6 +9,57 @@
                     <h2>Profile</h2>
                 </div>
             </div>
+            <div class="row my-5">
+                <div class="profile-history col-md-6 col-12 mx-auto order-md-last">
+                    <h3>Order History</h3>
+                </div>
+                <div class="profile-form col-md-6 col-12 mx-auto">
+                    <h3>Default Delivery Information</h3>
+                    <form id="profile-form" method="POST" action="{% url 'profile' %}">
+                        {% csrf_token %}
+                        <fieldset>
+                            <legend class="fs-5">Details</legend>
+                            <div class="mb-4">
+                                {{ details_form.first_name }}
+                            </div>
+                            <div class="mb-4">
+                                {{ details_form.last_name }}
+                            </div>
+                            <div class="mb-4">
+                                {{ details_form.email }}
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend class="fs-5">Delivery Info</legend>
+                            <div class="mb-4">
+                                {{ delivery_form.phone_number }}
+                            </div>
+                            <div class="mb-4">
+                                {{ delivery_form.street_address_1 }}
+                            </div>
+                            <div class="mb-4">
+                                {{ delivery_form.street_address_2 }}
+                            </div>
+                            <div class="mb-4">
+                                {{ delivery_form.postcode }}
+                            </div>
+                            <div class="mb-4">
+                                {{ delivery_form.city }}
+                            </div>
+                            <div class="mb-4">
+                                {{ delivery_form.country }}
+                            </div>
+                        </fieldset>
+                        <div>
+                            <button type="submit" class="btn btn-green mt-3" id="profile-submit">
+                                Update profile
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </main>
+
+    <script src="{% static 'js/countryField.js' %}"></script>
 {% endblock %}

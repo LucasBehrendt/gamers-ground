@@ -345,6 +345,25 @@ input::-webkit-inner-spin-button {
     height: 4rem;
 }
 
+/* --------------- Profile Page --------------- */
+
+.profile-form {
+    max-width: 450px;
+}
+
+.profile-form select option {
+    color: #212529;
+}
+
+.profile-form select:invalid,
+.profile-form select option[value=""] {
+    color: gray;
+}
+
+.profile-form input::placeholder {
+    color: gray;
+}
+
 /* ********************************************* */
 /* --------------- Media Queries --------------- */
 /* ********************************************* */
