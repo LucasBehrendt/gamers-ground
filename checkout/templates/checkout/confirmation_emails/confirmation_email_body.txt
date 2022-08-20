@@ -1,0 +1,25 @@
+Hello {{ order.first_name }} {{ order.last_name }}!
+
+Thank you for your order. Below is a summary of your order details:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Order Items:
+{% for item in order.lineitems.all %}
+{{ item.quantity }} x {{ item.product.brand }} {{ item.product.name }}
+${{ item.lineitem_total }}
+{% endfor %}
+
+Order Total: ${{ order.order_total }}
+Delivery Charge: ${{ order.delivery_cost }}
+Grand Total: ${{ order.grand_total }}
+
+Delivery Information:
+Address: {{ order.street_address_1 }}, {{ order.postcode }}, {{ order.city }}, {{ order.country }}
+Phone number: {{ order.phone_number }}
+
+If you have any questions, please contact us at {{ contact_email }}
+
+Kind Regards,
+Gamers Ground
