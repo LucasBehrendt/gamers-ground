@@ -82,7 +82,7 @@
                             <div class="row">
                                 <div class="col-5">
                                     <p>
-                                        <a class="underline-link" title="{{ order.order_number }}" href="">
+                                        <a class="underline-link" title="{{ order.order_number }}" href="{% url 'order_history' order.order_number %}">
                                             {{ order.order_number|truncatechars:8 }}
                                         </a>
                                     </p>
