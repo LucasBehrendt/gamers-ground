@@ -10,6 +10,8 @@ from django.http import JsonResponse
 from django.conf import settings
 from cart.context_processors import cart_contents
 from products.models import Product
+from profiles.models import UserProfile
+from profiles.forms import UserDeliveryForm
 from .models import Order, OrderLineItem
 from .forms import OrderForm
 
@@ -94,6 +96,22 @@ class Checkout(generic.CreateView):
 
     # add form_invalid ??
 
+    def get_initial(self):
+        # If user is signed in, get profile info & set as initial values
+        if self.request.user.is_authenticated:
+            profile = get_object_or_404(UserProfile, user=self.request.user)
+            return {
+                'first_name': profile.user.get_full_name().split()[0],
+                'last_name': profile.user.get_full_name().split()[1],
+                'email_address': profile.user.email,
+                'phone_number': profile.phone_number,
+                'street_address_1': profile.street_address_1,
+                'street_address_2': profile.street_address_2,
+                'postcode': profile.postcode,
+                'city': profile.city,
+                'country': profile.country,
+            }
+
     def get(self, request, *args, **kwargs):
         cart = request.session.get('cart', {})
         if not cart:
@@ -121,6 +139,28 @@ class CheckoutSuccess(generic.View):
     def get(self, request, order_number):
         save_info = request.session.get('save_info')
         order = get_object_or_404(Order, order_number=order_number)
+
+        # If user is signed in, their profile is assigned to the order
+        if request.user.is_authenticated:
+            profile = get_object_or_404(UserProfile, user=request.user)
+            order.user_profile = profile
+            order.save()
+
+            # Stores user info if box is checked
+            if save_info:
+                delivery_data = {
+                    'phone_number': order.phone_number,
+                    'street_address_1': order.street_address_1,
+                    'street_address_2': order.street_address_2,
+                    'postcode': order.postcode,
+                    'city': order.city,
+                    'country': order.country,
+                }
+                delivery_form = UserDeliveryForm(
+                    delivery_data, instance=profile)
+                if delivery_form.is_valid():
+                    delivery_form.save()
+
         messages.success(
             request, 'Your order has been successfully processed.\
                 Thank you for shopping with us!')
