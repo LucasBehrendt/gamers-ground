@@ -21,7 +21,7 @@ def profile(request):
             delivery.save()
             messages.success(request, 'Your profile has been updated!')
 
-    orders = profile.orders.all()
+    orders = profile.orders.all().order_by('-date')
     details_form = UserDetailsForm(instance=request.user)
     delivery_form = UserDeliveryForm(instance=profile)
 

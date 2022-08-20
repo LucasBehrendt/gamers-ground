@@ -29,7 +29,6 @@ class ProductList(generic.ListView):
                 products = products.annotate(lower_name=Lower('name'))
             if sortkey == 'category':
                 sortkey = 'category__name'
-                print(sortkey)
             if 'direction' in self.request.GET:
                 direction = self.request.GET['direction']
                 if direction == 'desc':
