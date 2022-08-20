@@ -4,6 +4,7 @@ from django.views import generic
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category
+# from .forms import AddProductForm
 
 
 class ProductList(generic.ListView):
@@ -90,3 +91,15 @@ class ProductDetail(generic.DetailView):
     Main product detail view, renders a specific product.
     """
     model = Product
+
+
+class AddProduct(generic.CreateView):
+    """
+    View for creating products
+    """
+    # form_class = AddProductForm
+    model = Product
+    fields = '__all__'
+    template_name = 'products/add_product.html'
+    success_message = 'The product was added successfully!'
+    success_url = '/products/{category}/{slug}'
