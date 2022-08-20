@@ -348,7 +348,7 @@ input::-webkit-inner-spin-button {
 /* --------------- Profile Page --------------- */
 
 .profile-form {
-    max-width: 450px;
+    max-width: 600px;
 }
 
 .profile-form select option {
@@ -362,6 +362,11 @@ input::-webkit-inner-spin-button {
 
 .profile-form input::placeholder {
     color: gray;
+}
+
+.order-history {
+    max-height: 640px;
+    overflow-y: auto;
 }
 
 /* ********************************************* */

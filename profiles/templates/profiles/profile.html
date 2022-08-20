@@ -4,17 +4,14 @@
 {% block content %}
     <main>
         <div class="container">
-            <div class="row text-uppercase text-center mt-3">
+            <div class="row text-uppercase text-center mt-5">
                 <div class="col">
                     <h2>Profile</h2>
                 </div>
             </div>
             <div class="row my-5">
-                <div class="profile-history col-md-6 col-12 mx-auto order-md-last">
-                    <h3>Order History</h3>
-                </div>
                 <div class="profile-form col-md-6 col-12 mx-auto">
-                    <h3>Default Delivery Information</h3>
+                    <h3>Default Information</h3>
                     <form id="profile-form" method="POST" action="{% url 'profile' %}">
                         {% csrf_token %}
                         <fieldset>
@@ -52,10 +49,59 @@
                         </fieldset>
                         <div>
                             <button type="submit" class="btn btn-green mt-3" id="profile-submit">
-                                Update profile
+                                Update Profile
                             </button>
+                            <!-- <div class="row text-center mt-3">
+                                <div class="col-6 toast-btn mb-xs-3">
+                                    <a class="btn btn-green w-100" href="#">Delete Profile</a>
+                                </div>
+                                <div class="col-6 toast-btn">
+                                    <button type="submit" class="btn btn-green w-100" id="profile-submit">
+                                        Update Profile
+                                    </button>
+                                </div>
+                            </div> -->
                         </div>
                     </form>
+                </div>
+                <div class="order-history col-md-6 col-12 mx-auto mt-5 mt-md-0">
+                    <h3 class="mb-4">Order History</h3>
+                    {% if orders %}
+                        <div class="row mb-3">
+                            <div class="col-5">
+                                <p class="fw-6 fs-5">Order No</p>
+                            </div>
+                            <div class="col-4">
+                                <p class="fw-6 fs-5">Date</p>
+                            </div>
+                            <div class="col-3">
+                                <p class="fw-6 fs-5">Total</p>
+                            </div>
+                        </div>
+                        {% for order in orders %}
+                            <div class="row">
+                                <div class="col-5">
+                                    <p>
+                                        <a class="underline-link" title="{{ order.order_number }}" href="">
+                                            {{ order.order_number|truncatechars:8 }}
+                                        </a>
+                                    </p>
+                                </div>
+                                <div class="col-4">
+                                    <p>
+                                        <a class="underline-link" href="">{{ order.date.date }}</a>
+                                    </p>
+                                </div>
+                                <div class="col-3">
+                                    <p>
+                                        <a class="underline-link" href="">${{ order.grand_total }}</a>
+                                    </p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>You have no previous orders on this account</p>
+                    {% endif %}
                 </div>
             </div>
         </div>

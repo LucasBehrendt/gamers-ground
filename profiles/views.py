@@ -11,6 +11,8 @@ def profile(request):
     if request.method == 'POST':
         details_form = UserDetailsForm(request.POST, instance=request.user)
         delivery_form = UserDeliveryForm(request.POST, instance=profile)
+        # Handle both forms in one post request
+        # source: https://stackoverflow.com/questions/27832076/
         if all((details_form.is_valid(), delivery_form.is_valid())):
             details = details_form.save()
             delivery = delivery_form.save(commit=False)
