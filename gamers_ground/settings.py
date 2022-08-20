@@ -111,9 +111,6 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
-# move to smtp config
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
 # Allauth configuration
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
@@ -200,3 +197,8 @@ STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
 STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET')
+
+# SMTP Configuration
+if 'DEVELOPMENT' in os.environ:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'gamersground@example.com'
