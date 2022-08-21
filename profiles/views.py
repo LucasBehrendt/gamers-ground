@@ -20,10 +20,10 @@ def profile(request):
             delivery.user = details
             delivery.save()
             messages.success(request, 'Your profile has been updated!')
-
+    else:
+        details_form = UserDetailsForm(instance=request.user)
+        delivery_form = UserDeliveryForm(instance=profile)
     orders = profile.orders.all().order_by('-date')
-    details_form = UserDetailsForm(instance=request.user)
-    delivery_form = UserDeliveryForm(instance=profile)
 
     context = {
         'details_form': details_form,

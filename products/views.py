@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import generic
 from django.db.models import Q
 from django.db.models.functions import Lower
@@ -93,13 +95,18 @@ class ProductDetail(generic.DetailView):
     model = Product
 
 
-class AddProduct(generic.CreateView):
+class AddProduct(SuccessMessageMixin, generic.CreateView):
     """
     View for creating products
     """
-    # form_class = AddProductForm
     model = Product
     fields = '__all__'
     template_name = 'products/add_product.html'
     success_message = 'The product was added successfully!'
-    success_url = '/products/{category}/{slug}'
+    success_url = '/products/add_product'
+
+    def form_invalid(self, form):
+        messages.error(
+            self.request,
+            'Failed to add product. Please check form validity.')
+        return super().form_invalid(form)
