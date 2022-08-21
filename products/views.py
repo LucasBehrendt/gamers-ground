@@ -112,7 +112,7 @@ class AddProduct(LoginRequiredMixin,
         messages.error(
             self.request,
             'Failed to add product. Please check form validity.')
-        return super().form_invalid(form)
+        return self.render_to_response(self.get_context_data(form=form))
 
     def test_func(self):
         return self.request.user.is_superuser
@@ -135,7 +135,25 @@ class UpdateProduct(LoginRequiredMixin,
         messages.error(
             self.request,
             'Failed to update product. Please check form validity.')
-        return super().form_invalid(form)
+        return self.render_to_response(self.get_context_data(form=form))
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+
+class DeleteProduct(LoginRequiredMixin,
+                    UserPassesTestMixin,
+                    generic.DeleteView):
+    """
+    View for deleting products
+    """
+    model = Product
+    success_message = 'The product was deleted successfully!'
+    success_url = '/products'
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super().delete(request, *args, **kwargs)
 
     def test_func(self):
         return self.request.user.is_superuser
