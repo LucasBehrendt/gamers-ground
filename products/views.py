@@ -95,12 +95,15 @@ class ProductDetail(generic.DetailView):
     model = Product
 
 
-class AddProduct(SuccessMessageMixin, generic.CreateView):
+class AddProduct(LoginRequiredMixin,
+                 UserPassesTestMixin,
+                 SuccessMessageMixin,
+                 generic.CreateView):
     """
     View for creating products
     """
     model = Product
-    fields = '__all__'
+    fields = ('category', 'name', 'brand', 'price', 'description', 'image')
     template_name = 'products/add_product.html'
     success_message = 'The product was added successfully!'
     success_url = '/products/add_product'
@@ -110,3 +113,29 @@ class AddProduct(SuccessMessageMixin, generic.CreateView):
             self.request,
             'Failed to add product. Please check form validity.')
         return super().form_invalid(form)
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+
+class UpdateProduct(LoginRequiredMixin,
+                    UserPassesTestMixin,
+                    SuccessMessageMixin,
+                    generic.UpdateView):
+    """
+    View for updating products
+    """
+    model = Product
+    fields = ('category', 'name', 'brand', 'price', 'description', 'image')
+    template_name = 'products/update_product.html'
+    success_message = 'The product was updated successfully!'
+    success_url = '/products'
+
+    def form_invalid(self, form):
+        messages.error(
+            self.request,
+            'Failed to update product. Please check form validity.')
+        return super().form_invalid(form)
+
+    def test_func(self):
+        return self.request.user.is_superuser

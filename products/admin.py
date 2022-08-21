@@ -7,6 +7,7 @@ class CategoryAdmin(admin.ModelAdmin):
     """
     Configuration for Categories on admin page.
     """
+    prepopulated_fields = {'slug': ('name',)}
     list_display = ('name', 'slug')
     ordering = ('name',)
 
@@ -16,6 +17,7 @@ class ProductAdmin(admin.ModelAdmin):
     """
     Configuration for Products on admin page.
     """
+    prepopulated_fields = {'slug': ('name',)}
     list_display = ('name', 'category', 'brand', 'price')
     list_filter = ('brand', 'category__name')
     search_fields = ('name', 'category', 'brand')
