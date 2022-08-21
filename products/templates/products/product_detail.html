@@ -45,12 +45,49 @@
                         {% csrf_token %}
                         <div class="row">
                             <div class="col">
-                                <input type="submit" class="btn btn-green py-2 px-6 mt-3 mb-5" value="Add to Cart">
+                                <input type="submit" class="btn btn-green py-2 px-6 my-3" value="Add to Cart">
                             </div>
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </form>
+                    <!-- Product management for superusers -->
+                    {% if request.user.is_superuser %}
+                    <span class="">
+                        <small>
+                            <a href="{% url 'update_product' product.slug %}" class="text-link me-1">Update</a>
+                        </small>|
+                        <small>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#modal-{{ product.slug }}" class="text-link text-danger ms-1">Delete</a>
+                        </small>
+                    </span>
+    
+                    <!-- Modal for deleting products -->
+                    <div class="modal fade" id="modal-{{ product.slug }}" tabindex="-1"
+                        aria-labelledby="delete-product-modal" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content bg-grey border-black">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="delete-product-modal">Delete Product</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Are you sure you want to delete product:</p>
+                                    <p>"{{ product.brand }} {{ product.name }}"</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-green" data-bs-dismiss="modal">Cancel</button>
+                                    <form action="{% url 'delete_product' product.slug %}" method="POST"
+                                        class="d-inline">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+            {% endif %}
             </div>
             <!-- Related / popular products row? -->
         </div>
