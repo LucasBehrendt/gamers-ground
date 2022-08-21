@@ -49,7 +49,11 @@
                         <hr class="my-2">
                         <div class="row">
                             <div class="col-4">
-                                <img class="w-100 fit-scale toast-img" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                {% if item.product.image %}
+                                    <img class="w-100 fit-scale toast-img" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                {% else %}
+                                    <img class="w-100 fit-scale toast-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                {% endif %}
                             </div>
                             <div class="col-8">
                                 <div class="row mb-2">
