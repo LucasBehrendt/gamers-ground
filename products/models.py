@@ -34,6 +34,8 @@ class Product(models.Model):
     image = models.ImageField(null=True, blank=True)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
+    rating = models.DecimalField(
+        max_digits=3, decimal_places=2, null=True, blank=True)
 
     def avg_rating(self):
         avg = Review.objects.filter(
