@@ -1,12 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import generic
 from django.db.models import Q
 from django.db.models.functions import Lower
+from reviews.forms import ReviewForm
 from .models import Product, Category
-# from .forms import AddProductForm
 
 
 class ProductList(generic.ListView):
@@ -93,6 +93,30 @@ class ProductDetail(generic.DetailView):
     Main product detail view, renders a specific product.
     """
     model = Product
+    form_class = ReviewForm
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = self.form_class
+
+        return context
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        product = self.get_object()
+        if form.is_valid():
+            form.instance.user = request.user
+            form.instance.product = product
+            form.save()
+            messages.success(request, 'Review posted. Thank You!')
+
+            return redirect('product_detail', category=product.category,
+                            slug=product.slug)
+        else:
+            messages.info(
+                request, "Don't forget to give the product a star rating!")
+            return redirect('product_detail', category=product.category,
+                            slug=product.slug)
 
 
 class AddProduct(LoginRequiredMixin,
@@ -107,6 +131,9 @@ class AddProduct(LoginRequiredMixin,
     template_name = 'products/add_product.html'
     success_message = 'The product was added successfully!'
     success_url = '/products/add_product'
+
+    # def get_success_url(self):
+    #     url = self.request.META.get('HTTP_REFERER')
 
     def form_invalid(self, form):
         messages.error(
