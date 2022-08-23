@@ -4,6 +4,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import generic
 from django.db.models import Q
+from django.db.models import Avg
 from django.db.models.functions import Lower
 from reviews.forms import ReviewForm
 from reviews.models import Review
@@ -116,8 +117,13 @@ class ProductDetail(generic.DetailView):
             form.instance.user = request.user
             form.instance.product = product
             form.save()
-            messages.success(request, 'Review posted. Thank You!')
 
+            avg_rating = Review.objects.filter(
+                product=product).aggregate(Avg('rating'))['rating__avg']
+            product.rating = avg_rating
+            product.save()
+
+            messages.success(request, 'Review posted. Thank You!')
             return redirect('product_detail', category=product.category,
                             slug=product.slug)
         else:
