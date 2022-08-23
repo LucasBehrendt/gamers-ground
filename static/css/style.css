@@ -401,7 +401,17 @@ label:hover {
     /* color: black; */
 }
 
+/* reviews */
 
+.review-wrapper {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.user-star-rating i {
+    color: #35C71E;
+    /* color: black; */
+}
 
 /* ********************************************* */
 /* --------------- Media Queries --------------- */
