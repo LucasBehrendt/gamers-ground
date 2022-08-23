@@ -1,5 +1,7 @@
 from django.db import models
+from django.db.models import Avg
 from django.template.defaultfilters import slugify
+from reviews.models import Review
 
 
 class Category(models.Model):
@@ -32,6 +34,11 @@ class Product(models.Model):
     image = models.ImageField(null=True, blank=True)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
+
+    def avg_rating(self):
+        avg = Review.objects.filter(
+            product=self).aggregate(Avg('rating'))['rating__avg']
+        return avg
 
     def __str__(self):
         return self.name

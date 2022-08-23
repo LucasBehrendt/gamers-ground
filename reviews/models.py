@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
-from products.models import Product
+# from products.models import Product
 
 rating_choices = (
     (1, '1'),
@@ -15,7 +15,7 @@ rating_choices = (
 class Review(models.Model):
     """Main model for leaving reviews & ratings on products"""
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    product = models.ForeignKey('products.Product', on_delete=models.CASCADE)
     rating = models.IntegerField(choices=rating_choices, default=5)
     review = models.TextField(max_length=500, null=False, blank=False)
     created_on = models.DateTimeField(default=timezone.now)
