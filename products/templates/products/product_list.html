@@ -89,7 +89,7 @@
                                             <h4 class="card-title">{{ product.name }}</h4>
                                         </a>
                                         {% if product.avg_rating %}
-                                            <div class="my-2">
+                                            <div class="mb-3">
                                                 <span class="product-star-rating">
                                                     <i class="fa-solid fa-star{% if product.avg_rating < 0.5 %}-o{% elif product.avg_rating >= 0.5 and product.avg_rating < 1 %}-half{% endif %}" aria-hidden="true"></i>
                                                     <i class="fa-solid fa-star{% if product.avg_rating < 1.5 %}-o{% elif product.avg_rating >= 1.5 and product.avg_rating < 2 %}-half{% endif %}" aria-hidden="true"></i>

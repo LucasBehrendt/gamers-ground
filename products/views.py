@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -6,6 +6,7 @@ from django.views import generic
 from django.db.models import Q
 from django.db.models.functions import Lower
 from reviews.forms import ReviewForm
+from reviews.models import Review
 from .models import Product, Category
 
 
@@ -97,8 +98,15 @@ class ProductDetail(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['form'] = self.form_class
+        product = self.get_object()
+        if self.request.user.is_authenticated:
+            reviewed = Review.objects.filter(
+                product=product).filter(user=self.request.user)
+        else:
+            reviewed = False
 
+        context['reviewed'] = reviewed
+        context['form'] = self.form_class
         return context
 
     def post(self, request, *args, **kwargs):
@@ -130,10 +138,11 @@ class AddProduct(LoginRequiredMixin,
     fields = ('category', 'name', 'brand', 'price', 'description', 'image')
     template_name = 'products/add_product.html'
     success_message = 'The product was added successfully!'
-    success_url = '/products/add_product'
 
-    # def get_success_url(self):
-    #     url = self.request.META.get('HTTP_REFERER')
+    def form_valid(self, form):
+        product = form.save()
+        return redirect(
+            reverse('product_detail', args=[product.category, product.slug]))
 
     def form_invalid(self, form):
         messages.error(
@@ -156,7 +165,11 @@ class UpdateProduct(LoginRequiredMixin,
     fields = ('category', 'name', 'brand', 'price', 'description', 'image')
     template_name = 'products/update_product.html'
     success_message = 'The product was updated successfully!'
-    success_url = '/products'
+
+    def form_valid(self, form):
+        product = form.save()
+        return redirect(
+            reverse('product_detail', args=[product.category, product.slug]))
 
     def form_invalid(self, form):
         messages.error(
