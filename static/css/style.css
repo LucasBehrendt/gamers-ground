@@ -394,11 +394,11 @@ input::-webkit-inner-spin-button {
 }
 
 .star-rating input:checked ~ label,
-label:hover ~ label,
-label:hover {
-    color: #212228;
-    /* color: #35C71E; */
-    /* color: black; */
+.star-rating label:hover ~ label,
+.star-rating label:hover {
+    /* color: #212228; */
+    color: #35C71E;
+    color: black;
 }
 
 /* reviews */
@@ -411,6 +411,11 @@ label:hover {
 .user-star-rating i {
     color: #35C71E;
     /* color: black; */
+}
+
+.product-star-rating i {
+    /* color: #35C71E; */
+    color: black;
 }
 
 /* ********************************************* */

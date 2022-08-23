@@ -35,7 +35,20 @@
                         <p class="text-muted mb-0">{{ product.brand }}</p>
                     {% endif %}
                     <h4 class="card-title">{{ product.name }}</h4>
-                    <!-- Rating goes here -->
+                    {% if product.avg_rating %}
+                        <div class="my-2">
+                            <span class="product-star-rating">
+                                <i class="fa-solid fa-star{% if product.avg_rating < 0.5 %}-o{% elif product.avg_rating >= 0.5 and product.avg_rating < 1 %}-half{% endif %}" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star{% if product.avg_rating < 1.5 %}-o{% elif product.avg_rating >= 1.5 and product.avg_rating < 2 %}-half{% endif %}" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star{% if product.avg_rating < 2.5 %}-o{% elif product.avg_rating >= 2.5 and product.avg_rating < 3 %}-half{% endif %}" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star{% if product.avg_rating < 3.5 %}-o{% elif product.avg_rating >= 3.5 and product.avg_rating < 4 %}-half{% endif %}" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star{% if product.avg_rating < 4.5 %}-o{% elif product.avg_rating >= 4.5 and product.avg_rating < 5 %}-half{% endif %}" aria-hidden="true"></i>
+                                <a class="underline-link" href="#reviews"><small>({{ product.review_set.all.count }}  Review{% if product.review_set.all.count != 1 %}s{% endif %})</small></a>
+                            </span>
+                        </div>
+                    {% else %}
+                        <p class="text-muted">Not rated yet</p>
+                    {% endif %}
                     <p>{{ product.description }}</p>
                     <p class="fw-6">
                         ${{ product.price }}
@@ -90,7 +103,7 @@
             {% endif %}
             </div>
             <!-- Product review / ratings -->
-            <div class="row my-5">
+            <div class="row my-5"  id="reviews">
                 <div class="col-12 col-lg-6 order-lg-last">
                     <h5>Write a Review</h5>
                     <hr>

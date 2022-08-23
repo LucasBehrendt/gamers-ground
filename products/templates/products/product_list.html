@@ -88,7 +88,20 @@
                                         <a class="text-link" href="{% url 'product_detail' product.category.slug product.slug %}">
                                             <h4 class="card-title">{{ product.name }}</h4>
                                         </a>
-                                        <!-- Rating goes here -->
+                                        {% if product.avg_rating %}
+                                            <div class="my-2">
+                                                <span class="product-star-rating">
+                                                    <i class="fa-solid fa-star{% if product.avg_rating < 0.5 %}-o{% elif product.avg_rating >= 0.5 and product.avg_rating < 1 %}-half{% endif %}" aria-hidden="true"></i>
+                                                    <i class="fa-solid fa-star{% if product.avg_rating < 1.5 %}-o{% elif product.avg_rating >= 1.5 and product.avg_rating < 2 %}-half{% endif %}" aria-hidden="true"></i>
+                                                    <i class="fa-solid fa-star{% if product.avg_rating < 2.5 %}-o{% elif product.avg_rating >= 2.5 and product.avg_rating < 3 %}-half{% endif %}" aria-hidden="true"></i>
+                                                    <i class="fa-solid fa-star{% if product.avg_rating < 3.5 %}-o{% elif product.avg_rating >= 3.5 and product.avg_rating < 4 %}-half{% endif %}" aria-hidden="true"></i>
+                                                    <i class="fa-solid fa-star{% if product.avg_rating < 4.5 %}-o{% elif product.avg_rating >= 4.5 and product.avg_rating < 5 %}-half{% endif %}" aria-hidden="true"></i>
+                                                    <small>({{ product.review_set.all.count }})</small>
+                                                </span>
+                                            </div>
+                                        {% else %}
+                                            <p><small class="text-muted">No Rating</small></p>
+                                        {% endif %}
                                         <p class="fw-6">
                                             ${{ product.price }}
                                         </p>
