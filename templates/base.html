@@ -60,7 +60,7 @@
                 <div class="navbar-collapse collapse order-3" id="gg-navbar">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-end text-uppercase">
                         <li class="nav-item">
-                            <a class="nav-link underline-link {% if request.path == products %} active {% endif %}" href="{% url 'products' %}">Shop</a>
+                            <a class="nav-link underline-link {% if request.path == products %} active {% endif %}" href="{% url 'products' %}">Store</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link underline-link" href="#">Link</a>
@@ -179,13 +179,13 @@
                         <h5 class="text-uppercase my-3">Customer Service</h5>
                         <ul class="list-unstyled">
                             <li class="mb-2">
-                                <a class="underline-link" href="#">FAQ</a>
+                                <a class="underline-link" href="{% url 'faq' %}">FAQ</a>
                             </li>
                             <li class="mb-2">
-                                <a class="underline-link" href="#">Terms & Conditions</a>
+                                <a class="underline-link" href="{% url 'terms-and-conditions' %}">Terms & Conditions</a>
                             </li>
                             <li class="mb-2">
-                                <a class="underline-link" href="#">Privacy Policy</a>
+                                <a class="underline-link" href="{% url 'privacy-policy' %}">Privacy Policy</a>
                             </li>
                         </ul>
                     </div>

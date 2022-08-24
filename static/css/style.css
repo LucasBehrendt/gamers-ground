@@ -403,9 +403,16 @@ input::-webkit-inner-spin-button {
 
 /* reviews */
 
+/* Hide scrollbar source: https://blog.hubspot.com/website/hide-scrollbar-css */
 .review-wrapper {
     max-height: 600px;
     overflow-y: auto;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+}
+
+.review-wrapper::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
 }
 
 .user-star-rating i {
