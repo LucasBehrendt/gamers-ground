@@ -19,7 +19,7 @@
                     <img src="{% static 'images/razer-carousel.png' %}" class="d-block w-100" alt="Razer products">
                     <div class="carousel-caption text-start">
                         <h5 class="fs-3">Latest gear from Razer!</h5>
-                        <a href="" class="btn btn-green my-3 text-uppercase">Shop now</a>
+                        <a href="{% url 'products' %}?q=razer" class="btn btn-green my-3 text-uppercase">Shop now</a>
                     </div>
                 </div>
                 <div class="carousel-item bg-black">
@@ -27,7 +27,7 @@
                     <img src="{% static 'images/steelseries-carousel.png' %}" class="d-block w-100" alt="Steelseries products">
                     <div class="carousel-caption text-start">
                         <h5 class="fs-3">Steelseries Arctis 9 & More!</h5>
-                        <a href="" class="btn btn-green my-3 text-uppercase">Shop now</a>
+                        <a href="{% url 'products' %}?q=steelseries" class="btn btn-green my-3 text-uppercase">Shop now</a>
                     </div>
                 </div>
                 <div class="carousel-item bg-black">
@@ -35,7 +35,7 @@
                     <img src="{% static 'images/logitech-carousel.png' %}" class="d-block w-100" alt="Logitech products">
                     <div class="carousel-caption text-start">
                         <h5 class="fs-3">Gaming keyboards from Logitech!</h5>
-                        <a href="" class="btn btn-green my-3 text-uppercase">Shop now</a>
+                        <a href="{% url 'products' %}?q=logitech" class="btn btn-green my-3 text-uppercase">Shop now</a>
                     </div>
                 </div>
             </div>
@@ -50,24 +50,28 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <!-- Components section -->
+        <!-- Computers section -->
         <section>
             <div class="row gx-0">
                 <div class="col-10 offset-1">
                     <div class="row">
-                        <div class="col-md-6 py-sm-5 py-3 text-center">
-                            <a href="">
-                                <!-- Image source: https://unsplash.com/photos/KV2vFOYItcY -->
-                                <img src="{% static 'images/gaming-pc.png' %}" class="img-fluid fit-cover rounded-3" alt="Image of gaming pc components">
+                        <div class="col-md-6 py-sm-5 py-3 px-0 text-center">
+                            <a href="{% url 'category' 'desktops' %}">
+                                <!-- Image source: https://unsplash.com/photos/Db-tzBhd500 -->
+                                <img src="{% static 'images/gaming-pc.png' %}" class="img-fluid fit-cover" alt="Image of gaming pc">
                             </a>
                         </div>
                         <div class="col-md-6 order-md-first py-5 d-flex flex-column align-items-center justify-content-center">
-                            <h2 class="text-uppercase">PC Components</h2>
+                            <h2 class="text-uppercase">PC & Laptops</h2>
                             <p class="text-center">
-                                Interested in building your own PC? We have a variety of components in different price ranges. 
-                                Want to build the best gaming rig possible? Need a more basic setup? We got you covered!
+                                Want the meanest gaming rig on the market? 
+                                We have a variety of desktops for the ultimate experience.
+                                Looking for a more portable option? Check out our powerful gaming laptops.
                             </p>
-                            <a href="" class="btn btn-green my-3 text-uppercase">Find components</a>
+                            <div class="d-flex w-100 justify-content-evenly my-3">
+                                <a href="{% url 'category' 'desktops' %}" class="btn btn-green mx-3 text-uppercase">Desktops</a>
+                                <a href="{% url 'category' 'laptops' %}" class="btn btn-green mx-3 text-uppercase">Laptops</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -85,22 +89,30 @@
                     </p>
                 </div>
             </div>
-            <div class="row gx-0">
+            <div class="row gx-0 my-3">
                 <div class="col-10 offset-1">
                     <div class="row text-center">
-                        <div class="col-md-6 py-sm-5 py-3 img-container">
-                            <a href="">
-                                <!-- Image source: https://pixabay.com/photos/keyboard-technology-office-internet-4759500/ -->
-                                <img src="{% static 'images/keyboard.jpg' %}" class="img-fluid fit-cover rounded-3" alt="Image of gaming keyboard">
-                                <a href="" class="btn btn-green my-3 text-uppercase">Shop keyboards</a>
-                            </a>
+                        <div class="col-md-6 py-md-4 py-3 px-0 img-container">
+                            <!-- Image source: https://pixabay.com/photos/keyboard-technology-office-internet-4759500/ -->
+                            <img src="{% static 'images/keyboard.jpg' %}" class="img-fluid fit-cover" alt="Image of gaming keyboard">
+                            <a href="{% url 'category' 'keyboards' %}" class="btn btn-green my-3 text-uppercase">Shop keyboards</a>
                         </div>
-                        <div class="col-md-6 py-sm-5 py-3 img-container">
-                            <a href="">
-                                <!-- Image source: https://unsplash.com/photos/xo-MJALGPrI -->
-                                <img src="{% static 'images/mouse.jpg' %}" class="img-fluid fit-cover rounded-3" alt="Image of gaming mouse">
-                                <a href="" class="btn btn-green my-3 text-uppercase">Shop mice</a>
-                            </a>
+                        <div class="col-md-6 py-md-4 py-3 px-0 img-container">
+                            <!-- Image source: https://unsplash.com/photos/xo-MJALGPrI -->
+                            <img src="{% static 'images/mouse.jpg' %}" class="img-fluid fit-cover" alt="Image of gaming mouse">
+                            <a href="{% url 'category' 'mice' %}" class="btn btn-green my-3 text-uppercase">Shop mice</a>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-6 py-md-4 py-3 px-0 img-container">
+                            <!-- Image source:https://unsplash.com/photos/aiWjNA46Urc -->
+                            <img src="{% static 'images/gaming-audio.png' %}" class="img-fluid fit-cover" alt="Image of gaming headsets">
+                            <a href="{% url 'category' 'audio' %}" class="btn btn-green my-3 text-uppercase">Shop Audio</a>
+                        </div>
+                        <div class="col-md-6 py-md-4 py-3 px-0 img-container">
+                            <!-- Image source: https://unsplash.com/photos/PruhDU1m1Yk -->
+                            <img src="{% static 'images/gaming-chair.png' %}" class="img-fluid fit-cover" alt="Image of gaming chair">
+                            <a href="{% url 'category' 'chairs' %}" class="btn btn-green my-3 text-uppercase">Shop Chairs</a>
                         </div>
                     </div>
                 </div>

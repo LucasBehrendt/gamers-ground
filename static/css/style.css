@@ -164,6 +164,7 @@ sup {
 
 .img-fluid {
     height: 100%;
+    width: 80%;
     min-height: 260px;
     max-height: 500px;
 }
@@ -455,6 +456,12 @@ input::-webkit-inner-spin-button {
 
     .nav-icons {
         margin-left: 0 !important;
+    }
+
+    /* --------------- Home page --------------- */
+
+    .img-fluid {
+        width: 100%;
     }
 
     /* --------------- Products List --------------- */
