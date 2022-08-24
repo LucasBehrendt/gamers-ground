@@ -65,42 +65,42 @@
                     </form>
                     <!-- Product management for superusers -->
                     {% if request.user.is_superuser %}
-                    <span class="">
-                        <small>
-                            <a href="{% url 'update_product' product.slug %}" class="text-link me-1">Update</a>
-                        </small>|
-                        <small>
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#modal-{{ product.slug }}" class="text-link text-danger ms-1">Delete</a>
-                        </small>
-                    </span>
+                        <span class="">
+                            <small>
+                                <a href="{% url 'update_product' product.slug %}" class="text-link me-1">Update</a>
+                            </small>|
+                            <small>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#modal-{{ product.slug }}" class="text-link text-danger ms-1">Delete</a>
+                            </small>
+                        </span>
     
-                    <!-- Modal for deleting products -->
-                    <div class="modal fade" id="modal-{{ product.slug }}" tabindex="-1"
-                        aria-labelledby="delete-product-modal" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content bg-grey border-black">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="delete-product-modal">Delete Product</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Are you sure you want to delete product:</p>
-                                    <p>"{{ product.brand }} {{ product.name }}"</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-green" data-bs-dismiss="modal">Cancel</button>
-                                    <form action="{% url 'delete_product' product.slug %}" method="POST"
-                                        class="d-inline">
-                                        {% csrf_token %}
-                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                    </form>
+                        <!-- Modal for deleting products -->
+                        <div class="modal fade" id="modal-{{ product.slug }}" tabindex="-1"
+                            aria-labelledby="delete-product-modal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content bg-grey border-black">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="delete-product-modal">Delete Product</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Are you sure you want to delete product:</p>
+                                        <p>"{{ product.brand }} {{ product.name }}"</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-green" data-bs-dismiss="modal">Cancel</button>
+                                        <form action="{% url 'delete_product' product.slug %}" method="POST"
+                                            class="d-inline">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
+                    {% endif %}
                 </div>
-            {% endif %}
             </div>
             <!-- Product review / ratings -->
             <div class="row my-5"  id="reviews">
@@ -147,6 +147,34 @@
                         <hr>
                         {% for review in product.review_set.all %}
                             <div class="bg-grey rounded border-black p-3 mb-3">
+                                {% if review.user == user %}
+                                    <a class="underline-link text-danger float-end" href="#" data-bs-toggle="modal" data-bs-target="#modal-{{ review.id }}">Delete</a>
+
+                                    <!-- Modal for deleting review -->
+                                    <div class="modal fade" id="modal-{{ review.id }}" tabindex="-1"
+                                        aria-labelledby="delete-review-modal" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content bg-grey border-black">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="delete-review-modal">Delete Review</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Are you sure you want to delete your review of {{ review.product.name }}?</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-green" data-bs-dismiss="modal">Cancel</button>
+                                                    <form class="d-inline" action="{% url 'delete_review' review.id %}" method="POST">
+                                                        {% csrf_token %}
+                                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                {% endif %}
                                 <p class="mb-1">
                                     {{ review.user.username }} - {{ review.created_on|timesince }} ago
                                 </p>

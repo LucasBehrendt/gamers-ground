@@ -18,7 +18,7 @@ class ProductAdmin(admin.ModelAdmin):
     Configuration for Products on admin page.
     """
     prepopulated_fields = {'slug': ('name',)}
-    list_display = ('name', 'category', 'brand', 'price')
-    list_filter = ('brand', 'category__name')
-    search_fields = ('name', 'category', 'brand')
+    list_display = ('name', 'rating', 'category', 'brand', 'price')
+    list_filter = ('brand', 'rating', 'category__name')
+    search_fields = ('name', 'rating', 'category__name', 'brand')
     ordering = ('name',)
