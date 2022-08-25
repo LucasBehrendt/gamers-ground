@@ -1,6 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.models import User
+from django.views.generic import DeleteView
 from checkout.models import Order
 from .models import UserProfile
 from .forms import UserDetailsForm, UserDeliveryForm
@@ -48,3 +51,23 @@ def order_history(request, order_number):
 
     template = 'checkout/checkout_success.html'
     return render(request, template, context)
+
+
+class DeleteUser(LoginRequiredMixin,
+                 UserPassesTestMixin,
+                 DeleteView):
+    """
+    View for deleting signed in users account.
+    Validates that the signed in user equals the request.user.
+    """
+    model = User
+    success_message = 'Your account has been deleted!'
+    success_url = '/'
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(DeleteUser, self).delete(request, *args, **kwargs)
+
+    def test_func(self):
+        user = self.get_object()
+        return self.request.user == user
