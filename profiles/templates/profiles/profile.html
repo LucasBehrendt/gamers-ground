@@ -51,20 +51,36 @@
                             <button type="submit" class="btn btn-green mt-3" id="profile-submit">
                                 Update Profile
                             </button>
-                            <!-- <div class="row text-center mt-3">
-                                <div class="col-6 toast-btn mb-xs-3">
-                                    <a class="btn btn-green w-100" href="#">Delete Profile</a>
-                                </div>
-                                <div class="col-6 toast-btn">
-                                    <button type="submit" class="btn btn-green w-100" id="profile-submit">
-                                        Update Profile
-                                    </button>
-                                </div>
-                            </div> -->
                         </div>
                     </form>
-                    <div class="mt-3">
+                    <div class="d-flex justify-content-between mt-5">
                         <a href="{% url 'account_change_password' %}" class="text-link">Change Password</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal-{{ request.user.id }}" class="text-link text-danger ms-1">Delete Account</a>
+
+                        <!-- Modal for deleting user -->
+                        <div class="modal fade" id="modal-{{ request.user.id }}" tabindex="-1"
+                            aria-labelledby="delete-user-modal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content bg-grey border-black">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="delete-user-modal">Delete Account</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Are you sure you want to delete your account?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-green" data-bs-dismiss="modal">Cancel</button>
+                                        <form action="{% url 'delete_user' request.user.id %}" method="POST"
+                                            class="d-inline">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 <div class="order-history col-md-6 col-12 mx-auto mt-5 mt-md-0">
