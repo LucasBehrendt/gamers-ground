@@ -73,7 +73,7 @@
                     <div class="row">
                         {% for product in object_list %}
                             <div class="col-sm-6 col-lg-4 my-3">
-                                <div class="card product-card bg-grey border-0 h-100">
+                                <div class="card product-card bg-grey border-black h-100">
                                     {% if product.image %}
                                         <a href="{% url 'product_detail' product.category.slug product.slug %}">
                                             <img class="card-img-top fit-scale p-3" src="{{ product.image.url }}" alt="{{ product.name }}">

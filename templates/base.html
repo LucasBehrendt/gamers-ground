@@ -86,7 +86,7 @@
                                 <a class="nav-link px-2" title="Logged in as {{ request.user }}" href="#" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa-solid fa-user fs-4"></i>
                                 </a>
-                                <ul class="dropdown-menu bg-grey" aria-labelledby="dropdown">
+                                <ul class="dropdown-menu bg-grey border-black" aria-labelledby="dropdown">
                                     <li><a class="dropdown-item underline-link" href="{% url 'profile' %}">Profile</a></li>
                                     <li><a class="dropdown-item underline-link" href="{% url 'account_logout' %}">Sign Out</a></li>
                                     {% if request.user.is_superuser %}
@@ -100,7 +100,7 @@
                                 <a class="nav-link px-2" title="Sign in" href="" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa-regular fa-user fs-4"></i>
                                 </a>
-                                <ul class="dropdown-menu bg-grey" aria-labelledby="dropdown">
+                                <ul class="dropdown-menu bg-grey border-black" aria-labelledby="dropdown">
                                     <li><a class="dropdown-item underline-link" href="{% url 'account_login' %}">Sign In</a></li>
                                     <li><a class="dropdown-item underline-link" href="{% url 'account_signup' %}">Register</a></li>
                                 </ul>

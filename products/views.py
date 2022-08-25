@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
-from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import generic
 from django.db.models import Q
@@ -135,7 +134,6 @@ class ProductDetail(generic.DetailView):
 
 class AddProduct(LoginRequiredMixin,
                  UserPassesTestMixin,
-                 SuccessMessageMixin,
                  generic.CreateView):
     """
     View for creating products
@@ -143,10 +141,10 @@ class AddProduct(LoginRequiredMixin,
     model = Product
     fields = ('category', 'name', 'brand', 'price', 'description', 'image')
     template_name = 'products/add_product.html'
-    success_message = 'The product was added successfully!'
 
     def form_valid(self, form):
         product = form.save()
+        messages.success(self.request, 'The product was added successfully!')
         return redirect(
             reverse('product_detail', args=[product.category, product.slug]))
 
@@ -162,7 +160,6 @@ class AddProduct(LoginRequiredMixin,
 
 class UpdateProduct(LoginRequiredMixin,
                     UserPassesTestMixin,
-                    SuccessMessageMixin,
                     generic.UpdateView):
     """
     View for updating products
@@ -170,10 +167,10 @@ class UpdateProduct(LoginRequiredMixin,
     model = Product
     fields = ('category', 'name', 'brand', 'price', 'description', 'image')
     template_name = 'products/update_product.html'
-    success_message = 'The product was updated successfully!'
 
     def form_valid(self, form):
         product = form.save()
+        messages.success(self.request, 'The product was updated successfully!')
         return redirect(
             reverse('product_detail', args=[product.category, product.slug]))
 

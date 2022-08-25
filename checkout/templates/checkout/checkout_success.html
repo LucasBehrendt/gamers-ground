@@ -13,6 +13,12 @@
                         <h2 class="text-uppercase my-3">Thank you for your order!</h2>
                         <p>Please find your order summary below. A confirmation email was sent to <strong>{{ order.email_address }}</strong></p>
                     {% endif %}
+                    <p>
+                        <small>Do you have any questions? Check out our
+                        <a class="text-link" href="{% url 'faq' %}"> FAQs</a>, 
+                        or contact <a class="text-link" href="mailto:hello@email.com"> Customer Service</a>
+                        </small>
+                    </p>
                 </div>
             </div>
             <div class="row">
