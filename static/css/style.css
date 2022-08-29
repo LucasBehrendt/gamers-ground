@@ -15,6 +15,11 @@ body {
     color: #35C71E;
 }
 
+.btn-sm {
+    padding: .1rem .3rem;
+    font-size: .75rem;
+}
+
 .active {
     text-decoration: underline;
 }
@@ -84,8 +89,8 @@ body {
 /* --------------- Margins & Paddings --------------- */
 
 .px-6 {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
 }
 
 

@@ -27,7 +27,7 @@
                         <div class="card-body">
 
                             <div class="row">
-                                <h5 class="text-muted">Order information</h5>
+                                <h5 class="text-muted">Order Information</h5>
 
                                 <div class="col-12 col-md-4">
                                     <p class="mb-0 fw-6">Order Number</p>
@@ -58,7 +58,7 @@
                             </div>
 
                             <div class="row">
-                                <h5 class="text-muted mt-3">Delivery information</h5>
+                                <h5 class="text-muted mt-3">Delivery Information</h5>
 
                                 <div class="col-12 col-md-4">
                                     <p class="mb-0 fw-6">Full Name</p>
@@ -113,7 +113,7 @@
                             </div>
 
                             <div class="row">
-                                <h5 class="text-muted mt-3">Billing information</h5>
+                                <h5 class="text-muted mt-3">Billing Information</h5>
 
                                 <div class="col-12 col-md-4">
                                     <p class="mb-0 fw-6">Subtotal</p>
@@ -123,7 +123,7 @@
                                 </div>
 
                                 <div class="col-12 col-md-4">
-                                    <p class="mb-0 fw-6">Delivery charge</p>
+                                    <p class="mb-0 fw-6">Delivery Charge</p>
                                 </div>
                                 <div class="col-12 col-md-8 text-md-end">
                                     <p class="mb-1 fw-3">${{ order.delivery_cost }}</p>
@@ -138,11 +138,11 @@
                             </div>
                             {% if history %}
                                 <div>
-                                    <a class="btn btn-green mt-4" href="{% url 'profile' %}">Back to profile</a>
+                                    <a class="btn btn-green text-uppercase mt-4" href="{% url 'profile' %}">Back to profile</a>
                                 </div>
                             {% else %}
                                 <div>
-                                    <a class="btn btn-green mt-4" href="{% url 'products' %}">Back to products</a>
+                                    <a class="btn btn-green text-uppercase mt-4" href="{% url 'products' %}">Back to products</a>
                                 </div>
                             {% endif %}
                         </div>

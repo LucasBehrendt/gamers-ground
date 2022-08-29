@@ -191,7 +191,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Variable for when customer gets free delivery
-FREE_DELIVERY_THRESHOLD = 100
+FREE_DELIVERY_THRESHOLD = 150
 
 # Stripe configuration
 STRIPE_CURRENCY = 'usd'

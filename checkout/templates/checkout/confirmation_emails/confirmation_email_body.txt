@@ -17,7 +17,7 @@ Grand Total: ${{ order.grand_total }}
 
 Delivery Information:
 Address: {{ order.street_address_1 }}, {{ order.postcode }}, {{ order.city }}, {{ order.country }}
-Phone number: {{ order.phone_number }}
+Phone Number: {{ order.phone_number }}
 
 If you have any questions, please contact us at {{ contact_email }}
 

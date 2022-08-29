@@ -8,14 +8,14 @@
     </div>
     <!-- Toast body -->
     <div class="toast-body m-2">
-        <div class="row mb-4">
+        <div class="row">
             <div class="col fs-6">
                 {{ message }}
             </div>
         </div>
         <!-- Loop for each item in cart -->
         {% if product_count and message.extra_tags == 'show-cart' %}
-            <p class="fs-6 fw-5">Your cart ({{ product_count }} items)</p>
+            <p class="fs-6 fw-5 my-3">Your cart ({{ product_count }} items)</p>
             {% for item in cart_items %}
                 <div class="row">
                     <div class="col-4">
