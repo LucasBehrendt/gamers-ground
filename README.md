@@ -12,7 +12,7 @@ Gamers Ground is a B2C e-commerce website for people interested in pc gaming. If
 
 # User Experience (UX)
 
-The five planes of UX Design was implemented during the planning stage of the project. Each stage is presented below.
+The five planes of UX Design was implemented during the planning stage of the project. A summary of each stage is presented below.
 
 ## Strategy
 
@@ -124,7 +124,51 @@ The user stories were implemented in an agile approach when creating the applica
 
 ## Scope
 
+The scope of the project was determined by prioritizing to get a Minimum Viable Product deployed, and if time permits, add on additional features. A basic MoSCoW method was implemented on user stories where each user story received a label defining it as either 'Must Have', 'Should Have' or 'Could Have'. They were broken up into epics to gain better project overview and help plan the development process. Both tasks and acceptance criteria were given to each user story to assure that the intended feature was implemented correctly. For further details of tasks and acceptance criteria, and a list of all user stories, see this projects [GitHub Issues Tab](https://github.com/LucasBehrendt/gamers-ground/issues) In general, the higher priority user stories were implemented earlier.
+
+### Core features
+
+-	An inviting landing page that incentivizes the user to explore the site further
+
+-	Products listings where users can search, filter and sort products in a relevant way
+
+-	Products are visually inviting and professionally presented
+
+-	Cart functionality to save multiple items for purchasing before proceeding to checkout
+
+-	Checkout system that gives users a professional and trustworthy feel with confirmation email sent after a placed order
+
+-	Authentication system for site users, where they can save their info and view previous orders
+
+-	User feedback on all interactions with the site, such as adding to cart, signing up, updating cart etc
+
+-	Site admin have full CRUD functionality over products and can control the selection of products entirely (Through site UI)
+
+-	Ratings / review system for customers who wants to give feedback on purchased products
+
+-	Site admin have full CRUD functionality over written reviews and can remove objectionable ones (Through Django Admin panel)
+
 ## Structure
+
+The website is structured with simplicity and accessibility in mind, where both shoppers and site admins can intuitively navigate the site. Consistency in structure and layout is evident, to allow site users to gain a recognizable feel of the Gamers Ground brand. Combined with predictable behaviour and layout through all site pages, navigation through the site is a pleasing and positive experience.
+
+### Business Model
+
+The business model is centered around Business-to-Consumer (B2C), where emphasis has been put on provoking a positive response and an easy to use e-commerce platform. Where business customers usually do a lot of research and require large amounts of information about products, often the opposite is true for consumers. The shopping experience is often impulsive and emotionally driven, and a purchase should be as easy and frictionless as possible. To achieve this, a number of interaction designs were kept in mind when structuring the site. The flow of information is kept at a pleasing level to prevent cognitive overload with users. The review system uses a user-friendly star rating system to incentivize users to leave reviews on products. The checkout and payment process have been implemented with minimal friction in mind, and short clicking distances coupled with intuitive navigation are key in creating a frictionless and pleasing shopping experience. The site is fully resposive so users can choose to do their shopping from a device of their own choosing.
+
+### Information Architecture
+
+To facilitate an intuitive and easily navigated site, Information Architecture was considered when structuring the pages throughout the website. Features that help users understand where they are, and where certain information can be found were implemented. Examples of these features include user-friendly urls, that show both the category and the product name when viewing a specific product, a breadcrumb navigation on product list and detail pages for ease of access to other related products, and clear confirmations on all user interactions.
+
+To help facilitate a logical flow of the application during the development process, a simple flowchart / site map was created using [LucidChart](https://www.lucidchart.com/pages/).
+
+<details>
+
+<summary>Flowchart / Site Map</summary>
+
+![Flowchart](static/images/readme-images/flowchart.png)
+
+</details>
 
 ## Skeleton
 ### Wireframes
@@ -138,36 +182,38 @@ The user stories were implemented in an agile approach when creating the applica
 
 # Data Model
 
+# Search Engine Optimization
+
+# Marketing
 
 
 
 
 
+# Agile Methodology (?)
 
-## Agile Methodology
+# Features
+## Features Left to Implement
 
-## Features
-### Features Left to Implement
+# Testing
+## Validator Testing
+## Responsive Testing
+## Lighthouse Testing
+## Links and Form Testing
+## Fixed Bugs
+## Known/Unfixed Bugs
 
-## Testing
-### Validator Testing
-### Responsive Testing
-### Lighthouse Testing
-### Links and Form Testing
-### Fixed Bugs
-### Known/Unfixed Bugs
+# Technologies Used
+## Languages
+## Programs & Libraries
 
-## Technologies Used
-### Languages
-### Programs & Libraries
+# Deployment
 
-## Deployment
-
-## Credits
-### Code
-### Content
-### Media
-### Acknowledgements
+# Credits
+## Code
+## Content
+## Media
+## Acknowledgements
 
 
 
