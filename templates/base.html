@@ -60,10 +60,10 @@
                 <div class="navbar-collapse collapse order-3" id="gg-navbar">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-end text-uppercase">
                         <li class="nav-item">
-                            <a class="nav-link underline-link {% if request.path == products %} active {% endif %}" href="{% url 'products' %}">Store</a>
+                            <a class="nav-link underline-link {% if request.path == home %} active {% endif %}" href="{% url 'home' %}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link underline-link" href="#">Link</a>
+                            <a class="nav-link underline-link {% if request.path == products %} active {% endif %}" href="{% url 'products' %}">Store</a>
                         </li>
                     </ul>
                     <form method="GET" action="{% url 'products' %}">
@@ -97,7 +97,7 @@
                             </li>
                         {% else %}
                             <li class="list-group-item bg-transparent border-0">
-                                <a class="nav-link px-2" title="Sign in" href="" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link px-2" title="Sign in" href="#" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa-regular fa-user fs-4"></i>
                                 </a>
                                 <ul class="dropdown-menu bg-grey border-black" aria-labelledby="dropdown">

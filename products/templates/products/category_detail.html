@@ -93,7 +93,7 @@
                                         <p class="fw-6">
                                             ${{ product.price }}
                                         </p>
-                                        <a class="btn btn-green btn-sm fw-4" href="">
+                                        <a class="btn btn-green btn-sm fw-4" href="{% url 'category' product.category.slug %}">
                                             <i class="fa-solid fa-tag"></i> {{ product.category }}
                                         </a>
                                         <!-- Product management for superusers -->

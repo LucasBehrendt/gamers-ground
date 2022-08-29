@@ -64,7 +64,7 @@
                     </form>
                     <!-- Product management for superusers -->
                     {% if request.user.is_superuser %}
-                        <span class="">
+                        <span>
                             <small>
                                 <a href="{% url 'update_product' product.slug %}" class="text-link me-1">Update</a>
                             </small>|
