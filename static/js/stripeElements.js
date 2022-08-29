@@ -53,7 +53,10 @@ document.addEventListener('DOMContentLoaded', async function() {
         // If an error occurs, disable loading overlay, enable card 
         // input & buttons, and display error message to customer.
         const csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
-        const saveInfo = document.getElementById('save-info').checked;
+
+        let saveInfo = document.getElementById('save-info')
+        saveInfo = saveInfo ? document.getElementById('save-info').checked : false;
+
         const url = '/checkout/cache_checkout_data/';
 
         const cachedData = new FormData();
