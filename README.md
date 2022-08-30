@@ -269,6 +269,110 @@ The websites surface is designed to be inviting and polished so as to invoke a p
 
 # Data Model
 
+## Codebase
+
+The codebase includes the following apps and folders:
+
+- Cart app, for managing adding products to a cart.
+
+- Checkout app, handles the payment system and orders.
+
+- Home app, renders home page and customer service pages.
+
+- Products app, handles creating, storing and rendering products.
+
+- Profiles app, holds the profile model which extends user model.
+
+- Review app, lets users leave a rating and review on products.
+
+- Static folder, holds static files and images.
+
+- Templates folder, holds base, error, allauth and toasts templates.
+
+ADD MORE??
+
+## Models
+
+The database used for the application requires several models which will be defined below. The user authentication system is included in Django Allauth and a User model was therefore already provided. However, this model was extended with a Profile model which you'll also find below.
+
+To get an idea of the relationships and fields required in the models, an ERD (Entity Relationship Diagram) was created using [LucidChart](https://www.lucidchart.com/pages/).
+
+<details>
+
+<summary>Entity Relationship Diagram</summary>
+
+![Entity relationship diagram](static/images/readme-images/erd.png)
+
+</details>
+
+### User Model
+
+- Provied by Django Allauth, users receive a unique ID which serve a FK (Foreign Key) to other models in the database.
+
+- Upon registration, users choose a username, email and password.
+
+- To improve user experience, registration was extended to also include users first and last name. These will then be visible on their profile, as well as pre-filled at checkout.
+
+### UserProfile Model
+
+- Extends User model with delivery information to allow users to save it for future purchases.
+
+- Includes an OneToOneField to User model, which allows the UserProfile model to be created automatically when a new user registered with the help of a post_save signal.
+
+- The remaining fields are delivery information fields, namely phone_number, street_address_1, street_address_2, postcode, city and country.
+
+### Category Model
+
+- Implemented with SEO-friendly urls in mind, this model has a name field and a slug field.
+
+- The slug field is automatically generated when a category is created, and later user in the url when visiting a product / category page.
+
+### Product Model
+
+- Products are assigned a category through an FK to the Category model.
+
+- This model also includes an automatically generated slug field from the name field of the product. Again this makes the url easier to follow.
+
+- A brand and a description field lets shoppers know more about the product and gives them the chance to find products of their favourite brand.
+
+- The product has an image field and price field, as well as a field for rating.
+
+- The rating is updated when a review is posted on the product through a method that calculates the average rating.
+
+### Order Model
+
+- The Order model features a randomly generated order number, and an FK to UserProfile to assign orders to authenticated users.
+
+- Personal info fields include first_name, last_name, email_address and phone_number. These are prefilled with authenticated users info at checkout.
+
+- Delivery info fields include street_address_1, street_address_2, postcode, city and country. Just like the personal info, these will be prefilled with available UserProfile data.
+
+- The fields delivery_cost, order_total and grand_total are set automatically through a method that calculates the total as products are added to the order, and for orders above a certain sum, the shipping fee is removed.
+
+- Lastly a field to hold the Stripe payment intent ID, stripe_pid, makes sure no orders are confused with each other.
+
+### OrderLineItem Model
+
+- Serves as a temporary state for products added to an order, where the FK to the Order model assigns it to a specific order.
+
+- The product field, an FK to the Product model, makes sure the correct product is represented.
+
+- To allow shoppers to purchase more than one of a given product, a quantity field holds the number of line items to be purchased.
+
+- To easily calculate the total cost of an item, the lineitem_total field automatically multiplies product price with the quantity defined above.
+
+### Review Model
+
+- Reviews are assigned a user through an FK to the User model.
+
+- The Product model serves as FK on the product field.
+
+- Choices from 1 to 5 are defined for the rating field to let users give products a rating.
+
+- A review text field allow users to write some thoughts on a product along with their rating.
+
+- The created_on field tells users when a specific review was posted.
+
 # Search Engine Optimization
 
 # Marketing
