@@ -171,6 +171,71 @@ To help facilitate a logical flow of the application during the development proc
 </details>
 
 ## Skeleton
+
+The structure and layout defined above was expressed with the help of wireframes in the planning process. These mock-ups are intended to show the overall layout of all pages within the website. While the wireframes are similar to the finished project, some changes were made during development to better suit content, information architecture, and overall structure.
+
+[Balsamiq](https://balsamiq.com/) was utilized when creating the wireframes below.
+
+<details>
+
+<summary>Desktop wireframes</summary>
+
+Home Page<br>
+![Desktop wireframe home](static/images/readme-images/wireframes/Desktop-home.png)
+
+Products Page<br>
+![Desktop wireframe products](static/images/readme-images/wireframes/Desktop-products.png)
+
+Product Detail Page<br>
+![Desktop wireframe product detail](static/images/readme-images/wireframes/Desktop-product-detail.png)
+
+Cart Page<br>
+![Desktop wireframe cart](static/images/readme-images/wireframes/Desktop-cart.png)
+
+Checkout Page<br>
+![Desktop wireframe checkout](static/images/readme-images/wireframes/Desktop-checkout.png)
+
+Checkout Success Page<br>
+![Desktop wireframe checkout success](static/images/readme-images/wireframes/Desktop-checkout-success.png)
+
+Profile Page<br>
+![Desktop wireframe profile](static/images/readme-images/wireframes/Desktop-profile.png)
+
+Add Product Page (site admins)<br>
+![Desktop wireframe add product](static/images/readme-images/wireframes/Desktop-add-product.png)
+
+</details>
+
+<details>
+
+<summary>Mobile wireframes</summary>
+
+Home Page<br>
+![Mobile wireframe home](static/images/readme-images/wireframes/Mobile-home.png)
+
+Products Page<br>
+![Mobile wireframe products](static/images/readme-images/wireframes/Mobile-products.png)
+
+Product Detail Page<br>
+![Mobile wireframe product detail](static/images/readme-images/wireframes/Mobile-product-detail.png)
+
+Cart Page<br>
+![Mobile wireframe cart](static/images/readme-images/wireframes/Mobile-cart.png)
+
+Checkout Page<br>
+![MobileM wireframe checkout](static/images/readme-images/wireframes/Mobile-checkout.png)
+
+Checkout Success Page<br>
+![MobileM wireframe checkout success](static/images/readme-images/wireframes/Mobile-checkout-success.png)
+
+Profile Page<br>
+![MobileM wireframe profile](static/images/readme-images/wireframes/Mobile-profile.png)
+
+Add Product Page (site admins)<br>
+![MobileM wireframe add product](static/images/readme-images/wireframes/Mobile-add-product.png)
+
+</details>
+
 ### Wireframes
 
 ## Surface
