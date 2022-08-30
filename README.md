@@ -174,6 +174,10 @@ To help facilitate a logical flow of the application during the development proc
 
 The structure and layout defined above was expressed with the help of wireframes in the planning process. These mock-ups are intended to show the overall layout of all pages within the website. While the wireframes are similar to the finished project, some changes were made during development to better suit content, information architecture, and overall structure.
 
+The authentications system / templates with sign in, sign out, registration, email verification etc. was provided by Allauth. The templates used have only been slightly styled to fit the rest of the site, and therefore no wireframes were made of those pages.
+
+### Wireframes
+
 [Balsamiq](https://balsamiq.com/) was utilized when creating the wireframes below.
 
 <details>
@@ -223,27 +227,45 @@ Cart Page<br>
 ![Mobile wireframe cart](static/images/readme-images/wireframes/Mobile-cart.png)
 
 Checkout Page<br>
-![MobileM wireframe checkout](static/images/readme-images/wireframes/Mobile-checkout.png)
+![Mobile wireframe checkout](static/images/readme-images/wireframes/Mobile-checkout.png)
 
 Checkout Success Page<br>
-![MobileM wireframe checkout success](static/images/readme-images/wireframes/Mobile-checkout-success.png)
+![Mobile wireframe checkout success](static/images/readme-images/wireframes/Mobile-checkout-success.png)
 
 Profile Page<br>
-![MobileM wireframe profile](static/images/readme-images/wireframes/Mobile-profile.png)
+![Mobile wireframe profile](static/images/readme-images/wireframes/Mobile-profile.png)
 
 Add Product Page (site admins)<br>
-![MobileM wireframe add product](static/images/readme-images/wireframes/Mobile-add-product.png)
+![Mobile wireframe add product](static/images/readme-images/wireframes/Mobile-add-product.png)
 
 </details>
 
-### Wireframes
-
 ## Surface
+
+The websites surface is designed to be inviting and polished so as to invoke a positive response from users when they land on the home page. Several call to action buttons help incentivize the user to explore the site further. A balanced feel of simplicity and gaming themed design was prioritized, and low friction was always kept in mind during the designing phase.
 
 ### Design
 - #### Colours
-- #### Typography
+
+  The colours used on the site are meant to convey a theme of pc gaming with dark / mid grey, complemented with a popping lime / neon green colour for buttons and links. The main background colour is a mid grey colour (#33363f) that goes nicely with the theme and the palette chosen. Sections, cards and header / footer breaks off the background with a darker grey (#212228) that complements each other nicely. The green colour chosen for the buttons and links (#35C71E) help make the website feel more vibrant and catches the users attention straight upon landing on the home page. It also goes very nicely with the grey colours and give good contrast to text / elements. To help product cards and other module sized content stand out and feel more inviting, a solid black (#000) border was added in the later stages of development.
+
+  Where necessary, a red 'danger' colour was implemented to alert users of an action where they would delete data, like a review or their account. The same goes for the site admin links / buttons where appropriate.
+
+  <details>
+
+  <summary>Colour Palette</summary>
+
+  ![Colour palette](static/images/readme-images/colour-palette.png)
+
+  </details>
+
 - #### Imagery
+
+  The images are an important part of mainly the landing page, where large gripping images are meant to convey a sense of gaming enthusiasm and excitement for shoppers. A bootstrap carousel at the very top of the home page shows three eye-catching images of gaming peripherals, and content hinting with a gaming desktop lies just underneath. A nicely laid out grid of categories with accompaning images is found further down, where users easily can find a quick route to their favourite category. Across the other pages, the product images are the main focus, to help keep a clean and minimalistic design. 
+
+- #### Typography
+
+  The font chosen for the site is Rubik, a nicely edgy and well fitting font for gaming and tech content. Both different font sizes and weights have been user throughout the site, and consistency was always kept in mind. If the font isn't imported correctly, Sans-serif will serve as fallback.
 
 # Data Model
 
