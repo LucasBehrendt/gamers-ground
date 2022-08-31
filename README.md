@@ -325,7 +325,7 @@ To get an idea of the relationships and fields required in the models, an ERD (E
 
 - Implemented with SEO-friendly urls in mind, this model has a name field and a slug field.
 
-- The slug field is automatically generated when a category is created, and later user in the url when visiting a product / category page.
+- The slug field is automatically generated when a category is created, and later used in the url when visiting a product / category page.
 
 ### Product Model
 
@@ -373,6 +373,24 @@ To get an idea of the relationships and fields required in the models, an ERD (E
 
 - The created_on field tells users when a specific review was posted.
 
+# Agile Methodology
+
+To better plan and understand the development process, an agile approach was taken when implementing features. GitHub Projects provides a great way of keeping track of progress made and user stories to develop. By creating a project board on a basic kanban template, the development process can be overviewed and tackled in a proficient and time-effective way. Epics were defined (as GitHub Milestones) to get a sense of the overall aim of the project. Each user story created was then assigned to an Epic and added to the project board. The board features three columns for every step of the development process, Todo, In Progress and Done. As user stories were added to the board, their status was automatically set to Todo. They were then moved to In Progress as the feature was being developed, and finally to Done when it was implemented on the application.
+
+For each user story created, a set of acceptance criteria were defined to help clarify what a specific feature is expected to fulfill for users. Coupled with the acceptance criterias, tasks were assigned as a way of keeping track on what steps would need to be taken in order to implement any given feature. This helped keep an organized and agile mindset on how to get the best result within a reasonable timeframe.
+
+Labels were created and assigned to each user story to help keep track of the importance. The MoSCoW method is a practical way of assigning priority to user stories and helps planning the development of the application. The labels define user stories as either 'Must Have', 'Should Have' or 'Could Have'. While all user stories were completed, this method provided a valuable way of ensuring that the most important features were implemented first.
+
+This agile approach is especially powerful when working in teams, but still made the development process more enjoyable and easier to keep track of when developing alone. To view the project board and all user stories, see [Gamers Ground Project Board](https://github.com/users/LucasBehrendt/projects/2)
+
+<details>
+
+<summary>GitHub Project Board</summary>
+
+![GitHub Project Board](static/images/readme-images/project-board.png)
+
+</details>
+
 # Search Engine Optimization
 
 # Marketing
@@ -381,7 +399,6 @@ To get an idea of the relationships and fields required in the models, an ERD (E
 
 
 
-# Agile Methodology (?)
 
 # Features
 ## Features Left to Implement
