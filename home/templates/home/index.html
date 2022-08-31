@@ -18,7 +18,7 @@
                     <!-- Image source: https://www.razer.com/pc -->
                     <img src="{% static 'images/razer-carousel.png' %}" class="d-block w-100" alt="Razer products">
                     <div class="carousel-caption text-start">
-                        <h5 class="fs-3">Latest gear from Razer!</h5>
+                        <h1 class="fs-3">Latest gaming peripherals from Razer!</h1>
                         <a href="{% url 'products' %}?q=razer" class="btn btn-green my-3 text-uppercase">Shop now</a>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                     <!-- Image source: https://steelseries.com/gaming-headsets/arctis-9 -->
                     <img src="{% static 'images/steelseries-carousel.png' %}" class="d-block w-100" alt="Steelseries products">
                     <div class="carousel-caption text-start">
-                        <h5 class="fs-3">Steelseries Arctis 9 & More!</h5>
+                        <h1 class="fs-3">Steelseries Arctis 9 & More!</h1>
                         <a href="{% url 'products' %}?q=steelseries" class="btn btn-green my-3 text-uppercase">Shop now</a>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                     <!-- Image source: https://blog.logitech.com/2019/08/15/g915-g815-gaming-keyboard/ -->
                     <img src="{% static 'images/logitech-carousel.png' %}" class="d-block w-100" alt="Logitech products">
                     <div class="carousel-caption text-start">
-                        <h5 class="fs-3">Gaming keyboards from Logitech!</h5>
+                        <h1 class="fs-3">Mechanical keyboards from Logitech!</h1>
                         <a href="{% url 'products' %}?q=logitech" class="btn btn-green my-3 text-uppercase">Shop now</a>
                     </div>
                 </div>
@@ -61,12 +61,14 @@
                                 <img src="{% static 'images/gaming-pc.png' %}" class="img-fluid fit-cover" alt="Image of gaming pc">
                             </a>
                         </div>
-                        <div class="col-md-6 order-md-first py-5 d-flex flex-column align-items-center justify-content-center">
-                            <h2 class="text-uppercase">PC & Laptops</h2>
+                        <div class="col-md-6 order-md-first py-5 px-0 d-flex flex-column align-items-center justify-content-center">
+                            <h2 class="text-uppercase fs-3">Gaming PC & Laptops</h2>
                             <p class="text-center">
-                                Want the meanest gaming rig on the market? 
-                                We have a variety of desktops for the ultimate experience.
-                                Looking for a more portable option? Check out our powerful gaming laptops.
+                                Want to find the <strong>ultimate gaming rig</strong> to satisfy every 
+                                need you can image?
+                                 <!-- Check out our desktops section. -->
+                                Looking for a more portable option? We have a variety of 
+                                <strong>powerful gaming laptops</strong>.
                             </p>
                             <div class="d-flex w-100 justify-content-evenly my-3">
                                 <a href="{% url 'category' 'desktops' %}" class="btn btn-green mx-3 text-uppercase">Desktops</a>
@@ -80,12 +82,14 @@
         <!-- Peripherals section -->
         <section>
             <div class="row gx-0 bg-grey">
-                <div class="col-10 offset-1 text-center">
-                    <h3 class="text-uppercase mt-5">Peripherals</h3>
+                <div class="col-12 col-sm-10 offset-sm-1 px-3 text-center">
+                    <h2 class="text-uppercase fs-3 mt-5">Peripherals</h2>
                     <p class="mt-4 mb-5">
                         A powerful rig needs high-performance gear to match. 
                         Understand what it means to wield the unfair advantage as you 
                         experience the best gaming peripherals on the market.
+                        Check out our selection of <strong>mechanical gaming keyboards</strong>,
+                        or find your next throne among our <strong>ergonomic gaming chairs</strong>.
                     </p>
                 </div>
             </div>
