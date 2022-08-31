@@ -393,6 +393,171 @@ This agile approach is especially powerful when working in teams, but still made
 
 # Search Engine Optimization
 
+To help users find the website easier, Search Engine Optimization techniques were employed as part of the development process. Some of these techniques are outlined below.
+
+## Keywords
+
+By researching and implementing the use of keywords that search engines deem authoritative and relevant to the site, better ranking can be achieved. The process of implementing these started with doing research of general topics applicable to the content of the application.
+
+These topics are as follows:
+
+- **Gaming Peripherals**
+
+- **Desktops / Laptops**
+
+- **Brands**
+
+To find as many keywords as possible, a brainstorming session was undertaken with the following result:
+
+**Gaming Peripherals**
+
+- Gaming keyboard
+
+- Gaming mouse
+
+- Best gaming gear
+
+- Gaming accessories
+
+- Best keyboard / mouse for gaming
+
+- Gaming peripherals
+
+- Ergonomic gaming chair
+
+- Mechanical gaming keyboard
+
+- Mechanical wireless keyboard
+
+- Buy affordable gaming peripherals
+
+- Affordable gaming peripherals
+
+- TKL keyboard
+
+**Desktops / Laptops**
+
+- Best desktops for gaming
+
+- Best laptops for gaming
+
+- Gaming pc
+
+- Gaming laptop
+
+- Buy affordable gaming desktop
+
+- Buy affordable gaming laptop
+
+- Gaming pc with rgb
+
+- Affordable laptops for gaming
+
+- Buy desktop for gaming
+
+- Laptop with rgb
+
+- Ultimate gaming rig
+
+- Powerful gaming laptop
+
+- Best gaming pc
+
+- Affordable gaming pc
+
+- Gaming rig
+
+- Computer for gaming
+
+- Budget gaming pc
+
+**Brands**
+
+- Gaming pc brands
+
+- Best brands for pc gaming
+
+- Best gaming gear brand
+
+- Steelseries peripherals
+
+- Razer mouse / keyboard
+
+- Logitech gaming bundle
+
+- Logitech mechanical keyboard
+
+- Razer gaming peripherals
+
+- Razer blade laptop
+
+After careful consideration, and extensive research through both manual google searches and the site [WordTracker](https://www.wordtracker.com/), the list was narrowed down and divided in to short-tail and long-tail keywords. Many of the written down keywords were either too popular and competition-heavy, or not authoritative and relevant to the content of the site. These have not been used consciously for SEO reasons, but will still be present on the site in generic text / content.
+
+The chosen keywords:
+
+**Short tail keywords**
+
+- Gaming peripherals
+
+- TKL keyboard
+
+- Gaming pc
+
+- Gaming laptop
+
+- Steelseries peripherals
+
+- RGB lighting
+
+**Long tail keywords**
+
+- Ergonomic gaming chair
+
+- Mechanical gaming keyboard
+
+- Gaming pc with RGB
+
+- Ultimate gaming rig
+
+- Powerful gaming laptop
+
+- Logitech mechanical keyboard
+
+- Razer gaming peripherals
+
+- Razer blade laptop
+
+These keywords were then used as part of the content in an organic way and should never disturb the flow of the site. Some keywords are present on the landing page, where semantically relevant HTML, such as h1, h2 and strong tags were used to help boost the keywords visibility while avoiding keyword stuffing. Other keywords are present directly in product names or descriptions as part of the natural flow.
+
+An example of these implementations can be seen on the image below.
+
+<details>
+
+<summary>Keywords, Home page</summary>
+
+![Keywords, Home page](static/images/readme-images/keywords-homepage.png)
+
+</details>
+
+## Images and Links
+
+To further increase search engine ranking, images used on the site are high quality, relevant and have clear motives. The `alt` attribute of images are, when applicable written with keywords in mind without stuffing or making the `alt` text irrelevant. The product images on the site include an `alt` text with the product name dynamically set. Links to other pages of the application are clear and predictable, while also being relevant to the content of the site. External links have the appropriate `rel` attribute and the only ones present are links to social media platforms. The Facebook link takes users to Gamers Grounds Facebook page created as part of this project, while the other links takes users to the home page of the platform.
+
+## Meta Data
+
+By adding meta tags with keywords and a description for the website, search engines have more ways of finding relevant results, improving the rating. These meta tags were added to the base template:
+
+`
+<meta name="keywords" content="gaming peripherals, ergonomic gaming chairs, mechanical gaming keyboards,
+    tkl keyboards, gaming pc, gaming laptops, rgb lighting, ultimate gaming rig, powerful gaming laptop,
+    steelseries peripherals, logitech mechanical keyboard, razer gaming peripherals, Razer blade laptop">
+`
+
+`
+<meta name="description" content="Find your next ultimate gaming rig or the new Razer mechanical 
+    keyboard at Gamers Ground, your one-stop-shop for all things PC Gaming">
+`
+
 # Marketing
 
 
