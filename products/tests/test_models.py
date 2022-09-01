@@ -4,7 +4,6 @@ from profiles.models import UserProfile
 from checkout.models import Order, OrderLineItem
 from products.models import Category, Product
 from reviews.models import Review
-from decimal import Decimal
 
 
 class TestModels(TestCase):
@@ -29,7 +28,6 @@ class TestModels(TestCase):
             brand='testbrand',
             description='testdescription',
             price=99.00,
-            # rating=4.5,
         )
 
         self.order = Order.objects.create(

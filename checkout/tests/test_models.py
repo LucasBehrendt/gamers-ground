@@ -1,9 +1,9 @@
+from decimal import Decimal
 from django.test import TestCase
 from django.contrib.auth.models import User
 from profiles.models import UserProfile
 from checkout.models import Order, OrderLineItem
 from products.models import Category, Product
-from decimal import Decimal
 
 
 class TestModels(TestCase):
