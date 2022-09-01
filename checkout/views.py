@@ -101,8 +101,8 @@ class Checkout(generic.CreateView):
         if self.request.user.is_authenticated:
             profile = get_object_or_404(UserProfile, user=self.request.user)
             return {
-                'first_name': profile.user.get_full_name().split()[0],
-                'last_name': profile.user.get_full_name().split()[1],
+                'first_name': profile.user.get_short_name(),
+                'last_name': profile.get_last_name(),
                 'email_address': profile.user.email,
                 'phone_number': profile.phone_number,
                 'street_address_1': profile.street_address_1,

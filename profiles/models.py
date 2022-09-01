@@ -21,3 +21,6 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+    def get_last_name(self):
+        return self.user.last_name
