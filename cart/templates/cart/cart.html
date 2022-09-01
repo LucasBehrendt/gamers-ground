@@ -150,7 +150,19 @@
                 </div>
             </div>
         </div>
+        <!-- Back to top button -->
+        <div>
+            <a class="btt-link btn btn-green">
+                <i class="fa-solid fa-arrow-up mt-2"></i>
+            </a>
+        </div>
     </main>
+
+    <script type="text/javascript">
+        document.querySelector('.btt-link').onclick = function() {
+            window.scrollTo(0,0);
+        };
+    </script>
 
     <script src="{% static 'js/itemQuantityInput.js' %}"></script>
 {% endblock %}

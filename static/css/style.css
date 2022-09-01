@@ -243,6 +243,7 @@ sup {
 
 .btt-link {
     position: fixed;
+    z-index: 9999;
     height: 50px;
     width: 50px;
     bottom: 20px;
