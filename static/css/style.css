@@ -126,6 +126,11 @@ body {
 .list-group-item a:focus,
 .list-group-item a:hover {
     color: white;
+    border: none;
+}
+
+header .navbar-toggler:focus {
+    box-shadow: none;
 }
 
 header .dropdown-item:focus,
@@ -403,8 +408,6 @@ input::-webkit-inner-spin-button {
 .star-rating input:checked ~ label,
 .star-rating label:hover ~ label,
 .star-rating label:hover {
-    /* color: #212228; */
-    color: #35C71E;
     color: black;
 }
 
@@ -423,18 +426,24 @@ input::-webkit-inner-spin-button {
 }
 
 .user-star-rating i {
-    color: #35C71E;
-    /* color: black; */
+    color: black;
 }
 
 .product-star-rating i {
-    /* color: #35C71E; */
     color: black;
 }
 
 /* ********************************************* */
 /* --------------- Media Queries --------------- */
 /* ********************************************* */
+
+/* Remove hover effect on Back to top link on touch devices  */
+@media (hover: none) {
+    .btt-link:hover {
+        background-color: #35C71E;
+        color: #212228;
+    }
+}
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1600px) {
@@ -494,7 +503,7 @@ input::-webkit-inner-spin-button {
         width: 100%;
     }
 
-    /* --------------- Margins etc --------------- */
+    /* --------------- Margins & Paddings --------------- */
 
     .mb-xs-3 {
         margin-bottom: 1rem;
