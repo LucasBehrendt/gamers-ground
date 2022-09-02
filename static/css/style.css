@@ -10,9 +10,11 @@ body {
     font-weight: 600;
 }
 
-.btn-green:hover {
+.btn-green:hover,
+.btn-green:focus {
     background-color: #212228;
     color: #35C71E;
+    box-shadow: none;
 }
 
 .btn-sm {
@@ -432,6 +434,61 @@ input::-webkit-inner-spin-button {
 
 .product-star-rating i {
     color: black;
+}
+
+/* --------------- Mailchimp signup form --------------- */
+
+#mc_embed_signup {
+    margin: auto;
+    max-width: 450px;
+}
+
+#mc_embed_signup form {
+    margin: 1rem 0;
+}
+
+#mc_embed_signup input[type='email'] {
+    outline: none;
+    border: none;
+    border-radius: 0.25rem;
+}
+
+#mc_embed_signup input[type='email']:focus {
+    border: none;
+}
+
+#mc_embed_signup #mc-embedded-subscribe-form input.mce_inline_error {
+    border: none;
+}
+
+#mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error {
+    color: #df4759;
+    background-color: transparent;
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+
+#mc_embed_signup input[type='submit'] {
+    border: 1px solid transparent;
+    margin: 1rem 0;
+}
+
+#mc_embed_signup input[type='submit']:focus {
+    box-shadow: none;
+}
+
+#mc_embed_signup div#mce-responses {
+    margin: 0;
+    padding: 0;
+}
+
+#mc_embed_signup div.response {
+    margin: 0 0 0.75rem 0;
+    padding: 0;
+}
+
+#mc_embed_signup #mce-success-response {
+    color: #35C71E;
 }
 
 /* ********************************************* */
