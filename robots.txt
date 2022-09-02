@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /profile/
+Disallow: /checkout/
+Sitemap: https://gamers-ground.herokuapp.com/sitemap.txt
