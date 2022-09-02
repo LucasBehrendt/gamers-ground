@@ -40,18 +40,22 @@
                             </select>
                         </div>
                         <div class="col-12 col-sm-6 d-flex align-items-center justify-content-center justify-content-sm-start my-3">
-                            <p class="mb-0">{{ cat_products.count }} products</p>
+                            {% if cat_products.count == 1 %}
+                                <p class="mb-0">{{ cat_products.count }} product</p>
+                            {% else %}
+                                <p class="mb-0">{{ cat_products.count }} products</p>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
             </div>
             <!-- If no products found -->
             {% if not cat_products %}
-            <div class="row my-5">
-                <div class="col text-center">
-                    <p>There are no products here yet.<br>Try widening your search and make sure to keep an eye out for new products!</p>
+                <div class="row my-5">
+                    <div class="col text-center">
+                        <p>There are no products here yet.<br>Try widening your search and make sure to keep an eye out for new products!</p>
+                    </div>
                 </div>
-            </div>
             {% endif %}
             <!-- Products cards -->
             <div class="row">
