@@ -1,8 +1,3 @@
-// Get keys from template
-// const stripe_publishable_key = document.getElementById('id_stripe_publishable_key').innerText.slice(1, -1);
-// const client_secret = document.getElementById('id_client_secret').innerText.slice(1, -1);
-
-
 // set up stripe elements & mount to template
 document.addEventListener('DOMContentLoaded', async function() {
     const stripeData = await FetchData()
@@ -50,8 +45,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         // Retrieve metadata & add to new form, post to cache_checkout_data
         // view & modify payment intent to hold metadata.
         // If response is OK, confirm card payment & submit form with data from customer.
-        // If an error occurs, disable loading overlay, enable card 
-        // input & buttons, and display error message to customer.
+        // If an error occurs, disable loading overlay,
+        // enable card input & buttons, and display error message to customer.
         const csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
 
         let saveInfo = document.getElementById('save-info')
@@ -137,8 +132,6 @@ function toggleLoadingOverlay(value) {
 async function FetchData() {
     const response = await fetch('/checkout/secret');
     const stripeData = await response.json();
-
-    // document.getElementById('client-secret').innerText = client_secret['client_secret']
 
     return stripeData
 }

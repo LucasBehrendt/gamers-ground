@@ -43,7 +43,7 @@
                             <span class="ms-auto">${{ grand_total }}</span>
                         </div>
                     </div>
-                    <!-- Loop for each item in cart -->
+                    <!-- Loop over each item in cart -->
                     <h4>Order Items ({{ product_count }})</h4>
                     {% for item in cart_items %}
                         <hr class="my-2">
@@ -73,6 +73,7 @@
                         {% endif %}
                     {% endfor %}
                 </div>
+                <!-- Checkout form -->
                 <div class="checkout-form col-md-6 col-12 mx-auto">
                     <div>
                         <form id="payment-form" method="POST">
@@ -154,7 +155,5 @@
         </div>
     </main>
 
-    <!-- {{ stripe_publishable_key|json_script:"id_stripe_publishable_key" }} -->
-    <!-- {{ client_secret|json_script:"id_client_secret" }} -->
     <script src="{% static 'js/stripeElements.js' %}"></script>
 {% endblock %}

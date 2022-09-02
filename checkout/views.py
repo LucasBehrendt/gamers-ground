@@ -94,8 +94,6 @@ class Checkout(generic.CreateView):
 
         return super().form_valid(form)
 
-    # add form_invalid ??
-
     def get_initial(self):
         # If user is signed in, get profile info & set as initial values
         if self.request.user.is_authenticated:
@@ -125,13 +123,6 @@ class Checkout(generic.CreateView):
                     Did you forget to set it in your environment?')
         return super().get(request, *args, **kwargs)
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        # context['stripe_publishable_key'] = settings.STRIPE_PUBLISHABLE_KEY
-        # context['client_secret'] = 'test'
-
-        return context
-
 
 class CheckoutSuccess(generic.View):
     """Renders checkout success page with order details"""
@@ -146,7 +137,7 @@ class CheckoutSuccess(generic.View):
             order.user_profile = profile
             order.save()
 
-            # Stores user info if box is checked
+            # Stores user info if save info box is checked
             if save_info:
                 delivery_data = {
                     'phone_number': order.phone_number,

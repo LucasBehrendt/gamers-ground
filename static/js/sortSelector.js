@@ -1,3 +1,4 @@
+// Handle sort selector inputs & reload page
 document.getElementById('sort-selector').onchange = function() {
     let selector = this.value;
     let currentUrl = new URL(window.location);

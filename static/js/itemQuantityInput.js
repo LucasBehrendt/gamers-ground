@@ -5,9 +5,6 @@
         let itemId = button.getAttribute('data-item_id');
         let closestInput = button.closest('.input-group').querySelector('.qty-input');
         let currentValue = parseInt(closestInput.value);
-        // if (currentValue > closestInput.getAttribute('min')) {
-        //     closestInput.value = currentValue - 1;
-        // }
         closestInput.value = currentValue - 1;
         let form = document.getElementById(`update-qty-form-${itemId}`);
         form.submit();

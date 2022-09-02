@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
-# from products.models import Product
 
 rating_choices = (
     (1, '1'),

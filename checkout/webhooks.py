@@ -15,27 +15,19 @@ def webhook(request):
     Taken from Stripe docs
     """
     # Get stripe keys
-    # webhook_secret = settings.STRIPE_WH_SECRET
     stripe.api_key = settings.STRIPE_SECRET_KEY
 
     # get payload data
     payload = request.body
-    # sig_header = request.META['HTTP_STRIPE_SIGNATURE']
     event = None
 
     try:
         event = stripe.Event.construct_from(
             json.loads(payload), stripe.api_key
         )
-        # event = stripe.Webhook.construct_event(
-        #     payload, sig_header, webhook_secret
-        # )
     except ValueError as e:
         # Invalid payload
         return HttpResponse(content=e, status=400)
-    # except stripe.error.SignatureVerificationError as e:
-    #     # Invalid signature
-    #     return HttpResponse(content=e, status=400)
     except Exception as e:
         return HttpResponse(content=e, status=400)
 

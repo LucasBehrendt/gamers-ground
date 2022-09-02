@@ -7,6 +7,7 @@ class UserDetailsForm(forms.ModelForm):
     """User details configuration"""
 
     class Meta:
+        """Definition of fields used in form"""
         model = User
         fields = ('first_name', 'last_name', 'email')
 

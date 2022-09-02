@@ -79,7 +79,6 @@ class TestViews(TestCase):
             'postcode': 12345,
             'city': 'testcity',
             'country': 'US',
-            # 'save_info': True,
             'client_secret': 'mock_clientsecretljksadglljsdlfj_secret'
         })
 

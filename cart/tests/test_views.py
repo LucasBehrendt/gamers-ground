@@ -88,10 +88,6 @@ class TestViews(TestCase):
         self.assertEqual(self.client.session['cart'], {})
 
     def test_delete_from_cart_POST(self):
-        # add_url = reverse('add_to_cart', args=[self.product.id])
-        # add_response = self.client.post(add_url, {
-        #     'redirect_url': 'home'
-        # })
 
         session = self.client.session
         session['cart'] = {}
@@ -100,12 +96,8 @@ class TestViews(TestCase):
 
         self.assertEqual(self.client.session['cart'], {'1': 2})
 
-        # print(self.client.session['cart'])
-
         url = reverse('delete_from_cart', args=[self.product.id])
         response = self.client.get(url)
-
-        # print(self.client.session['cart'])
 
         self.assertEqual(response.status_code, 302)
         self.assertEqual(self.client.session['cart'], {})
