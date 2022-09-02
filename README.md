@@ -539,6 +539,14 @@ An example of these implementations can be seen on the image below.
 
 </details>
 
+## Content
+
+When a user lands on Gamers Ground, the content of the website is meant to be relevant to what the user searched for to find the site. This means that keywords chosen for SEO, should be relevant to the content of the site, and users should expect to have their questions answered by the content. If the content is not useful to site visitors, they are more likely to exit the site as soon as they land on it.
+
+As the user clicks through the site, the layout needs to be easily navigated and pleasing to browse. The content must also be uncluttered and easily digested, and incentivize users to explore other pages of the site. Honest and clear information about products and any additional fees is also important, and gives the site trustworthiness.
+
+Content on the site is free of typos and grammatical errors. Some additional pages for FAQs, Terms & Conditions and Privacy Policy were added to improve the professionalism and trustworthiness of the website.
+
 ## Images and Links
 
 To further increase search engine ranking, images used on the site are high quality, relevant and have clear motives. The `alt` attribute of images are, when applicable written with keywords in mind without stuffing or making the `alt` text irrelevant. The product images on the site include an `alt` text with the product name dynamically set. Links to other pages of the application are clear and predictable, while also being relevant to the content of the site. External links have the appropriate `rel` attribute and the only ones present are links to social media platforms. The Facebook link takes users to Gamers Grounds Facebook page created as part of this project, while the other links takes users to the home page of the platform.
@@ -562,6 +570,8 @@ By adding meta tags with keywords and a description for the website, search engi
 
 To help speed up the content discovery of search engines crawling the website, a sitemap.xml file was added to the project by generating it from [XML Sitemaps](https://www.xml-sitemaps.com/). The deployed link was used to generate a list of urls within the site.
 
+On a live project, the sitemap would need to be registered through the Google Search Console. Since this project is for educational purposes only, and won't be deployed to a custom domain, this will not be done for this website.
+
 <details>
 
 <summary>XML Sitemaps</summary>
@@ -574,6 +584,8 @@ To help speed up the content discovery of search engines crawling the website, a
 
 A robots.txt file tells search engine crawlers which URLs the crawler can access on your site. By adding it to the project, pages that contain sensitive information is shielded by excluding it from search engine crawling. It also helps avoid overloading the site with requests.
 
+On a live project, the robots.txt file would need to be tested through the Google Search Console. Again, since this project is for educational purposes only, no further steps will be taken. 
+
 <details>
 
 <summary>Robots.txt file</summary>
@@ -584,7 +596,42 @@ A robots.txt file tells search engine crawlers which URLs the crawler can access
 
 # Marketing
 
+Marketing strategies used for Gamers Ground are SEO, social media marketing, and email marketing.
 
+### Search Engine Optimization
+
+Several SEO marketing strategies were implemented on the site, which are all outlined [here](#search-engine-optimization).
+
+### Social Media Marketing
+
+A Facebook page was created for Gamers Ground to reach a wide and relevant range of potential customers. Social media marketing is free, easy to set up and reach large groups of people. This makes it ideal for a small online business, where a community can be formed and customer loyalty is rewarded. It is also a great way of promoting new products, campaigns and special offers. If there's a budget for it, paid advertisements are also a great way of reaching more consumers through social media. This will not be implemented for Gamers Ground though, since the project is educational.
+
+Gamers Grounds Facebook page can be viewed [here](https://www.facebook.com/Gamers-Ground-111472718360772). *This link may not work as facebook regularly removes inactive business pages.*
+<details>
+
+<summary>Gamers Ground Facebook Page</summary>
+
+![Gamers Ground Facebook Page](static/images/readme-images/facebook-gg.png)
+
+![Gamers Ground Facebook Page about](static/images/readme-images/facebook-gg-about.png)
+
+</details>
+
+### Email Marketing
+
+Another great way of marketing a small low-bugdet business is through the use of a mailing list. This is also free, or low cost if the email list grows large, and is easy to implement. Emailing lists are also advantageous for businesses, since visitors who choose to sign up are more likely converted into customers through exclusive offers or similar. Steps to ensure that users do not percieve emails as spam or obtrusive would be taken. In the footer of Gamers Ground visitors can sign up for future newsletters, campaigns and special offers. 
+
+The marketing platform [Mailchimp](https://mailchimp.com/) was used to implement the signup form. When a user submits the form, they receive a notification and their email address is added to the mailing list.
+
+<details>
+
+<summary>Mailchimp</summary>
+
+![Mailchimp Form](static/images/readme-images/mailchimp.png)
+
+![Mailchimp Audience](static/images/readme-images/mailchimp-audience.png)
+
+</details>
 
 
 
