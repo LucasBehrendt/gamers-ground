@@ -558,6 +558,30 @@ By adding meta tags with keywords and a description for the website, search engi
     keyboard at Gamers Ground, your one-stop-shop for all things PC Gaming">
 `
 
+## Sitemap.xml File
+
+To help speed up the content discovery of search engines crawling the website, a sitemap.xml file was added to the project by generating it from [XML Sitemaps](https://www.xml-sitemaps.com/). The deployed link was used to generate a list of urls within the site.
+
+<details>
+
+<summary>XML Sitemaps</summary>
+
+![XML Sitemaps](static/images/readme-images/xml-sitemaps.png)
+
+</details>
+
+## Robots.txt File
+
+A robots.txt file tells search engine crawlers which URLs the crawler can access on your site. By adding it to the project, pages that contain sensitive information is shielded by excluding it from search engine crawling. It also helps avoid overloading the site with requests.
+
+<details>
+
+<summary>Robots.txt file</summary>
+
+![Robots.txt file](static/images/readme-images/robots.png)
+
+</details>
+
 # Marketing
 
 

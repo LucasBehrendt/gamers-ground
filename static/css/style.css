@@ -127,6 +127,7 @@ body {
 .list-group-item a:hover {
     color: white;
     border: none;
+    outline: none;
 }
 
 header .navbar-toggler:focus {
