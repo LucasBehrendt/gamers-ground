@@ -633,10 +633,170 @@ The marketing platform [Mailchimp](https://mailchimp.com/) was used to implement
 
 </details>
 
-
-
-
 # Features
+
+The following section will provide an overview of the features included in Gamers Ground. The site consists of several pages, all with a consistent layout and logical paths to take. A few pages can only be accessed by signed in users, while most are accessible to all visitors. All features are fully responsive across all devices.
+
+## Header
+
+ - The header holds a company logo to the left, along with links to the home page and the store. To the right, navigation links for authentication interaction and a shopping cart can be found.
+
+ - If a site visitor registers for an account, the authentication link will change appearance to notify the user they are signed in. They will then have access to new links to either visit their profile page or sign out. Additionally, site admins will have a link to add a new product.
+
+ - The header also features a search bar where users can query the site for products in stock. They are redirected to the products page with their search query shown.
+
+ - On smaller screen sizes, the left side links will collapse into a burger icon along with the search bar. The shopping cart and authentication link remain visible to allow for easy navigation.
+
+<details>
+
+<summary>Header</summary>
+
+![Header](static/images/readme-images/features/header.png)
+
+</details>
+
+<details>
+
+<summary>Header - Authenticated</summary>
+
+![Header](static/images/readme-images/features/header-auth.png)
+
+</details>
+
+<details>
+
+<summary>Header - Mobile</summary>
+
+![Header - Mobile](static/images/readme-images/features/header-mobile.png)
+
+</details>
+
+<details>
+
+<summary>Header - Mobile navigation</summary>
+
+![Header - Mobile navigation](static/images/readme-images/features/header-mobile-nav.png)
+
+</details>
+
+## Home Page
+
+### Carousel
+
+ - The top part of the home page features a carousel with large, visually striking images, conveying the theme and purpose of the site. The section is designed to draw customers in and to clarify what type of products are sold.
+
+ - Buttons on each slide funcions as calls to action, and directs visitors to products relevant to the image.
+
+ - The images fit properly on all devices, and scales nicely on both mobile screens and desktops.
+
+<details>
+
+<summary>Carousel</summary>
+
+![Carousel](static/images/readme-images/features/home-carousel.png)
+
+</details>
+
+<details>
+
+<summary>Carousel - mobile</summary>
+
+![Carousel - mobile](static/images/readme-images/features/home-mobile-carousel.png)
+
+</details>
+
+### Products Rows
+
+ - Below the carousel, rows of different product categories lets visitors easily find specific products they are looking for.
+
+ - Each category have a corresponding button for viewing products in that category.
+
+ - Responsive design makes sure the images and content looks good across all devices.
+
+<details>
+
+<summary>Product Rows</summary>
+
+![Product Rows](static/images/readme-images/features/home-products.png)
+
+</details>
+
+<details>
+
+<summary>Product Rows - Mobile</summary>
+
+![Product Rows - Mobile](static/images/readme-images/features/home-mobile-products-1.png)
+
+![Product Rows - Mobile](static/images/readme-images/features/home-mobile-products-2.png)
+
+</details>
+
+## Footer
+
+### Mailing List Form
+
+ - The top part of the footer consists of a signup form for a fictional newsletter. [Mailchimp](https://mailchimp.com/) was used to implement it and subscriptions are functional, although no marketing emails will be sent.
+
+<details>
+
+<summary>Mailing List Form</summary>
+
+![Mailing List Form](static/images/readme-images/features/footer-mailing-list.png)
+
+</details>
+
+### Useful Links & Contact Info
+
+ - The mid section of the footer holds links to various useful pages / resources of the site. These include popular categories and customer service links.
+
+ - Fictional contact information is also found here, with a location, email and phone number for customers to get in touch with Gamers Ground.
+
+ - On larger screens, three columns holds the links and info, while on mobile devices, they are found in a single, easily readable column.
+
+<details>
+
+<summary>Footer Links</summary>
+
+![Footer Links](static/images/readme-images/features/footer-links.png)
+
+</details>
+
+<details>
+
+<summary>Footer Links - Mobile</summary>
+
+![Footer Links - Mobile](static/images/readme-images/features/footer-mobile-links.png)
+
+</details>
+
+### Copyright & Social Media
+
+ - The last section of the footer is a simple copyright text with the current year and links to social media sites.
+
+ - Gamers Ground have a facebook page, created for marketing reasons, which is linked here. The other social media platform links directs to their respective home page.
+
+ - All links open in a new tab, and have a relationship on noopener, to keep search engines from considering them in the SEO ranking.
+
+<details>
+
+<summary>Footer Copyright & Social</summary>
+
+![Footer Copyright & Social](static/images/readme-images/features/footer-social.png)
+
+</details>
+
+<details>
+
+<summary>Footer Copyright & Social - Mobile</summary>
+
+![Footer Copyright & Social - Mobile](static/images/readme-images/features/footer-mobile-social.png)
+
+</details>
+
+
+
+
+
 ## Features Left to Implement
 
 # Testing
