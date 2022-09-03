@@ -1186,14 +1186,251 @@ The following section will provide an overview of the features included in Gamer
 
 </details>
 
+## Profile Page
 
+ - Authenticated users have access to their profile page, where they can see default information such as user details, delivery info and order history.
 
+ - Users can also change their password or delete their account from here.
 
+<details>
 
+<summary>Profile Page</summary>
+
+![Profile Page](static/images/readme-images/features/profile-page.png)
+
+</details>
+
+<details>
+
+<summary>Profile Page - Mobile</summary>
+
+![Profile Page - Mobile 1](static/images/readme-images/features/profile-page-mobile-1.png)
+
+![Profile Page - Mobile 2](static/images/readme-images/features/profile-page-mobile-2.png)
+
+</details>
+
+### Default Information
+
+ - The form that holds users default information can be edited freely. When clicking 'Update profile' the altered info is saved to the users profile. 
+ 
+ - Removing info works fine as well, if the user doesn't want to share a specific part of information.
+
+<details>
+
+<summary>Default Information</summary>
+
+![Default Information](static/images/readme-images/features/default-information.png)
+
+</details>
+
+### Order History
+
+ - Orders that the user has made is saved here and listed with basic info like order number, date and total.
+
+ - These orders serves as links to view the order confirmation in its entirety on a different page. This page is similar to the checkout success page, but the title explains that it is a previously placed order. A button at the bottom takes the user back to their profile page.
+
+<details>
+
+<summary>Order History</summary>
+
+![Order History](static/images/readme-images/features/order-history.png)
+
+</details>
+
+<details>
+
+<summary>Order History Page</summary>
+
+![Order History Page](static/images/readme-images/features/order-history-page.png)
+
+</details>
+
+### Account Management
+
+ - Below the default info form, two links lets users either change their password, or delete their account.
+
+ - If they click 'Change Password', they are redirected to a separate page with a form form changing their chosen password.
+
+ - If they click 'Delete Account', a modal pops up and asks for confirmation to prevent users accidentally deleting their account.
+
+<details>
+
+<summary>Account Management Links</summary>
+
+![Account Management Links](static/images/readme-images/features/account-management-links.png)
+
+</details>
+
+<details>
+
+<summary>Change Password</summary>
+
+![Change Password](static/images/readme-images/features/password-change.png)
+
+</details>
+
+<details>
+
+<summary>Delete Account Modal</summary>
+
+![Delete Account Modal](static/images/readme-images/features/delete-account-modal.png)
+
+</details>
+
+## Product Management (Site Admin)
+
+ - Users who have been given administrative privileges can access these pages. They are designed for letting admins add, update or delete products from the store without having to use the django admin panel.
+
+ - From the authentication link in the header, admins can find a link to a page for adding products.
+
+ - From the product cards in the store, or on a specific product detail page, links for updating or deleting a product can be found.
+
+<details>
+
+<summary>Add Product Link</summary>
+
+![Add Product Link](static/images/readme-images/features/add-product-link.png)
+
+</details>
+
+<details>
+
+<summary>Update / Delete Links</summary>
+
+![Update / Delete Links](static/images/readme-images/features/update-delete-link.png)
+
+</details>
+
+### Add Product
+
+ - On the top of the page, a link back to the products page was added for quick navigation.
+
+ - The rest of the page is essentially a form for creating a new product. By filling out the required fields and submitting the form, a new product is added directly to the store.
+
+ - The brand and image fields are optional and can be omitted, and a default image will be provided.
+
+<details>
+
+<summary>Add Product Page</summary>
+
+![Add Product Page 1](static/images/readme-images/features/add-product-page-1.png)
+
+![Add Product Page 2](static/images/readme-images/features/add-product-page-2.png)
+
+</details>
+
+### Update Product
+
+ - The page for updating a product has an identical layout and form as the add product page.
+
+ - The data of the product being updated is prefilled in the form.
+
+<details>
+
+<summary>Update Product Page</summary>
+
+![Update Product Page 1](static/images/readme-images/features/update-product-page-1.png)
+
+![Update Product Page 2](static/images/readme-images/features/update-product-page-2.png)
+
+</details>
+
+### Delete Product
+
+ - When clicking 'Delete' on a product, a modal asks for confirmation to prevent accidental deletion.
+
+ - Upon confirming deletion, the product is removed from the store and database.
+
+<details>
+
+<summary>Delete Product Modal</summary>
+
+![Delete Product Modal](static/images/readme-images/features/delete-product-modal.png)
+
+</details>
 
 ## Toast Messages
 
+ - As users interact with the website, they receive relevant notifications to confirm and acknowledge their actions.
+
+ - The notifications take the form of Bootstrap Toasts and, depending on the interaction, shows either an informational message along with the contents in the users cart, or just a message for actions not related to products / shopping.
+
+ - Different toasts are shown for different types of messages, meaning that for an error, a red outline and an error title of the toast is shown. For successful interaction a success title and black outline is shown, and so on.
+
+<details>
+
+<summary>Toast Success</summary>
+
+![Toast Cart](static/images/readme-images/features/toast-cart.png)
+
+![Toast Sign In](static/images/readme-images/features/toast-sign-in.png)
+
+![Toast Order Success](static/images/readme-images/features/toast-order-success.png)
+
+</details>
+
+<details>
+
+<summary>Toast Alert</summary>
+
+![Toast Rating](static/images/readme-images/features/toast-rating.png)
+
+</details>
+
+<details>
+
+<summary>Toast Error</summary>
+
+![Toast Cart Empty](static/images/readme-images/features/toast-cart-empty.png)
+
+</details>
+
+## Customer Service Pages
+
+ - For added professionalism and trustworthiness, some generic pages for FAQs, Privacy Policy and Terms of Conditions were implemented in the site.
+
+ - Links to these pages can be found in the footer of the site, and redirects to separate corresponding pages.
+
+<details>
+
+<summary>FAQ Page</summary>
+
+![FAQ Page](static/images/readme-images/features/faq-page.png)
+
+</details>
+
+<details>
+
+<summary>Privacy Policy</summary>
+
+![Privacy Policy](static/images/readme-images/features/privacy-policy.png)
+
+</details>
+
+<details>
+
+<summary>Terms and Conditions</summary>
+
+![Terms and Conditions](static/images/readme-images/features/terms-and-conditions.png)
+
+</details>
+
 ## Features Left to Implement
+
+Due to time constraints, some features will not be implemented at this point, but this list include features to add in future versions of this project.
+
+ - Give customers the option to sign in / register via social accounts.
+
+ - Add functionality for site admins to add new categories in the front end.
+
+ - Add a rich text editor to the description field of the product form, to improve the UI.
+
+ - Create sale option for site admins, where they can put specific products on sale for a set period of time.
+
+ - Create a coupon system, where customers can receive coupons through for instance email marketing and use when purchasing products.
+
+ - Add more complexity to the products, where for instance different coloured versions of the same products can be sold.
 
 # Testing
 ## Validator Testing
