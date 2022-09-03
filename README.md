@@ -964,11 +964,234 @@ The following section will provide an overview of the features included in Gamer
 
 </details>
 
+## Cart Page
+
+ - On the cart page, customers can find a summary of the products in their session. There is a link back to the products page at the top for easy navigation, and a button to the checkout page below the price summary.
+
+ - A paragraph close to the top will alert the customer if they have qualified for free delivery or, if not, how much more they need to spend to receive it.
+
+ - On larger screen sizes, the products are listed out on the left hand side, while price information is found to the right. When viewed on smaller screens, the price info is placed at the top part of the page, with the checkout button, so users easily and quickly navigate to the checkout page if they wish.
+
+<details>
+
+<summary>Cart Page</summary>
+
+![Cart Page](static/images/readme-images/features/cart-page.png)
+
+</details>
+
+<details>
+
+<summary>Cart Page - Mobile</summary>
+
+![Cart Page - Mobile](static/images/readme-images/features/cart-page-mobile.png)
+
+</details>
+
+### Cart Items
+
+ - Each item in the cart is represented with a card that holds the product image, brand, name, rating and price per unit.
+
+ - Below the price, a form where the customer can edit the quantity they wish to purchase is found. This in turn will update the item total to reflect the price for the set number of quantities for a specific product.
+
+ - In the top right corner, a trash can icon lets the customer remove the item completely from the cart. This can also be achieved by decrementing the quantity to 0 for the best UX.
+
+<details>
+
+<summary>Cart Item</summary>
+
+![Cart Item](static/images/readme-images/features/cart-item.png)
+
+</details>
+
+<details>
+
+<summary>Cart Item - Mobile</summary>
+
+![Cart Item - Mobile](static/images/readme-images/features/cart-item-mobile.png)
+
+</details>
+
+### Cart Price Information
+
+ - A summary of the cart shows the number of items, their total cost, the delivery cost, and the grand total. The button for checkout is also found here.
+
+ - The delivery cost is automatically updated if the subtotal exceeds a set amount, in this case $150. If the customer qualifies, the standard delivery cost is crossed out and shows a price of $0.
+
+<details>
+
+<summary>Cart Price Info</summary>
+
+![Cart Price Info](static/images/readme-images/features/cart-price-info.png)
+
+</details>
+
+## Checkout Page
+
+ - When a customer is ready to make a purchase, the checkout page serves as the last step where the payment is made. If they should want to go back to the cart, there's a link at the top for easy navigation.
+ 
+ - The page consists of a payment form, order information and a list of products about to be purchased.
+
+<details>
+
+<summary>Checkout Page</summary>
+
+![Checkout Page](static/images/readme-images/features/checkout-page.png)
+
+</details>
+
+<details>
+
+<summary>Checkout Page - Mobile</summary>
+
+![Checkout Page - Mobile](static/images/readme-images/features/checkout-page-mobile.png)
+
+</details>
+
+### Order Information
+
+ - Similar to the summary on the cart page, this section shows the customer their total cost, delivery cost, and grand total.
+
+<details>
+
+<summary>Order Information</summary>
+
+![Order Information](static/images/readme-images/features/order-information.png)
+
+</details>
+
+### Order Items
+
+ - Below the order info, a table of the order items can be found. Here the customer sees the product info once again so they can be confident that their order is correct.
+
+ - If the customer wishes to do any last-minute changes, they can remove items from the order straight from here. By simply clicking the trash can icon, the item is removed and the order info is updated.
+
+<details>
+
+<summary>Order Items</summary>
+
+![Order Items](static/images/readme-images/features/order-items.png)
+
+</details>
+
+### Payment Form
+
+ - To submit an order, customers fill out a form with required information. This form allows customers to choose a delivery address and, if authenticated, can choose to save their info to their profile.
+
+ - If previous information is available on an authenticated customer, it will be prefilled on the form for an easier checkout experience.
+
+ - The bottom part of the form holds a payment element generated from Stripe. This element will handle the payment and validates the card details. If there's an issue with the card, the customer is informed of the problem.
+
+<details>
+
+<summary>Payment Form</summary>
+
+![Payment Form](static/images/readme-images/features/payment-form.png)
+
+</details>
+
+<details>
+
+<summary>Payment Form - Prefilled</summary>
+
+![Payment Form - Prefilled](static/images/readme-images/features/payment-form-prefilled.png)
+
+</details>
+
+### Form Submission
+
+ - When a payment is made, and the form is submitted, a loading overlay indicates that the order is being processed. This will also disable the submit button to prevent multiple form submissions.
+
+ - After the payment is made, the customer is redirected to a success page, described below.
+
+<details>
+
+<summary>Form Submission</summary>
+
+![Form Submission](static/images/readme-images/features/form-submission.png)
+
+</details>
+
+## Checkout Success Page
+
+ - When the payment has been processed, the customer is redirected to this page, where all order information can be found.
+
+ - The top part holds a brief thank you message with a note that an email confirmation has been sent, and some useful links to FAQs or to contact customer service in case of any issues.
+
+ - The rest of the page is a table showing all info about the order, and a button back to the products at the bottom.
+
+<details>
+
+<summary>Checkout Success</summary>
+
+![Checkout Success](static/images/readme-images/features/checkout-success.png)
+
+</details>
+
+<details>
+
+<summary>Checkout Success - Mobile</summary>
+
+![Checkout Success - Mobile](static/images/readme-images/features/checkout-success-mobile.png)
+
+</details>
+
+## Authentication System
+
+ - This site utilizes Django Allauth for its authentication. This means that templates for account interaction, such as sign in / out, registering, email verification etc. were provided by Allauth.
+
+ - All templates have been styled to match the rest of the site, and some content on the templates have been replaced.
+
+ - The register form was customized to let new users to type in their first and last name, so that when they place orders this information is already saved for them.
+
+ - Email verification has been set to required so that authenticated users have the correct email for when order confirmations are sent.
+
+<details>
+
+<summary>Register Page</summary>
+
+![Register Page](static/images/readme-images/features/register-page.png)
+
+</details>
+
+<details>
+
+<summary>Sign In Page</summary>
+
+![Sign In Page](static/images/readme-images/features/sign-in-page.png)
+
+</details>
+
+<details>
+
+<summary>Email Verification</summary>
+
+![Email Verification](static/images/readme-images/features/email-verification.png)
+
+</details>
+
+<details>
+
+<summary>Email Confirmation</summary>
+
+![Email Confirmation](static/images/readme-images/features/email-confirmation.png)
+
+</details>
+
+<details>
+
+<summary>Password Reset</summary>
+
+![Password Reset](static/images/readme-images/features/password-reset.png)
+
+</details>
 
 
 
 
 
+
+## Toast Messages
 
 ## Features Left to Implement
 
