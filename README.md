@@ -793,6 +793,179 @@ The following section will provide an overview of the features included in Gamer
 
 </details>
 
+## Products Page
+
+ - The products page holds all available products for sale on the site, and features options to view by category, sort products, and view searched products from the search bar in the header. Customers can also see how many products are available dynamically when searching or choosing a category.
+
+ - Each listed product is represented in a card, where an image and important information, such as brand, name, rating, price and category is presented.
+
+ - For responsivity, products will be listed in rows of three, two or one, depending on what layout fits the screen size best.
+
+<details>
+
+<summary>Products Page</summary>
+
+![Products Page](static/images/readme-images/features/products-page.png)
+
+</details>
+
+<details>
+
+<summary>Products Page - Mobile</summary>
+
+![Products Page - Mobile](static/images/readme-images/features/products-page-mobile.png)
+
+</details>
+
+### Categories Banner
+
+ - Just below the header, a banner displaying available categories help customers navigate and see what products they can expect to find.
+
+ - When on a specific category page, that category will be underlined to help customers see their current position.
+
+ - On smaller screen sizes, the banner collapses into a dropdown menu to improve the design of the page.
+
+<details>
+
+<summary>Categories Banner</summary>
+
+![Categories Banner](static/images/readme-images/features/products-categories-banner.png)
+
+</details>
+
+
+<details>
+
+<summary>Categories Banner - Mobile</summary>
+
+![Categories Banner - Mobile](static/images/readme-images/features/products-categories-banner-mobile.png)
+
+</details>
+
+### Sort Products
+
+ - Customers can sort products by price, rating, name, brand or category. This will let them control the list to suit their needs.
+
+ - The select dropdown has been styled to fit the rest of the site, although after some research, select dropdowns can't be styled freely, and relies on the specific browsers styling rules. Becase of this, the options in the dropdown have some unwanted styling attributes, such as a hover effect.
+
+<details>
+
+<summary>Sort Products</summary>
+
+![Sort Products](static/images/readme-images/features/products-sort.png)
+
+![Sort Products](static/images/readme-images/features/products-sort-dropdown.png)
+
+</details>
+
+## Product Detail
+
+ - When clicking on a product name or image from the products page, a detailed view of the product is rendered. This contains all information about the product, as well as the product image.
+
+ - The rating of the product is updated automatically as reviews are posted, and an average rating is calculated. The rating is rounded to the nearest half and shown as whole or half stars from 1 to 5.
+
+ - An 'Add to cart' button is clearly visible and, if clicked, adds a quantity of one to the customers cart. The quantity can be edited from the cart page described further down in the 'Features' section, and was decided to be omitted from this page to keep the UX as frictionless as possible.
+
+ - The layout adapts to fit the screen size and looks good across all devices.
+
+<details>
+
+<summary>Product Detail</summary>
+
+![Product Detail](static/images/readme-images/features/product-detail.png)
+
+</details>
+
+<details>
+
+<summary>Product Detail - Mobile</summary>
+
+![Product Detail - Mobile](static/images/readme-images/features/product-detail-mobile.png)
+
+</details>
+
+### Breadcrumb Navigation
+
+ - At the top of the product detail page, a breadcrumb navigation bar is visible. This helps customers see the path to the current page, and they can easily go back to the product category, all products page, or straight to the home page.
+
+ - The breadcrumb nav bar is also visible from the products and category page, with relevant navigation links.
+
+ - To improve the UX on mobile devices, the breadcrumb nav bar is scrollable when the length exceeds the width of the screen.
+
+<details>
+
+<summary>Breadcrumb</summary>
+
+![Breadcrumb](static/images/readme-images/features/breadcrumb.png)
+
+</details>
+
+<details>
+
+<summary>Breadcrumb - Mobile</summary>
+
+![Breadcrumb - Mobile](static/images/readme-images/features/breadcrumb-mobile.png)
+
+</details>
+
+### Review Form
+
+ - Below the product details, a section for leaving and reading reviews is found. The form consists of a star-rating system and a textfield for writing a review.
+
+ - Only authenticated users can leave reviews, and a user can only leave one review per product to prevent spamming.
+
+ - Form authentication makes sure the form is submitted correctly and that all fields are filled in.
+
+<details>
+
+<summary>Review Form</summary>
+
+![Review Form](static/images/readme-images/features/product-review-form.png)
+
+</details>
+
+<details>
+
+<summary>Review Form - Posted</summary>
+
+![Review Form - Posted](static/images/readme-images/features/product-review-posted.png)
+
+</details>
+
+<details>
+
+<summary>Review Form - Signed Out</summary>
+
+![Review Form - Signed Out](static/images/readme-images/features/product-review-signed-out.png)
+
+</details>
+
+### Reviews
+
+ - Any reviews posted on a product is seen adjacent to the form, to the left on larger screens, and below and mobile devices. 
+ 
+ - They are listed in chronological order with the newest first, and shows the authors username, when they posted the review, their rating and the review text itself.
+
+ - The author of a posted review can delete it if they wish, by clicking the 'delete' link on the right side of the review. This will trigger a modal, asking for confirmation so deletion doesn't happen accidentally.
+
+<details>
+
+<summary>Reviews</summary>
+
+![Reviews](static/images/readme-images/features/product-reviews.png)
+
+</details>
+
+<details>
+
+<summary>Reviews - Delete Modal</summary>
+
+![Reviews - Delete Modal](static/images/readme-images/features/product-reviews-delete.png)
+
+</details>
+
+
+
 
 
 
