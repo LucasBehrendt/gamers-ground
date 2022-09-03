@@ -1,3 +1,4 @@
+// Sets country field on profile page to correct colour values
 let countrySelected = document.getElementById('default_country');
 if (!countrySelected.value) {
     countrySelected.style.color = 'grey';

@@ -64,26 +64,6 @@ body {
     object-fit: scale-down;
 }
 
-.product-container .form-select {
-    max-width: 260px;
-    background-color: transparent;
-    color: #35C71E;
-    border: none;
-    border-bottom: 1px solid #35C71E;
-    border-radius: 0;
-    cursor: pointer;
-}
-
-.product-container .form-select:focus {
-    border: none;
-    border-bottom: 1px solid #35C71E;
-    box-shadow: none;
-}
-
-.product-container .form-select option {
-    background-color: #212228;
-}
-
 .border-black {
     border: 1px solid black !important;
 }
@@ -233,6 +213,26 @@ sup {
 
 .product-card:hover {
     box-shadow: -2px 2px 10px rgba(239, 239, 239, 0.2);
+}
+
+.product-container .form-select {
+    max-width: 260px;
+    background-color: transparent;
+    color: #35C71E;
+    border: none;
+    border-bottom: 1px solid #35C71E;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.product-container .form-select:focus {
+    border: none;
+    border-bottom: 1px solid #35C71E;
+    box-shadow: none;
+}
+
+.product-container .form-select option {
+    background-color: #212228;
 }
 
 /* --------------- Breadcrumb Navigation --------------- */

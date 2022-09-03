@@ -11,8 +11,8 @@ from checkout.webhook_handler import StripeWebhookHandler
 @csrf_exempt
 def webhook(request):
     """
-    Listen for Stripe webhooks
-    Taken from Stripe docs
+    Listen for Stripe webhooks, taken from Stripe docs.
+    Inspired by Boutiqu Ado Walkthrough project.
     """
     # Get stripe keys
     stripe.api_key = settings.STRIPE_SECRET_KEY

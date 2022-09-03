@@ -12,8 +12,8 @@ from .models import Product, Category
 
 class ProductList(generic.ListView):
     """
-    Main product list view, renders a list of products.
-    Also handles searches and sorting.
+    Renders a list of all products. Handles search queries and sorting.
+    If an empty search query is posted, an error message is displayed.
     """
     model = Product
 
@@ -57,8 +57,8 @@ class ProductList(generic.ListView):
 
 class CategoryDetail(generic.DetailView):
     """
-    Main category list view, renders a list
-    of all products in a specific category.
+    Renders a list of all products in a specific category.
+    Handles sorting the category products.
     """
     model = Category
 
@@ -91,7 +91,9 @@ class CategoryDetail(generic.DetailView):
 
 class ProductDetail(generic.DetailView):
     """
-    Main product detail view, renders a specific product.
+    Renders a specific product detail page.
+    Renders the review form and sets product to reviewed if a user already
+    left a review, so user can only leave one review per product.
     """
     model = Product
     form_class = ReviewForm
@@ -110,6 +112,10 @@ class ProductDetail(generic.DetailView):
         return context
 
     def post(self, request, *args, **kwargs):
+        """
+        Handles review form and updates product rating.
+        Redirects back to product detail page.
+        """
         form = self.form_class(request.POST)
         product = self.get_object()
         if form.is_valid():
@@ -136,7 +142,8 @@ class AddProduct(LoginRequiredMixin,
                  UserPassesTestMixin,
                  generic.CreateView):
     """
-    View for creating products
+    Renders add product page and checks for superuser status.
+    Handles form and redirects to added product.
     """
     model = Product
     fields = ('category', 'name', 'brand', 'price', 'description', 'image')
@@ -162,7 +169,8 @@ class UpdateProduct(LoginRequiredMixin,
                     UserPassesTestMixin,
                     generic.UpdateView):
     """
-    View for updating products
+    Renders update product page and checks for superuser status.
+    Prepoulates and handles form, and redirects to updated product.
     """
     model = Product
     fields = ('category', 'name', 'brand', 'price', 'description', 'image')
@@ -188,7 +196,8 @@ class DeleteProduct(LoginRequiredMixin,
                     UserPassesTestMixin,
                     generic.DeleteView):
     """
-    View for deleting products
+    Handles deleting a product through a modal.
+    Checks for superuser status.
     """
     model = Product
     success_message = 'The product was deleted successfully!'

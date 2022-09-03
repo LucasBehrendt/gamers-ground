@@ -41,7 +41,11 @@ def cache_checkout_data(request):
 
 
 def create_payment_intent(request):
-    """Gets stripe keys and creates a payment intent"""
+    """
+    Retrieve stripe keys from settings and create a payment intent,
+    which holds the amount for the payment and currency used.
+    Returns a json response to js payment handling.
+    """
     stripe_publishable_key = settings.STRIPE_PUBLISHABLE_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -61,7 +65,10 @@ def create_payment_intent(request):
 
 
 class Checkout(generic.CreateView):
-    """Renders checkout page with payment form"""
+    """
+    Renders checkout page with payment form.
+    Create order line items for each product and attach to the order.
+    """
     form_class = OrderForm
     template_name = 'checkout/checkout.html'
     success_url = 'checkout_success/{order_number}'
@@ -125,7 +132,10 @@ class Checkout(generic.CreateView):
 
 
 class CheckoutSuccess(generic.View):
-    """Renders checkout success page with order details"""
+    """
+    Renders checkout success page with order details.
+    Deletes the session cart.
+    """
 
     def get(self, request, order_number):
         save_info = request.session.get('save_info')

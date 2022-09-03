@@ -7,7 +7,10 @@ from .models import Review
 
 
 class DeleteReview(LoginRequiredMixin, generic.View):
-    """View for users deleting own reviews"""
+    """
+    Handles deleting a signed in users own review through a modal.
+    Updates the products rating after the review is deleted.
+    """
     def post(self, request, review_id):
         review = get_object_or_404(Review, pk=review_id)
         product = review.product

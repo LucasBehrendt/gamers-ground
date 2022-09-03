@@ -11,7 +11,10 @@ from .forms import UserDetailsForm, UserDeliveryForm
 
 @login_required
 def profile(request):
-    """user profiles"""
+    """
+    Renders user profile page with details and delivery form prepopulated.
+    Shows order history and handles updating user profile info.
+    """
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
@@ -41,7 +44,10 @@ def profile(request):
 
 
 def order_history(request, order_number):
-    """Render details for past order"""
+    """
+    Uses checkout success page for rendering order history details.
+    Passes history context to template to allow repurposing it.
+    """
     order = get_object_or_404(Order, order_number=order_number)
 
     context = {
@@ -57,8 +63,8 @@ class DeleteUser(LoginRequiredMixin,
                  UserPassesTestMixin,
                  DeleteView):
     """
-    View for deleting signed in users account.
-    Validates that the signed in user equals the request.user.
+    Handles deleting a signed in users account through a modal.
+    Validates that the user equals the request.user.
     """
     model = User
     success_message = 'Your account has been deleted!'

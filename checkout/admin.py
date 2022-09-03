@@ -11,9 +11,7 @@ class OrderLineItemAdminInline(admin.TabularInline):
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    """
-    Configuration for Orders on admin page.
-    """
+    """Configuration for Orders on admin page"""
     inlines = (OrderLineItemAdminInline,)
     readonly_fields = (
         'order_number', 'date', 'delivery_cost',

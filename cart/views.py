@@ -10,7 +10,10 @@ class ViewCart(generic.TemplateView):
 
 
 class AddToCart(generic.View):
-    """Adds product to cart"""
+    """
+    Adds product to cart. If it already exists in cart,
+    increments qty by one.
+    """
     def post(self, request, item_id):
 
         item = get_object_or_404(Product, pk=item_id)
@@ -33,7 +36,10 @@ class AddToCart(generic.View):
 
 
 class EditCart(generic.View):
-    """Edits product in cart"""
+    """
+    Sets product qty to user input in cart.
+    If input is 0, removes from cart.
+    """
     def post(self, request, item_id):
 
         item = get_object_or_404(Product, pk=item_id)
@@ -56,7 +62,10 @@ class EditCart(generic.View):
 
 
 class DeleteFromCart(generic.View):
-    """Delete product from cart"""
+    """
+    Delete product from cart.
+    If product not found in cart, display error message.
+    """
     def get(self, request, item_id):
 
         try:

@@ -4,10 +4,10 @@ from .models import UserProfile
 
 
 class UserDetailsForm(forms.ModelForm):
-    """User details configuration"""
+    """User details form configuration"""
 
     class Meta:
-        """Definition of fields used in form"""
+        """Definition of fields, labels & widgets used in form"""
         model = User
         fields = ('first_name', 'last_name', 'email')
 
@@ -20,10 +20,10 @@ class UserDetailsForm(forms.ModelForm):
 
 
 class UserDeliveryForm(forms.ModelForm):
-    """Order form configuration"""
+    """User delivery form configuration"""
 
     class Meta:
-        """Definition of fields used in form"""
+        """Definition of fields, labels & widgets used in form"""
         model = UserProfile
         exclude = ('user',)
 

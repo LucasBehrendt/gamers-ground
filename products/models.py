@@ -18,6 +18,10 @@ class Category(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
+        """
+        Overrides save method and sets slug field to
+        slugified name.
+        """
         self.slug = slugify(self.name)
         return super().save(*args, **kwargs)
 
@@ -25,6 +29,8 @@ class Category(models.Model):
 class Product(models.Model):
     """
     Main model for products listed on the store.
+    Rating field is automatically updated when reviews for
+    the product are posted or deleted.
     """
     category = models.ForeignKey(
         'Category', on_delete=models.CASCADE, related_name='products')
@@ -38,6 +44,10 @@ class Product(models.Model):
         max_digits=3, decimal_places=2, null=True, blank=True)
 
     def avg_rating(self):
+        """
+        Returns the average rating of a product by aggregating
+        rating field on review model.
+        """
         avg = Review.objects.filter(
             product=self).aggregate(Avg('rating'))['rating__avg']
         return avg
@@ -46,5 +56,9 @@ class Product(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
+        """
+        Overrides save method and sets slug field to
+        slugified name.
+        """
         self.slug = slugify(self.name)
         return super().save(*args, **kwargs)

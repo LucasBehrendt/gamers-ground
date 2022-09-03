@@ -6,7 +6,7 @@ class OrderForm(forms.ModelForm):
     """Order form configuration"""
 
     class Meta:
-        """Definition of fields used in form"""
+        """Definition of fields, labels & widgets used in form"""
         model = Order
         fields = (
             'first_name', 'last_name', 'email_address',

@@ -4,7 +4,10 @@ from django_countries.fields import CountryField
 
 
 class UserProfile(models.Model):
-    """Main user profile model"""
+    """
+    Main model for user profiles created at signup.
+    Holds default delivery info for users.
+    """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone_number = models.CharField(
         max_length=20, null=True, blank=True)
@@ -23,4 +26,8 @@ class UserProfile(models.Model):
         return self.user.username
 
     def get_last_name(self):
+        """
+        Returns a users last name to be used
+        in setting initial values at checkout.
+        """
         return self.user.last_name

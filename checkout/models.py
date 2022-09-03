@@ -8,7 +8,11 @@ from profiles.models import UserProfile
 
 
 class Order(models.Model):
-    """Main order model"""
+    """
+    Main model for orders created at checkout.
+    All fields required except street address 2 &
+    user_profile for unauthorized customers.
+    """
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(
         UserProfile, on_delete=models.SET_NULL,
@@ -33,10 +37,10 @@ class Order(models.Model):
         max_length=254, null=False, blank=False, default='')
 
     def _generate_order_number(self):
-        '''
+        """
         Generate a random, unique order number using UUID.
         Taken from Boutique Ado walkthrough project.
-        '''
+        """
         return uuid4().hex.upper()
 
     def update_total(self):
@@ -70,7 +74,10 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
-    """Main line item model"""
+    """
+    Main model for line items assigned to order.
+    Serves as temporary state for each product added to an order.
+    """
     order = models.ForeignKey(
         Order, null=False, blank=False, on_delete=models.CASCADE,
         related_name='lineitems')
