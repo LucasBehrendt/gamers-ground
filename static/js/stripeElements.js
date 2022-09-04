@@ -1,6 +1,6 @@
 // set up stripe elements & mount to template
 document.addEventListener('DOMContentLoaded', async function() {
-    const stripeData = await FetchData()
+    const stripeData = await FetchData();
     const stripe = Stripe(stripeData.stripe_publishable_key);
     const options = {
         clientSecret: stripeData.client_secret,
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     // Handle payment form submit
     const form = document.getElementById('payment-form');
     form.addEventListener('submit', async (event) => {
-        handleFormSubmit(event, form, stripeData)
+        handleFormSubmit(event, form, stripeData);
     });
     async function handleFormSubmit(event, form, stripeData) {
         event.preventDefault();
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         // enable card input & buttons, and display error message to customer.
         const csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
 
-        let saveInfo = document.getElementById('save-info')
+        let saveInfo = document.getElementById('save-info');
         saveInfo = saveInfo ? document.getElementById('save-info').checked : false;
 
         const url = '/checkout/cache_checkout_data/';
@@ -113,18 +113,18 @@ document.addEventListener('DOMContentLoaded', async function() {
             } else {
                 location.reload();
             }
-        })
+        });
     }
 });
 
 // Toggle overlay when processing payment
 function toggleLoadingOverlay(value) {
-    const overlay = document.getElementById('loading-overlay')
+    const overlay = document.getElementById('loading-overlay');
 
     if (value) {
-        overlay.style.display = 'block'
+        overlay.style.display = 'block';
     } else {
-        overlay.style.display = 'none'
+        overlay.style.display = 'none';
     }
 }
 
@@ -133,5 +133,5 @@ async function FetchData() {
     const response = await fetch('/checkout/secret');
     const stripeData = await response.json();
 
-    return stripeData
+    return stripeData;
 }

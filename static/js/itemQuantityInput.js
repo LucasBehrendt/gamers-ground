@@ -27,7 +27,7 @@ document.querySelectorAll('.increment-qty').forEach((button) => {
 });
 
 // update manual input in quantity form
-let qtyInputs = document.querySelectorAll('.qty-input').forEach((itemQty) => {
+document.querySelectorAll('.qty-input').forEach((itemQty) => {
     let currentValue = itemQty.value;
     itemQty.onchange = function() {
         if (parseInt(itemQty.value) || itemQty.value == 0) {
@@ -41,5 +41,5 @@ let qtyInputs = document.querySelectorAll('.qty-input').forEach((itemQty) => {
         } else {
             itemQty.value = currentValue;
         }
-    }
+    };
 });

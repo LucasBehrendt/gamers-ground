@@ -18,4 +18,4 @@ document.getElementById('sort-selector').onchange = function() {
 
         window.location.replace(currentUrl);
     }
-}
+};

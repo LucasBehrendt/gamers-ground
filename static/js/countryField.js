@@ -10,4 +10,4 @@ countrySelected.onchange = function() {
     } else {
         this.style.color = '#212529';
     }
-}
+};
