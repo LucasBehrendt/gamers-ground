@@ -1433,7 +1433,496 @@ Due to time constraints, some features will not be implemented at this point, bu
  - Add more complexity to the products, where for instance different coloured versions of the same products can be sold.
 
 # Testing
-## Validator Testing
+
+## Code Validation
+
+To ensure all code written for Gamers Ground is free of errors, code validation through various validators was performed. The results are listed below.
+
+### HTML Validation
+
+All HTML code was checked with the [W3C Markup Validator](https://validator.w3.org/).
+
+ - One error was found in the category nav, where horizontal rules are used to divide categories. These were direct children of a `ul` element, and by instead having them inside an `li` element, the error was solved.
+
+    <details>
+
+    <summary>Category Nav Error</summary>
+
+    ![Category Nav Error](static/images/readme-images/testing/html-category-nav-error.png)
+
+    </details>
+
+Some minor warnings related to redundant type attributes on script tags were also found and corrected. No warnings or errors remain.
+
+<details>
+
+<summary>Home Page</summary>
+
+![Home Page](static/images/readme-images/testing/html-home.png)
+
+</details>
+
+<details>
+
+<summary>FAQ Page</summary>
+
+![FAQ Page](static/images/readme-images/testing/html-faq.png)
+
+</details>
+
+<details>
+
+<summary>Terms and Conditions Page</summary>
+
+![Terms and Conditions Page](static/images/readme-images/testing/html-tac.png)
+
+</details>
+
+<details>
+
+<summary>Privacy Policy Page</summary>
+
+![Privacy Policy Page](static/images/readme-images/testing/html-privacy.png)
+
+</details>
+
+<details>
+
+<summary>Products Page</summary>
+
+![Products Page](static/images/readme-images/testing/html-products.png)
+
+</details>
+
+<details>
+
+<summary>Category Page</summary>
+
+![Category Page](static/images/readme-images/testing/html-category.png)
+
+</details>
+
+<details>
+
+<summary>Product Detail Page</summary>
+
+![Product Detail Page](static/images/readme-images/testing/html-product-detail.png)
+
+</details>
+
+<details>
+
+<summary>Add Product Page</summary>
+
+![Add Product Page](static/images/readme-images/testing/html-add-product.png)
+
+</details>
+
+<details>
+
+<summary>Update Product Page</summary>
+
+![Update Product Page](static/images/readme-images/testing/html-update-product.png)
+
+</details>
+
+<details>
+
+<summary>Cart Page</summary>
+
+![Cart Page](static/images/readme-images/testing/html-cart.png)
+
+</details>
+
+<details>
+
+<summary>Checkout Page</summary>
+
+![Checkout Page](static/images/readme-images/testing/html-checkout.png)
+
+</details>
+
+<details>
+
+<summary>Checkout Success Page</summary>
+
+![Checkout Success Page](static/images/readme-images/testing/html-checkout-success.png)
+
+</details>
+
+<details>
+
+<summary>Profile Page</summary>
+
+![Profile Page](static/images/readme-images/testing/html-profile.png)
+
+</details>
+
+### CSS Validation
+
+All CSS code was checked with the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). No errors or warnings were found.
+
+<details>
+
+<summary>CSS code Results</summary>
+
+![CSS code Results](static/images/readme-images/testing/css-validation.png)
+
+</details>
+
+### JavaScript Validation
+
+All JavaScript code was checked with the [JSHint Code Quality Tool](https://jshint.com/). Four warnings in the 'Stripe Elements' file were found due to esversion 8 not being used in JSHint, and therefore async functions were flagged. In the same file an undefined variable was flagged, due to the installed Stripe package not being recognized in JSHint. A few missed semicolons were also flagged and fixed.
+
+<details>
+
+<summary>Country Field</summary>
+
+![Country Field](static/images/readme-images/testing/js-country-field.png)
+
+</details>
+
+<details>
+
+<summary>Item Quantity Input</summary>
+
+![Item Quantity Input](static/images/readme-images/testing/js-item-qty.png)
+
+</details>
+
+<details>
+
+<summary>Sort Selector</summary>
+
+![Sort Selector](static/images/readme-images/testing/js-sort-selector.png)
+
+</details>
+
+<details>
+
+<summary>Stripe Elements</summary>
+
+![Stripe Elements](static/images/readme-images/testing/js-stripe-elements.png)
+
+</details>
+
+### Python Validation
+
+All Python code was checked with the [PEP8 Online Validator](http://pep8online.com/). No errors or warnings were found.
+
+<details>
+
+<summary>Home App urls.py</summary>
+
+![Home App urls.py](static/images/readme-images/testing/pep8-home-urls.png)
+
+</details>
+
+<details>
+
+<summary>Home App views.py</summary>
+
+![Home App views.py](static/images/readme-images/testing/pep8-home-views.png)
+
+</details>
+
+<details>
+
+<summary>Products App admin.py</summary>
+
+![Products App admin.py](static/images/readme-images/testing/pep8-products-admin.png)
+
+</details>
+
+<details>
+
+<summary>Products App models.py</summary>
+
+![Products App models.py](static/images/readme-images/testing/pep8-products-models.png)
+
+</details>
+
+<details>
+
+<summary>Products App urls.py</summary>
+
+![Products App urls.py](static/images/readme-images/testing/pep8-products-urls.png)
+
+</details>
+
+<details>
+
+<summary>Products App views.py</summary>
+
+![Products App views.py](static/images/readme-images/testing/pep8-products-views.png)
+
+</details>
+
+<details>
+
+<summary>Products App test_models.py</summary>
+
+![Products App test_models.py](static/images/readme-images/testing/pep8-products-test_models.png)
+
+</details>
+
+<details>
+
+<summary>Products App test_urls.py</summary>
+
+![Products App test_urls.py](static/images/readme-images/testing/pep8-products-test_urls.png)
+
+</details>
+
+<details>
+
+<summary>Products App test_views.py</summary>
+
+![Products App test_views.py](static/images/readme-images/testing/pep8-products-test_views.png)
+
+</details>
+
+<details>
+
+<summary>Cart App context_processors.py</summary>
+
+![Cart App context_processors.py](static/images/readme-images/testing/pep8-cart-context.png)
+
+</details>
+
+<details>
+
+<summary>Cart App urls.py</summary>
+
+![Cart App urls.py](static/images/readme-images/testing/pep8-cart-urls.png)
+
+</details>
+
+<details>
+
+<summary>Cart App views.py</summary>
+
+![Cart App views.py](static/images/readme-images/testing/pep8-cart-views.png)
+
+</details>
+
+<details>
+
+<summary>Cart App test_urls.py</summary>
+
+![Cart App test_urls.py](static/images/readme-images/testing/pep8-cart-test_urls.png)
+
+</details>
+
+<details>
+
+<summary>Cart App test_views.py</summary>
+
+![Cart App test_views.py](static/images/readme-images/testing/pep8-cart-test_views.png)
+
+</details>
+
+<details>
+
+<summary>Checkout App admin.py</summary>
+
+![Checkout App admin.py](static/images/readme-images/testing/pep8-checkout-admin.png)
+
+</details>
+
+<details>
+
+<summary>Checkout App forms.py</summary>
+
+![Checkout App forms.py](static/images/readme-images/testing/pep8-checkout-forms.png)
+
+</details>
+
+<details>
+
+<summary>Checkout App models.py</summary>
+
+![Checkout App models.py](static/images/readme-images/testing/pep8-checkout-models.png)
+
+</details>
+
+<details>
+
+<summary>Checkout App signals.py</summary>
+
+![Checkout App signals.py](static/images/readme-images/testing/pep8-checkout-signals.png)
+
+</details>
+
+<details>
+
+<summary>Checkout App urls.py</summary>
+
+![Checkout App urls.py](static/images/readme-images/testing/pep8-checkout-urls.png)
+
+</details>
+
+<details>
+
+<summary>Checkout App views.py</summary>
+
+![Checkout App views.py](static/images/readme-images/testing/pep8-checkout-views.png)
+
+</details>
+
+<details>
+
+<summary>Checkout App webhook_handler.py</summary>
+
+![Checkout App webhook_handler.py](static/images/readme-images/testing/pep8-checkout-webhook_handler.png)
+
+</details>
+
+<details>
+
+<summary>Checkout App webhooks.py</summary>
+
+![Checkout App webhooks.py](static/images/readme-images/testing/pep8-checkout-webhooks.png)
+
+</details>
+
+<details>
+
+<summary>Checkout App test_forms.py</summary>
+
+![Checkout App test_forms.py](static/images/readme-images/testing/pep8-checkout-test_forms.png)
+
+</details>
+
+<details>
+
+<summary>Checkout App test_models.py</summary>
+
+![Checkout App test_models.py](static/images/readme-images/testing/pep8-checkout-test_models.png)
+
+</details>
+
+<details>
+
+<summary>Checkout App test_urls.py</summary>
+
+![Checkout App test_urls.py](static/images/readme-images/testing/pep8-checkout-test_urls.png)
+
+</details>
+
+<details>
+
+<summary>Checkout App test_views.py</summary>
+
+![Checkout App test_views.py](static/images/readme-images/testing/pep8-checkout-test_views.png)
+
+</details>
+
+<details>
+
+<summary>Profiles App admin.py</summary>
+
+![Profiles App admin.py](static/images/readme-images/testing/pep8-profiles-admin.png)
+
+</details>
+
+<details>
+
+<summary>Profiles App forms.py</summary>
+
+![Profiles App forms.py](static/images/readme-images/testing/pep8-profiles-forms.png)
+
+</details>
+
+<details>
+
+<summary>Profiles App models.py</summary>
+
+![Profiles App models.py](static/images/readme-images/testing/pep8-profiles-models.png)
+
+</details>
+
+<details>
+
+<summary>Profiles App signals.py</summary>
+
+![Profiles App signals.py](static/images/readme-images/testing/pep8-profiles-signals.png)
+
+</details>
+
+<details>
+
+<summary>Profiles App urls.py</summary>
+
+![Profiles App urls.py](static/images/readme-images/testing/pep8-profiles-urls.png)
+
+</details>
+
+<details>
+
+<summary>Profiles App views.py</summary>
+
+![Profiles App views.py](static/images/readme-images/testing/pep8-profiles-views.png)
+
+</details>
+
+<details>
+
+<summary>Reviews App admin.py</summary>
+
+![Reviews App admin.py](static/images/readme-images/testing/pep8-reviews-admin.png)
+
+</details>
+
+<details>
+
+<summary>Reviews App forms.py</summary>
+
+![Reviews App forms.py](static/images/readme-images/testing/pep8-reviews-forms.png)
+
+</details>
+
+<details>
+
+<summary>Reviews App models.py</summary>
+
+![Reviews App models.py](static/images/readme-images/testing/pep8-reviews-models.png)
+
+</details>
+
+<details>
+
+<summary>Reviews App urls.py</summary>
+
+![Reviews App urls.py](static/images/readme-images/testing/pep8-reviews-urls.png)
+
+</details>
+
+<details>
+
+<summary>Reviews App views.py</summary>
+
+![Reviews App views.py](static/images/readme-images/testing/pep8-reviews-views.png)
+
+</details>
+
+<details>
+
+<summary>Custom Signup Form</summary>
+
+![Custom Signup Form](static/images/readme-images/testing/pep8-custom-signup-form.png)
+
+</details>
+
+<details>
+
+<summary>Project urls.py</summary>
+
+![Project urls.py](static/images/readme-images/testing/pep8-project-urls.png)
+
+</details>
+
+
 ## Responsive Testing
 ## Lighthouse Testing
 ## Links and Form Testing
