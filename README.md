@@ -106,9 +106,9 @@ The user stories were implemented in an agile approach when creating the applica
 
 - #### EPIC: User Checkout
 
-  - As a Site User I can checkout and pay for the products in my cart so that I can buy and receive my newly purchased products.
-
   - As a Site User I can view details of my order on the checkout page so that I can make sure everything is correct before placing my order.
+
+  - As a Site User I can checkout and pay for the products in my cart so that I can buy and receive my newly purchased products.
 
   - As a Site User I can have my order confirmed after a purchase so that I can be certain my payment was processed successfully.
 
@@ -1924,14 +1924,425 @@ All Python code was checked with the [PEP8 Online Validator](http://pep8online.c
 
 
 ## Responsive Testing
-## Lighthouse Testing
-## Links and Form Testing
-## Fixed Bugs
-## Known/Unfixed Bugs
 
-# Technologies Used
-## Languages
+You can open DevTools with keyboard shortcuts (CMD+Opt+I for Mac OS or Ctrl+Shift+I for Linux and Windows), through the menu bar in the top right corner and go to "More Tools" > "Developer Tools." or by right-clicking on any web page and select "Inspect". To test responsiveness, click on the "device" icon on the left side, above the source code window or with the keyboard shortcut CMD+Shift+M for Mac OS or Ctrl+Shift+M for Linux and Windows. Under "Dimensions" you can choose between different devices to emulate, or you can drag the handles to resize the window to your preferred screen width by choosing "Responsive".
+
+To test the responsiveness of the website multiple devices were used to browse and make payments, register accounts etc including a Desktop, Laptop, iPad Air, Samsung Galaxy S20, iPhone 12, iPhone X, and iPhone 8. The site was also tested on different browsers, such as Chrome, Edge, Safari and Firefox.
+
+Using Chrome DevTools, the site was optimized for all screen widths down to about 270px.
+
+## Manual Testing
+
+To make sure all interactions and forms / links work as intended, extensive manual testing was performed.
+
+| Status | Home Page / Header |
+|:------:| ------------------ |
+| &check; | Clicking logo loads homepage |
+| &check; | Clicking Home loads homepage |
+| &check; | Clicking Store loads products page |
+| &check; | Submitting search form empty gives error message |
+| &check; | Submitting search form loads products page with correct query |
+| &check; | Clicking Sign In loads sign in page |
+| &check; | Clicking Register In loads register page |
+| &check; | Clicking Profile loads profile page (signed in) |
+| &check; | Clicking Sign Out loads sign out page (signed in) |
+| &check; | Clicking Add Product loads add product page (site admin) |
+| &check; | Clicking carousel buttons loads products page with relevant products |
+| &check; | Clicking category buttons loads correct category page |
+| &check; | Submitting newsletter incorrectly gives error message |
+| &check; | Submitting newsletter form works as expected with feedback |
+| &check; | Clicking category links in footer loads correct category page |
+| &check; | Clicking customer service links loads relevant page |
+| &check; | Clicking social media links in footer opens in new tab |
+| &check; | Clicking Facebook link in footer opens Gamers Ground Facebook page |
+| &check; | Clicking the other social links opens platform home page |
+
+| Status | Products Page |
+|:------:| ------------------ |
+| &check; | Clicking a category loads correct category page |
+| &check; | Clicking home link in breadcrumb navigation loads home page |
+| &check; | Using sort selection works as expected for all options |
+| &check; | Clicking a product image or name loads product detail page |
+| &check; | Clicking a products category tag loads correct category page |
+| &check; | Clicking back to top button scrolls to top of the page |
+
+| Status | Product Detail Page |
+|:------:| ------------------ |
+| &check; | Clicking navigation links in breadcrumb loads correct page |
+| &check; | Clicking a product image loads the image in a separate page |
+| &check; | Clicking add to cart button adds the product to the users cart |
+| &check; | Clicking Update product loads update product page (site admin) |
+| &check; | Clicking Delete product loads confirm delete modal (site admin) |
+| &check; | Confirming delete product deletes it completely (site admin) |
+| &check; | Filling out review form incorrectly gives error message (signed in) |
+| &check; | Posting a review reloads page and saves the review (signed in) |
+| &check; | Clicking Delete review loads confirm delete modal (signed in, author) |
+| &check; | Confirming delete review deletes it completely (signed in, author) |
+
+| Status | Add Product Page |
+|:------:| ---------------- |
+| &check; | Clicking Back to products takes user back to products page (site admin) |
+| &check; | Filling out form incorrectly gives error message (site admin) |
+| &check; | Uploading unsupported image format gives error message (site admin) |
+| &check; | Filling out form correctly saves product and redirects to product detail page (site admin) |
+| &check; | Not providing an image is accepted, placeholder is provided (site admin) |
+
+| Status | Update Product Page |
+|:------:| ---------------- |
+| &check; | Clicking Back to products takes user back to products page (site admin) |
+| &check; | All fields are prepopulated with saved data (site admin) |
+| &check; | Filling out form incorrectly gives error message (site admin) |
+| &check; | Uploading unsupported image format gives error message (site admin) |
+| &check; | Filling out form correctly saves product and redirects to product detail page (site admin) |
+| &check; | Not providing an image is accepted, placeholder is provided (site admin) |
+
+| Status | Cart Page |
+|:------:| ---------------- |
+| &check; | Clicking Continue shopping takes user back to products page |
+| &check; | Clicking a product image or name loads product detail page |
+| &check; | Clicking trash can icon removes product from cart |
+| &check; | Clicking minus icon decrements product qty in cart |
+| &check; | Decrementing to zero removes product from cart |
+| &check; | Clicking plus icon increments product qty in cart |
+| &check; | Filling out manual qty updates product qty in cart |
+| &check; | Clicking Secure checkout loads checkout page |
+| &check; | Clicking back to top button scrolls to top of the page |
+
+| Status | Checkout Page |
+|:------:| ---------------- |
+| &check; | Clicking Back to cart takes user back to cart page |
+| &check; | Clicking trash can icon removes product from cart |
+| &check; | Filling out form incorrectly gives error message |
+| &check; | Checking Save info box save user info to profile (signed in) |
+| &check; | Clicking Complete order triggers loading overlay and disables submit button |
+| &check; | Clicking Complete order loads checkout success page after successful payment |
+
+| Status | Checkout Success Page |
+|:------:| ------------ |
+| &check; | Clicking FAQ link loads FAQ page |
+| &check; | Clicking Customer Service link opens email to company CHANGE IF INQUIRY |
+| &check; | Clicking Back to products loads products page |
+
+| Status | Sign In Page |
+|:------:| ------------ |
+| &check; | Filling out form incorrectly gives error message |
+| &check; | Signing in with valid credentials authenticates user and loads home page |
+| &check; | Clicking Forgot Password? loads reset password page |
+| &check; | Clicking Sign Up loads register page |
+
+| Status | Password Reset Page |
+|:------:| ------------ |
+| &check; | Filling out form incorrectly gives error message |
+| &check; | Clicking Reset My Password sends reset password email |
+
+| Status | Set Password Page |
+|:------:| ------------ |
+| &check; | Filling out form incorrectly gives error message |
+| &check; | Setting new password works as expected |
+
+| Status | Register Page |
+|:------:| ------------- |
+| &check; | Filling out form incorrectly gives error message |
+| &check; | Registering with valid credentials sends 'verify email' email |
+| &check; | User is informed that email verification is required |
+
+| Status | Confirm Email Page |
+|:------:| ------------- |
+| &check; | Clicking Confirm loads sign in page |
+| &check; | Signing in with registered account works as expected |
+
+| Status | Profile Page |
+|:------:| ------------ |
+| &check; | All fields are prepopulated with saved data (signed in) |
+| &check; | Filling out form incorrectly gives error message (signed in) |
+| &check; | Updating user info and clicking Update Profile saves new data (signed in) |
+| &check; | Clicking Change Password loads change password page (signed in) |
+| &check; | Clicking Delete account loads confirm delete modal (signed in) |
+| &check; | Confirming delete account deletes it completely and loads home page (signed in) |
+| &check; | Clicking a previous order loads specific order history page (signed in) |
+
+| Status | Change Password Page |
+|:------:| ------------ |
+| &check; | Filling out form incorrectly gives error message |
+| &check; | Changing password works as expected |
+
+| Status | Order History Page |
+|:------:| ------------ |
+| &check; | Clicking FAQ link loads FAQ page |
+| &check; | Clicking Customer Service link opens email to company CHANGE IF INQUIRY |
+| &check; | Clicking Back to profile loads profile page |
+
+| Status | Sign Out Page |
+|:------:| ------------- |
+| &check; | Clicking Sign Out signs user out and loads home page |
+
+| Status | Error Pages |
+|:------:| ----------- |
+| &check; | Loads 403 page when a user tries to access a restricted url |
+| &check; | Loads 404 page when a user gives an invalid url |
+| &check; | Loads 500 page when an error occurs |
+| &check; | Clicking Take me back to safety! loads home page |
+
+## User Story Testing
+
+### User Authentication / Accounts
+
+ - As a Site User I can register an account so that I can sign in / out when revisiting the site.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I can sign up for an account from the register page |
+    | &check; | I can sign in / sign out of my account with ease |
+
+ - As a Signed In User I can view and update my information so that I can make sure the correct info is stored on me.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I can view my current information stored on the site |
+    | &check; | I can update my info to make sure my shipping address etc. is correct |
+
+ - As a Signed In User I can delete my account so that no information is stored on me.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I can find the "delete account" button on the profile page |
+    | &check; | I am asked if I am sure before deleting my account |
+    | &check; | I get redirected to the home page after deleting my account |
+
+ - As a Signed In User I can view previous order information so that I can see the details and make sure the orders are correct.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I can view a list of all previous orders |
+    | &check; | I can view a specific order on a separate page |
+
+ - As a Signed In User I can save my info or have my information prefilled at checkout if it's already saved so that my saved info is used, and I don't have to fill it out.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | My saved info is prefilled at checkout |
+    | &check; | I can check a box to save new / update my info |
+    | &check; | My profile page is updated with the new info if I added / updated anything |
+
+ - As a Signed In User I can reset my password using my email so that I can gain access to my account if I forget my password.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I have an email tied to my account |
+    | &check; | I can click a "forgot password?" link on the sign up page |
+    | &check; | I receive an email with instructions on how to reset my password |
+
+### User Site Navigation
+
+- As a Site User I can easily find and view products available so that I can browse products I may want to buy.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I can easily find all products without issue |
+    | &check; | I can see a short summary of the product, like price, name, picture etc |
+
+- As a Site User I can click a product and view all info so that I can learn more about the product and see if I want to purchase it.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I can click on a product from the products list to see all info on a separate page |
+    | &check; | I can see all relevant info, like price, name, picture, description etc |
+
+- As a Site User I can search for products using keywords so that I can find a specific product I have in mind.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I can easily find a search bar on the site |
+    | &check; | I can use keywords such as product name, description etc. to find products |
+    | &check; | Only relevant results are shown after searching |
+
+- As a Site User I can add a filter to the products so that I can find specific products I am looking for.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I can easily find buttons / links to help me filter products |
+    | &check; | I only see relevant products to the filter I have selected |
+    | &check; | I can remove or alter the filter easily |
+
+- As a Site User I can sort products by name, price, category etc. so that I can find certain / similar products easier.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I can easily find a "sort" button / menu on the site |
+    | &check; | I can choose between relevant and helpful sorting methods |
+    | &check; | The products are sorted as expected when choosing a sort method |
+
+- As a Site User I can click on the cart so that I can view the products I have saved for purchase and my total cost.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I can easily find the cart icon in the upper right corner as expected |
+    | &check; | I can see all products in my cart on a separate page |
+    | &check; | I can see the product details of my saved items |
+    | &check; | I can see my subtotal and grand total for all products |
+
+- As a Site User I can read other users reviews on products so that I can gain understanding of a products customer satisfaction.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I can read reviews left by other users on a product detail page |
+
+### User Site Interaction
+
+- As a Site User I can add products to a cart so that I can save it and purchase more than one product at a time.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I can easily find an "add to cart" button on the product detail page |
+    | &check; | When I click it, my cart is updated to reflect my saved products |
+
+- As a Site User I can see the number of items OR the total cost by the cart icon in the upper right corner when editing my cart so that I know how many items I have added / how much my total is.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I can see number of items / my total cost by the cart icon |
+    | &check; | When I add / remove a product, the cart icon reflects the new total items / cost |
+
+- As a Site User I can edit my saved items on the cart page so that I can change my cart content as I wish.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I can easily find an edit option on each product in my cart |
+    | &check; | I can increment / decrement product quantity straight from the cart page |
+    | &check; | The new total is reflected in my cart as I update product quantities |
+
+- As a Site User I can delete saved items on the cart page so that I can change my cart content as I wish.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I can easily find a delete option on each product in my cart |
+    | &check; | I can click delete and the item is removed from my cart |
+    | &check; | The new total is reflected in my cart as I delete product(s) |
+
+- As a Site User I can expect confirmation on my interactions with the site so that my actions get confirmed.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I get confirmation when I for example create an account or add a product to my cart |
+    | &check; | The messages are relevant and non intrusive on the UX |
+
+- As a Site User I can rate / review products I have purchased so that I can share my product experience with other customers.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I can easily find an option to rate / review a product I have bought |
+    | &check; | When I leave a review, I can immediately see it reflected on the site |
+
+- As a site user I can delete my own review so that I can decide which of my own content is visible, and I can write a new review if I wish.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I can easily find a 'delete' link by my review |
+    | &check; | When I click it, I am asked if I am sure if I wish to delete the review, so I don't delete something by accident |
+    | &check; | When I delete my review, it is immediately removed from the site |
+
+### User Checkout
+
+- As a Site User I can view details of my order on the checkout page so that I can make sure everything is correct before placing my order.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I can see all products I am about to buy and their information |
+    | &check; | If I want to change my order I can easily go back to my cart OR delete / edit items from the checkout page |
+    | &check; | I can see the exact amount I will be billed when placing my order |
+
+- As a Site User I can checkout and pay for the products in my cart so that I can buy and receive my newly purchased products.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | From my cart, I can easily find a checkout button / link |
+    | &check; | When I click it, I am taken to a checkout page |
+    | &check; | I can fill in my delivery and billing info (or have it autofill if I am signed in and have it saved) |
+    | &check; | My order gets processed and I receive an order confirmation with all necessary info |
+
+- As a Site User I can have my order confirmed after a purchase so that I can be certain my payment was processed successfully.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | After making a successful purchase, I am taken to an order confirmation page |
+    | &check; | I can view my order with all relevant info |
+    | &check; | I will receive an order confirmation on my registered email address |
+
+### Site Admin
+
+- As a Site admin I can add products to the site so that I can control the selection of products being sold.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I can easily find an "add product" button / link |
+    | &check; | When I click it, I am taken to a page where I can fill in a form to add a product |
+    | &check; | When I add a product, I can immediately find it on the site along with customers |
+
+- As a Site admin I can edit products on the site so that I can make sure the products being sold are correctly represented.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | On the product detail page, I can easily find a link to edit products |
+    | &check; | When I click it, I am taken to a page where I can fill in a form to edit a product |
+    | &check; | When I edit a product, I can immediately see the changes to the product on the site along with customers |
+
+- As a Site admin I can delete products on the site so that I can control the selection of products being sold.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | On the product detail page, I can easily find a link to delete products |
+    | &check; | When I click it, I am asked if I am sure if I wish to delete the product, so I don't delete something by accident |
+    | &check; | When I delete a product, it is immediately removed from the site |
+
+- As a Site Admin I can manage reviews posted by customers so that I can make sure no objectionable content is present.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I can find all reviews present on the site on the Django Admin page |
+    | &check; | I can delete / edit reviews from there |
+    | &check; | I can see who wrote the review so I can decide if I need to warn or remove the account |
+
+## Automated Testing
+
+Using Django TestCase automated python testing was performed, which helped show the benefits of writing tests for code. For this project a Minimum Viable Product was prioritized, therefore the application was built before the tests were written. Due to time constraints not all code have been tested, but a large portion have been covered as evident by the coverage report below.
+
+The local sqlite3 database provided the test database used. To achieve best practices and the clearest test environment, the tests have been created in files named after the python file being tested, ie views.py tests live in test_views.py etc. The files are themself found in a 'tests' folder in each of the apps where testing was performed.
+
+When creating tests, the coverage package was used to generate an html report of the tests. From the report, the tested code can be reviewed and the exact lines of code not covered by written tests are marked. By utilizing this tool, a high coverage for the files tested was achieved.
+
+A total of 58 tests were written for the cart, checkout and products apps. A total coverage of 87% was achieved, while the tested apps all came close to 100% coverage. The result is presented below.
+
+<details>
+
+<summary>Django TestCase - Results</summary>
+
+![Django TestCase - Results](static/images/readme-images/testing/testcase.png)
+
+</details>
+
+<details>
+
+<summary>Django TestCase - Coverage Report</summary>
+
+![Django TestCase - Coverage Report](static/images/readme-images/testing/coverage-report.png)
+
+</details>
+
+<details>
+
+<summary>Django TestCase - HTML Report</summary>
+
+![Django TestCase - Coverage Report](static/images/readme-images/testing/html-report.png)
+
+</details>
+
+## Fixed Bugs
+
+
+
 ## Programs & Libraries
+
+
 
 # Deployment
 
