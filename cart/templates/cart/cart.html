@@ -86,7 +86,7 @@
                                                     {% endif %}
                                                 </div>
                                                 <div class="col-6 text-end">
-                                                    <a class="text-white" href="{% url 'delete_from_cart' item.item_id %}">
+                                                    <a class="text-white" href="{% url 'delete_from_cart' item.item_id %}" aria-label="Delete from cart">
                                                         <i class="fa-solid fa-trash-can"></i>
                                                     </a>
                                                 </div>
@@ -165,9 +165,9 @@
         </div>
         <!-- Back to top button -->
         <div>
-            <a class="btt-link btn btn-green">
+            <span class="btt-link btn btn-green">
                 <i class="fa-solid fa-arrow-up mt-2"></i>
-            </a>
+            </span>
         </div>
     </main>
 

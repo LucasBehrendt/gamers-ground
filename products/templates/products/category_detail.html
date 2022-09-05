@@ -113,11 +113,11 @@
 
                                             <!-- Modal for deleting products -->
                                             <div class="modal fade" id="modal-{{ product.slug }}" tabindex="-1"
-                                                aria-labelledby="delete-product-modal" aria-hidden="true">
+                                                aria-labelledby="delete-{{ product.slug }}-modal" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content bg-grey border-black">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="delete-product-modal">Delete Product</h5>
+                                                            <h5 class="modal-title" id="delete-{{ product.slug }}-modal">Delete Product {{ product.name }}</h5>
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
@@ -147,9 +147,9 @@
         </div>
         <!-- Back to top button -->
         <div>
-            <a class="btt-link btn btn-green">
+            <span class="btt-link btn btn-green">
                 <i class="fa-solid fa-arrow-up mt-2"></i>
-            </a>
+            </span>
         </div>
     </main>
 
