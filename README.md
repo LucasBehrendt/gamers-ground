@@ -1939,6 +1939,118 @@ Using Chrome DevTools, the site was optimized for all screen widths down to abou
 
 </details>
 
+## Lighthouse Testing
+
+The Lighthouse tool in Chrome DevTools was used to test the sites performance, accessibility, best practices and SEO. The website performed well in the tests, indicating a well-structured, highly accessible site.
+
+Some performance enhancements could be made, mainly in serving images in a next-gen format instead of png or jpeg. This will be kept in mind for future updates, but since the performance still ranks relatively high, no immediate fix is deemed necessary. 
+
+The lighthouse tool also flagged the text-muted elements as having insufficient contrast, along with some foreground elements being too similar to the background colour. These elements are meant to have lower contrast and fits the layout nicely, so this was deliberately overlooked.
+
+<details>
+
+<summary>Lighthouse - Home Page</summary>
+
+![Lighthouse - Home Page](static/images/readme-images/testing/lighthouse-home.png)
+
+</details>
+
+<details>
+
+<summary>Lighthouse - FAQ Page</summary>
+
+![Lighthouse - FAQ Page](static/images/readme-images/testing/lighthouse-faq.png)
+
+</details>
+
+<details>
+
+<summary>Lighthouse - Terms and Conditions Page</summary>
+
+![Lighthouse - Terms and Conditions Page](static/images/readme-images/testing/lighthouse-tac.png)
+
+</details>
+
+<details>
+
+<summary>Lighthouse - Privacy Policy Page</summary>
+
+![Lighthouse - Privacy Policy Page](static/images/readme-images/testing/lighthouse-privacy-policy.png)
+
+</details>
+
+<details>
+
+<summary>Lighthouse - Products Page</summary>
+
+![Lighthouse - Products Page](static/images/readme-images/testing/lighthouse-products.png)
+
+</details>
+
+<details>
+
+<summary>Lighthouse - Category Page</summary>
+
+![Lighthouse - Category Page](static/images/readme-images/testing/lighthouse-category.png)
+
+</details>
+
+<details>
+
+<summary>Lighthouse - Product Detail Page</summary>
+
+![Lighthouse - Product Detail Page](static/images/readme-images/testing/lighthouse-product-detail.png)
+
+</details>
+
+<details>
+
+<summary>Lighthouse - Add Product Page</summary>
+
+![Lighthouse - Add Product Page](static/images/readme-images/testing/lighthouse-add-product.png)
+
+</details>
+
+<details>
+
+<summary>Lighthouse - Update Product Page</summary>
+
+![Lighthouse - Update Product Page](static/images/readme-images/testing/lighthouse-update-product.png)
+
+</details>
+
+<details>
+
+<summary>Lighthouse - Cart Page</summary>
+
+![Lighthouse - Cart Page](static/images/readme-images/testing/lighthouse-cart.png)
+
+</details>
+
+<details>
+
+<summary>Lighthouse - Checkout Page</summary>
+
+![Lighthouse - Checkout Page](static/images/readme-images/testing/lighthouse-checkout.png)
+
+</details>
+
+<details>
+
+<summary>Lighthouse - Checkout Success Page</summary>
+
+![Lighthouse - Checkout Success Page](static/images/readme-images/testing/lighthouse-checkout-success.png)
+
+</details>
+
+<details>
+
+<summary>Lighthouse - Profile Page</summary>
+
+![Lighthouse - Profile Page](static/images/readme-images/testing/lighthouse-profile.png)
+
+</details>
+
 ## Manual Testing
 
 To make sure all interactions and forms / links work as intended, extensive manual testing was performed.
