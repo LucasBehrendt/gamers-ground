@@ -1931,6 +1931,14 @@ To test the responsiveness of the website multiple devices were used to browse a
 
 Using Chrome DevTools, the site was optimized for all screen widths down to about 270px.
 
+<details>
+
+<summary>Responsive Testing</summary>
+
+![Responsive Testing](static/images/readme-images/testing/responsive-testing.png)
+
+</details>
+
 ## Manual Testing
 
 To make sure all interactions and forms / links work as intended, extensive manual testing was performed.
@@ -2337,6 +2345,34 @@ A total of 58 tests were written for the cart, checkout and products apps. A tot
 </details>
 
 ## Fixed Bugs
+
+When querying products model with user inputs, such as a search term & sorting options, the method responsible for handling it was written as a get_queryset on a class based view. This method can't return multiple queries, which led to not being able to sort / search products properly.
+
+- **Solution:** By writing the logic for querying the database in the method get_context_data instead, the queries could be handled and passed to the front end as context to be used in the template.
+
+When a user would update an items quantity from the cart page, if more than one item was added to the cart, the application would crash. This was caused by an issue with the javascript code handling the increment / decrement buttons, where several products meant there would be several buttons available in the template, and the javascript only targeting one button.
+
+- **Solution:** By adding a foreach function to the logic handling the buttons, the issue was solved, and proper handling would be executed for all buttons on the cart page.
+
+If a site admin removed an item through the back or front end that was currently in the cart, the context processor in the cart app would try to get an object that no longer exists, and throw a 404 error. Since the context processor is global, this meant that the entire project would would crash, and ALL pages would throw a 404 error.
+
+- **Solution:** Instead of using the get_object_or_404 method, products added to the cart is retrieved by filtering for products with the correct id and grabbing the first (and only) product in the queryset. An if statement checks if the product exists, then continues with the logic.
+
+When placing an order at checkout, if the customer is not signed in, an issue occured and the payment was not processed. This was due to the save info box not existing in the dom, and the javascript code handling the checkout tried to set a variable to the element.checked, meaning a boolean value. Since it didn't exist, the value was set to null, which broke the payment process.
+
+- **Solution:** The element itself was instead first assigned to a variable, and that variable is then evaluated with a ternary operator if it is truthy or falsy. If truthy, it is set to the value of the checkbox, true for checked and false for unchecked. If the element doesn't exist, and the variable is null, it is instead set to false.
+
+When a signed in user visited the checkout page and his account didn't have a store first and / or last name, an error would occur as the checkout form is prepopulated with the users info. The reason for this was that the first and last names were retrieved by the get_full_name method on the django User model, and then splitted at the space. If the value didn't exist, an index error would occur since the value couldn't be split.
+
+- **Solution:** The method get_short_name on the User model was used to retrieve the first name. Since there is no corresponding method for last name, a simple custom one was added the the profile model which returns the users last name. By then prepopulating the fields one at a time, no issues remain, and users can choose to have only first or last name, or have no name saved at all.
+
+## Known/Unfixed Bugs
+
+As of writing this readme, no known bugs remain unfixed. It is possible, however, that unknown / not found bugs are left within the project. If found in the future, these will be documented and fixes will be implemented.
+
+# Technologies Used
+
+## Languages
 
 
 
