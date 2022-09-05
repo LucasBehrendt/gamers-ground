@@ -2374,11 +2374,65 @@ As of writing this readme, no known bugs remain unfixed. It is possible, however
 
 ## Languages
 
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
 
+- [CSS3](https://en.wikipedia.org/wiki/CSS)
+
+- [JavaScript](https://www.javascript.com/)
+
+- [Python](https://www.python.org/)
+
+## Python Packages
+
+All packages used in the application can be found in the [requirements.txt](https://github.com/LucasBehrendt/gamers-ground/blob/main/requirements.txt) file.
 
 ## Programs & Libraries
 
+- [Amazon Web Sevices (AWS)](https://aws.amazon.com/) - Used to host all static and media files.
 
+- [Balsamiq](https://balsamiq.com/) - The wireframes used for the site was created with Balsamiq.
+
+- [Bootstrap](https://getbootstrap.com/) -  A CSS framework used for styling and making the site responsive.
+
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/) - A powerful tool used throughout the creation of the website.
+
+- [Django](https://www.djangoproject.com/) - A python-based batteries-included framework used to create the site.
+
+- [Favicon](https://favicon.io/) - The favicon visible in the websites tab was generated with this site.
+
+- [Font Awesome](https://fontawesome.com/) - The icons in the site were provided by Font Awesome.
+
+- [FreeLogoDesign](https://www.freelogodesign.org/) - Used to create the project logo in the header.
+
+- [Git](https://git-scm.com/) - Git was used through the GitPod terminal as version control to commit and push to GitHub.
+
+- [GitHub](https://github.com/) - All code for the site is stored on GitHub after being pushed from Git.
+
+- [Gitpod](https://www.gitpod.io/) - Code editor used for building the project.
+
+- [Google Fonts](https://fonts.google.com/) - The font used on the site was imported from Google Fonts.
+
+- [Heroku](https://www.heroku.com) - Used for hosting the site.
+
+- [JSHint](https://jshint.com/) - Validation of JavaScript code was done with JSHint.
+
+- [LucidChart](https://www.lucidchart.com/pages/) - The flowchart & ERD created for the site was made with LucidChart.
+
+- [PEP8 Online Validator](http://pep8online.com/) - Validation of Python code was done with PEP8 Online.
+
+- [Privacy Policy Generator](https://www.privacypolicygenerator.info/) - Used to generate the page for the projects privacy policy.
+
+- [PostgreSQL](https://www.postgresql.org/) - Used through Heroku as production database for the application.
+
+- [Stripe](https://stripe.com/) - Provided the integrated payment system.
+
+- [Techsini](http://techsini.com/multi-mockup/index.php) - The responsive image at the top of the README came from Techsini.
+
+- [Terms & Conditions Generator](https://www.termsandconditionsgenerator.com/) - Used to generate the page for the projects terms and conditions.
+
+- [W3C](https://www.w3.org/) - Validation of HTML and CSS code was done with W3C.
+
+- [Wordtracker](https://www.wordtracker.com/) - Used for researching keywords to improve SEO.
 
 # Deployment
 
