@@ -1,6 +1,8 @@
 from django.shortcuts import get_object_or_404
+from django.core.mail import send_mail
 from django.views import generic
 from django.contrib.messages.views import SuccessMessageMixin
+from django.conf import settings
 from profiles.models import UserProfile
 from .models import Inquiry
 from .forms import InquiryForm
@@ -38,6 +40,22 @@ class SendInquiry(SuccessMessageMixin, generic.CreateView):
         copy was sent to you. Thank you!'
     )
     success_url = '/'
+
+    def form_valid(self, form):
+        fname = form.instance.first_name
+        lname = form.instance.last_name
+        customer_email = form.instance.email_address
+        phone_number = form.instance.phone_number
+        subject = f'New inquiry from: {customer_email}'
+        inquiry = form.instance.inquiry
+        body = f'{fname} {lname}, Phone: {phone_number} wrote:\n{inquiry}'
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [settings.DEFAULT_FROM_EMAIL, customer_email]
+        )
+        return super().form_valid(form)
 
     def get_initial(self):
         # If user is signed in, get profile info & set as initial values
