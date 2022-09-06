@@ -2823,7 +2823,247 @@ If you wish to deploy to Heroku using the CLI, follow these steps instead:
     $ git push heroku main
     ```
 
+## 9. Set up AWS to serve static files, S3 Bucket setup
 
+- Sign in or create an account if you don't have one on [Amazon Web Services](https://aws.amazon.com/).
+
+- Navigate to the S3 dashboard from the 'Services' menu in the top left corner, located under submenu 'Storage' at the bottom.
+
+- Click 'Create bucket' to get started setting up your bucket for static files.
+
+- Name the bucket, preferably the same as your project and choose your nearest timezone.
+
+- Under 'Object Ownership', select 'ACLs enabled', and uncheck 'Block all public access' in the next section. 
+
+- To proceed, you must acknowledge that you have turned off blocking public access by checking a confirmation box. Then click 'Create bucket'.
+
+- Once created, click the bucket and go to the 'properties' tab. Scroll down to 'Static website hosting' and click 'Edit'.
+
+- Change the static website hosting to 'enable' and fill out the two document fields with a default value of 'index.html' and 'error.html', and click 'Save changes'.
+
+- Go to the 'Permissions' tab, scroll down to 'Cross-origin resource sharing (CORS)' and click 'Edit'.
+
+- Paste in the following snippet and click 'Save changes'.
+    ```
+    [
+        {
+            "AllowedHeaders": [
+                "Authorization"
+            ],
+            "AllowedMethods": [
+                "GET"
+            ],
+            "AllowedOrigins": [
+                "*"
+            ],
+            "ExposeHeaders": []
+        }
+    ]
+    ```
+
+- Scroll up and find 'Bucket policy', and click 'Edit'. Click the 'Policy generator', which opens in a new tab.
+
+- In step 1, select 'S3 Bucket Policy', in step 2 type an * in the 'Principal' field, select 'GetObject' from the 'Actions' dropdown, and paste in the 'Amazon Resource Name' by copying the Bucket ARN near the top of the previos page 'Edit bucket policy', where you clicked the 'Policy generator' link. As you will use your ARN later in the setup, it would be a good idea to write it down somewhere easily reachable.
+
+- Click 'Add Statement', which will add it in a line below the button. Lastly click 'Generate Policy' to receive a code snippet to paste on the previos page 'Edit bucket policy'. It should resemble the following snippet. Before saving, add '/*' to the end of your Bucket ARN value in the 'Resource' key, like in the snippet below. Click 'Save changes'.
+    ```
+    {
+        "Id": "Policy1662421416336",
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "Stmt1662421354455",
+                "Action": [
+                    "s3:GetObject"
+                ],
+                "Effect": "Allow",
+                "Resource": "arn:aws:s3:::yourbucketname/*",
+                "Principal": "*"
+            }
+        ]
+    }
+    ```
+    - **Note:** Do not copy this code exactly, you need to generate a specific snippet for your bucket!
+
+- Back on the 'Permissions' tab, scroll down to 'Access control list (ACL)' and click 'Edit.
+
+- Check the box 'List' by the 'Everyone (public access)' option, acknowledge your choice in the confirmation box and click 'Save changes'. This concludes Bucket setup.
+
+## 10. Set up AWS IAM User setup
+
+- Navigate to the IAM dashboard from the 'Services' menu in the top left corner, located under submenu 'Security, Identity, & Compliance' close to the bottom.
+
+- In the left side bar, click 'User Groups', followed by 'Create group'.
+
+- Name the group, preferably your project name prefixed with 'manage-', ie 'manage-project-name'. Scoll down and click 'Create group'.
+
+- In the left side bar, click 'Policies', then 'Create policy'.
+
+- Click the 'JSON' tab, and click 'Import managed policy'. Find the 'AmazonS3FullAccess' policy and select it. Then click 'Import'.
+
+- The code snippet imported must be edited slightly, so for the 'Resource' key, create a list and paste in your saved Bucket ARN from when setting up the bucket. If you didn't save it, simply go to your bucket in a new tab and copy it. Create a duplicate of the ARN in the 'Resource' list, so that you have to identical values in your list. Add a '/*' to the second value, so the snippet resembles the code below.
+    ```
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Allow",
+                "Action": [
+                    "s3:*",
+                    "s3-object-lambda:*"
+                ],
+                "Resource": [
+                    "arn:aws:s3:::yourbucketname",
+                    "arn:aws:s3:::yourbucketname/*"
+                ]
+            }
+        ]
+    }
+    ```
+- Click the 'Next: Tags' and 'Next: Review' buttons, then give the policy a name, preferably 'project-name-policy', and a short description. Click 'Create Policy'.
+
+- Go back to your previously created user group under 'User groups' in the left side bar, and click the 'Permissions' tab.
+
+- Click 'Add permissions' and from the dropdown, click 'Attach policies'. Find the policy you just created and select it. Click 'Add permissions'.
+
+- In the left side bar, click 'Users', then 'Add users'.
+
+- Choose a name, preferably 'project-name-staticfiles-user', check the 'Access key - Programmatic access' box and click 'Next: Permissions'.
+
+- Add the user to your group with the attached policy you just created, and click 'Next: Tags', 'Next: Review' and 'Create user'.
+
+- The next page has a link to download a CSV file. Click it and save the file for later. You will not be able to gain access to this file again, and it contains important credentials, so make sure you save it.
+
+## 11. Connect AWS S3 to your project
+
+- Install the Boto3 package:
+    ```
+    $ pip install boto3
+    ```
+
+- Install Django Storages:
+    ```
+    $ pip install django-storages
+    ```
+
+- Freeze the installed packages to your requirements.txt file:
+    ```
+    $ pip freeze --local > requirements.txt
+    ```
+
+- Add 'storages' to your INSTALLED_APPS in settings.py:
+    ```
+    INSTALLED_APPS = [
+        ...,
+        'storages',
+    ]
+    ```
+
+- Create an if statement at the bottom of your settings.py file, and add the following:
+    ```
+    if 'USE_AWS' in os.environ:
+        # Bucket Configuration
+        AWS_STORAGE_BUCKET_NAME = 'yourbucketname'
+        AWS_S3_REGION_NAME = 'yourbucketregion'
+        AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+        AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+    ```
+
+- Go to your Heroku Config Variables for your project, and add the above 'USE_AWS' with a value of 'True' to use AWS on Heroku.
+
+- Next, open the CSV file you saved earlier for your staticfiles user. There are two keys here you'll need.
+
+- Grab the 'Access key ID' value and assign to an environment variable called 'AWS_ACCESS_KEY_ID' (same name as in the if statement from settings.py).
+
+- The second one you'll need is the 'Secret access key'. Assign it to an environment variable called 'AWS_SECRET_ACCESS_KEY' (again, same name as in the if statement).
+
+- Remove the 'DISABLE_COLLECTSTATIC' variable to allow Heroku to collect static files automatically and upload them to your AWS S3 bucket.
+
+- Next, create a file in the root directory of your project called 'custom_storages.py', where django will be told to use your custom settings for static and media files.
+
+- Add the following imports at the top:
+    ```
+    from django.conf import settings
+    from storages.backends.s3boto3 import S3Boto3Storage
+    ```
+
+- Then, create your custom storage classes to override the default values:
+    ```
+    class StaticStorage(S3Boto3Storage):
+        location = settings.STATICFILES_LOCATION
+
+
+    class MediaStorage(S3Boto3Storage):
+        location = settings.MEDIAFILES_LOCATION
+    ```
+    - **Note:** The 'STATICFILES_LOCATION' & 'MEDIAFILES_LOCATION' variables above will be created shortly.
+
+- Back in settings.py, inside the 'USE_AWS' if statement, below the bucket config, add:
+    ```
+    # Static and media files
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+    ```
+
+- Next, still inside the if statement, override the static and media files urls with:
+    ```
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+    ```
+
+- Your settings configuration is now complete, so add, commit and push your changes:
+    ```
+    $ git add .
+    ```
+    ```
+    $ git commit -m "AWS deployment commit"
+    ```
+    ```
+    $ git push
+    ```
+    - **Note:** If you don't have automatic deploys setup to heroku, push to heroku as well:
+        ```
+        $ git push heroku main
+        ```
+
+    - An optional step to prolong caching of static files by browsers visiting your website can be added to the 'USE_AWS' if statement:
+        ```
+        # Cache control
+        AWS_S3_OBJECT_PARAMETERS = {
+            'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+            'CacheControl': 'max-age=94608000',
+        }
+        ```
+
+- Next, head back to your bucket and you'll see a 'static' folder with all your static files in it. To add media files, click 'Create folder', name it 'media' and click 'Save'.
+
+- You should now have two folders, one called 'static' and one called 'media'. Click your media folder and upload any media files you might have by clicking 'Upload', 'Add files' and selecting the media files you wish to uplod.
+
+- When you've added all the files you wish, click 'Permissions' and in the dropdown, check the 'Grant public-read access' and acknowledge your choice in the confirmation box and click 'Upload' at the bottom.
+
+- Your static and media files are now linked to your bucket, so that when new files are added, they are automatically uploaded to your bucket.
+
+## 12. Set up Stripe Integrated Payments
+
+- Sign in or create an account if you don't have one at [Stripe](https://stripe.com/).
+
+- On your dashboard, click 'Developer' in the upper right corner. In the left side bar, click 'API-keys'.
+
+- Copy your 'Publishable key' token and create an environment variable called 'STRIPE_PUBLISHABLE_KEY' with your token, both locally in your env.py file, and on Heroku under Config Vars.
+
+- Repeat the process for your 'Secret key' token and assign it to a variable 'STRIPE_SECRET_KEY' both locally and on Heroku.
+    ```
+    os.environ['STRIPE_PUBLISHABLE_KEY'] = 'yourpublishablekey'
+    os.environ['STRIPE_SECRET_KEY'] = 'yoursecretkey'
+    ```
+
+- The remaining steps for integrating stripe can be found in their docs [here](https://stripe.com/docs/payments/quickstart).
+
+The live link to this project can be found [here](https://gamers-ground.herokuapp.com/).
 
 # Credits
 ## Code
