@@ -289,7 +289,7 @@ The codebase includes the following apps and folders:
 
 - Templates folder, holds base, error, allauth and toasts templates.
 
-ADD MORE??
+ADD MORE?? FIXBEFORESUB
 
 ## Models
 
@@ -1922,7 +1922,6 @@ All Python code was checked with the [PEP8 Online Validator](http://pep8online.c
 
 </details>
 
-
 ## Responsive Testing
 
 You can open DevTools with keyboard shortcuts (CMD+Opt+I for Mac OS or Ctrl+Shift+I for Linux and Windows), through the menu bar in the top right corner and go to "More Tools" > "Developer Tools." or by right-clicking on any web page and select "Inspect". To test responsiveness, click on the "device" icon on the left side, above the source code window or with the keyboard shortcut CMD+Shift+M for Mac OS or Ctrl+Shift+M for Linux and Windows. Under "Dimensions" you can choose between different devices to emulate, or you can drag the handles to resize the window to your preferred screen width by choosing "Responsive".
@@ -2140,7 +2139,7 @@ To make sure all interactions and forms / links work as intended, extensive manu
 | Status | Checkout Success Page |
 |:------:| ------------ |
 | &check; | Clicking FAQ link loads FAQ page |
-| &check; | Clicking Customer Service link opens email to company CHANGE IF INQUIRY |
+| &check; | Clicking Customer Service link opens email to company CHANGE IF INQUIRY | FIXBEFORESUB
 | &check; | Clicking Back to products loads products page |
 
 | Status | Sign In Page |
@@ -2189,7 +2188,7 @@ To make sure all interactions and forms / links work as intended, extensive manu
 | Status | Order History Page |
 |:------:| ------------ |
 | &check; | Clicking FAQ link loads FAQ page |
-| &check; | Clicking Customer Service link opens email to company CHANGE IF INQUIRY |
+| &check; | Clicking Customer Service link opens email to company CHANGE IF INQUIRY | FIXBEFORESUB
 | &check; | Clicking Back to profile loads profile page |
 
 | Status | Sign Out Page |
@@ -2616,6 +2615,7 @@ The site was deployed using Heroku and Amazon Web Services. The steps for the de
     ```
     $ pip install -r requirements.txt
     ```
+
 - Otherwise install the following packages/libraries:
     ```
     $ pip install django3.2
@@ -2629,6 +2629,7 @@ The site was deployed using Heroku and Amazon Web Services. The steps for the de
     ```
     $ pip install dj_database_url 
     ```
+
 - Freeze the installed packages to a requirements.txt file:
     ```
     $ pip freeze --local > requirements.txt
@@ -2640,10 +2641,12 @@ The site was deployed using Heroku and Amazon Web Services. The steps for the de
     ```
     $ django-admin startproject project_name .
     ```
+
 - Create an app within the project:
     ```
     $ python manage.py startapp app_name
     ```
+
 - Add the new app 'app_name' to the bottom of INSTALLED_APPS in your projects settings.py file.
     ```
     INSTALLED_APPS = [
@@ -2656,6 +2659,7 @@ The site was deployed using Heroku and Amazon Web Services. The steps for the de
     ```
     $ python manage.py migrate
     ```
+
 - Test that the project works on your localhost:
     ```
     $ python manage.py runserver
@@ -2690,7 +2694,7 @@ The site was deployed using Heroku and Amazon Web Services. The steps for the de
     ```
     os.environ['DEVELOPMENT'] = 'True' 
     ``` 
-    - Make sure to NOT set this variable in you Heroku Config Vars!
+    - **Note:** Make sure to NOT set this variable in you Heroku Config Vars!
 
 ## 7. Update settings.py file
 
@@ -2920,6 +2924,7 @@ If you wish to deploy to Heroku using the CLI, follow these steps instead:
         ]
     }
     ```
+
 - Click the 'Next: Tags' and 'Next: Review' buttons, then give the policy a name, preferably 'project-name-policy', and a short description. Click 'Create Policy'.
 
 - Go back to your previously created user group under 'User groups' in the left side bar, and click the 'Permissions' tab.
@@ -3066,10 +3071,55 @@ If you wish to deploy to Heroku using the CLI, follow these steps instead:
 The live link to this project can be found [here](https://gamers-ground.herokuapp.com/).
 
 # Credits
+
 ## Code
+
+- [This Stack Overflow post](https://stackoverflow.com/questions/27832076/) helped with figuring out how to handle multiple forms in one post request.
+
+- [This article](https://www.geeksforgeeks.org/python-extending-and-customizing-django-allauth/) gave an idea of how to customize the Django Allauth signup form.
+
+- [Hiding the scrollbar](https://blog.hubspot.com/website/hide-scrollbar-css) for the reviews section if there is many reviews was achieved with the help of this source.
+
+- [Quantize method](https://docs.python.org/3/library/decimal.html) was used to round the delivery cost.
+
+- [The Django documentation](https://docs.djangoproject.com/en/3.2/) was used throughout the development process for help with a wide range of questions.
+
+- [The Bootstrap documentation](https://getbootstrap.com/docs/5.1/getting-started/introduction/) was also a big help when creating the front end with the Bootstrap framework.
+
+- Code Institute Tutor Support helped with solving some issues, including FIXBEFORESUB
+
+- The Code Institute Boutique Ado walkthrough project was of great help and some snippets have been taken from it. They are all credited in the code.
+
 ## Content
+
+- [Google Fonts](https://fonts.google.com/) provided the Rubik font used for the site.
+
+- [Terms & conditions Generator](https://www.termsandconditionsgenerator.com/) supplied the Terms and Conditions page content.
+
+- [Privacy Policy Generator](https://www.privacypolicygenerator.info/) provided the Privacy Policy page content.
+
+- Descriptions for the products were mostly taken from [Media Markt](https://www.mediamarkt.se/) and translated into english.
+
+- All other text content was written by the developer.
+
 ## Media
+
+- The logo image was generated with [FreeLogoDesign](https://www.freelogodesign.org/).
+
+- Carousel images on the home page came from [Razer](https://www.razer.com/technology), [Steelseries](https://www.steelseries.com/gaming-headsets/arctis-9) and [Logitech](https://blog.logitech.com/2019/08/15/g915-g815-gaming-keyboard/).
+
+- [Pixabay](https://pixabay.com/) provided several images, all credited in the code.
+
+- [Unsplash](https://unsplash.com/) also provided multiple images credited in the code.
+
+- All product images were taken from [Media Markt](https://www.mediamarkt.se/).
+
+**Note:** This project is only for educational purposes, so the images and content used have been used without explicit consent. Since the project only serves as a demo project, this falls under the Fair Use exemption of the Copyright law, so it should not pose any issues.
+
 ## Acknowledgements
 
+- My mentor Brian for some great feedback along the way, and some good ideas on how to make the project better.
 
+- Code Institutes Tutor Support, for always being helpful and professional.
 
+[Back to top](#gamers-ground)
