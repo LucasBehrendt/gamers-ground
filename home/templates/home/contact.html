@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <div class="row text-uppercase text-center mt-5">
+                <div class="col">
+                    <h2>Contact us</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="inquiry-col col-md-6 col-12 mx-auto mt-5">
+                    <p class="fw-6">
+                        Thank you for visiting Gamers Ground.
+                        If you have any questions, feel free to contact us!
+                    </p>
+                    <div class="row mt-4">
+                        <div class="col-4">
+                            <p>Location:</p>
+                        </div>
+                        <div class="col-8 text-md-start text-end">
+                            <p class="mb-0">Gamers Ground</p>
+                            <p class="mb-0">Gaming Street 1</p>
+                            <p class="mb-0">1337 Malmo</p>
+                            <p>Sweden</p>
+                        </div>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col-4">
+                            <p>Phone:</p>
+                        </div>
+                        <div class="col-8 text-md-start text-end">
+                            <p>+46 123 456 789</p>
+                        </div>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col-4">
+                            <p>Email:</p>
+                        </div>
+                        <div class="col-8 text-md-start text-end">
+                            <p class="text-break">gamers.ground.pp5@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            <p>Visit our Facebook page:</p>
+                        </div>
+                        <div class="col-4 text-md-start text-end">
+                            <p>
+                                <a href="https://www.facebook.com/Gamers-Ground-111472718360772" target="_blank"
+                                    rel="noopener" aria-label="Visit Facebook (opens in a new tab)">
+                                    <i class="fa-brands fa-facebook-square text-white fs-3"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="inquiry-col col-md-6 col-12 mx-auto my-5">
+                    <form id="" method="POST" action="{% url 'contact' %}">
+                        {% csrf_token %}
+                        <fieldset>
+                            <legend class="fs-5">Send us an inquiry</legend>
+                            <div class="mb-4">
+                                {{ form.first_name }}
+                            </div>
+                            <div class="mb-4">
+                                {{ form.last_name }}
+                            </div>
+                            <div class="mb-4">
+                                {{ form.email_address }}
+                            </div>
+                            <div class="mb-4">
+                                {{ form.phone_number }}
+                            </div>
+                            <div class="mb-4">
+                                {{ form.inquiry }}
+                            </div>
+                        </fieldset>
+                        <div>
+                            <button type="submit" class="btn btn-green text-uppercase mt-2">
+                                Send
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
