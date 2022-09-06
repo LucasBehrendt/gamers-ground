@@ -2548,6 +2548,283 @@ All packages used in the application can be found in the [requirements.txt](http
 
 # Deployment
 
+The site was deployed using Heroku and Amazon Web Services. The steps for the deployment process are:
+
+## 1. Create a repository in GitHub and clone to a local machine
+
+- If you are using the same template as for this project, it can be found [here](https://github.com/Code-Institute-Org/gitpod-full-template). Click 'Use this template' and create your own repository.
+
+- If you wish to clone this project, you must first fork it from [here](https://github.com/LucasBehrendt/gamers-ground).
+
+- In the upper right corner, click fork and create a fork of the project in a repository that you own.
+
+- If you are using a remote environment, such as Gitpod, you can now open the project in your environment.
+
+- If you're developing locally, clone it from your repository by follow the instructions below.
+
+- Navigate to the main page of the repository you wish to clone.
+
+- Above the list of files, click the 'code' button.
+
+- To clone the repository using HTTPS, under 'clone with HTTPS', copy the URL provided.
+
+- Open Git Bash.
+
+- Change the current working directory to the location where you want the cloned directory.
+
+- Type `git clone`, and then paste the URL you copied earlier.
+    ```
+    $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+    ```
+
+- Press Enter to create your local clone.
+    ```
+    $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+    > Cloning into `Clone-dir`...
+    > remote: Counting objects: 10, done.
+    > remote: Compressing objects: 100% (8/8), done.
+    > remove: Total 10 (delta 1), reused 10 (delta 1)
+    > Unpacking objects: 100% (10/10), done.
+    ```
+
+- For a more detailed explanation, see this [walkthrough](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
+
+## 2. Set up a virtual environment
+
+- **NOTE:** If you are using a remote environment, such as GitPod, you can skip these steps and go to chapter 3.
+
+- Open the project in your local code editor.
+
+- Install virtualenv:
+    ```
+    $ pip install virtualenv
+    ```
+
+- Create a virtual environment:
+    ```
+    $ virtualenv env_name
+    ```
+
+- Activate the virtual environment:
+    ```
+    $ source env_name/bin/activate
+    ```
+
+## 3. Install packages and libraries
+
+- If you are cloning this project, you can easily install all packages/libraries required:
+    ```
+    $ pip install -r requirements.txt
+    ```
+- Otherwise install the following packages/libraries:
+    ```
+    $ pip install django3.2
+    ```
+    ```
+    $ pip install gunicorn
+    ```
+    ```
+    $ pip install psycopg2
+    ```
+    ```
+    $ pip install dj_database_url 
+    ```
+- Freeze the installed packages to a requirements.txt file:
+    ```
+    $ pip freeze --local > requirements.txt
+    ```
+
+## 4. Create Django project
+
+- Create a new django project:
+    ```
+    $ django-admin startproject project_name .
+    ```
+- Create an app within the project:
+    ```
+    $ python manage.py startapp app_name
+    ```
+- Add the new app 'app_name' to the bottom of INSTALLED_APPS in your projects settings.py file.
+    ```
+    INSTALLED_APPS = [
+        ...,
+        'app_name',
+    ]
+    ```
+
+- Migrate changes:
+    ```
+    $ python manage.py migrate
+    ```
+- Test that the project works on your localhost:
+    ```
+    $ python manage.py runserver
+    ```
+
+## 5. Create an app on Heroku
+
+- Sign in or create an account if you don't have one on [Heroku](https://www.heroku.com/)
+
+- On your dashboard, click the 'New' button in the top right corner and select 'Create new app'.
+
+- Name the project and set the region to the relevant one, then click the 'Create app' button.
+
+- When the app has been created, go to the 'Resources' tab. Search for 'Heroku Postgres' and select 'Hobby Dev - Free' as plan, then click 'Submit Order Form'.
+
+## 6. Set up environment variables
+
+- In your projects root directory, create a file called env.py and add it to your .gitignore file to keep it from being tracked by version control.
+
+- Under the settings tab on your Heroku app, scroll down to 'Config Vars' and click on 'Reveal Config Vars'. Copy the 'DATABASE_URL' value.
+
+- In env.py, import os and set the following environment variable:
+    ```
+    os.environ["SECRET_KEY"] = "Make up your own randomSecretKey"
+    ```
+
+- In your Heroku Config Vars, add the key SECRET_KEY with your randomSecretKey value.
+
+- Set one more Heroku Config Var name DISABLE_COLLECTSTATIC with the value of 1. This is a temporary variable to be able to deploy to Heroku without any static files.
+
+- The last environment variable to set in env.py is to make sure DEBUG is set to True when running the server locally, but when deployed to Heroku it will be set to False:
+    ```
+    os.environ['DEVELOPMENT'] = 'True' 
+    ``` 
+    - Make sure to NOT set this variable in you Heroku Config Vars!
+
+## 7. Update settings.py file
+
+- Near the top of the settings.py file, below `from pathlib import Path` add the following imports:
+    ```
+    import os
+    import dj_database_url
+    if os.path.isfile('env.py'):
+        import env
+    ```
+
+- Set DEBUG to fetch 'DEVELOPMENT' in the environment (which is only set locally) so that, if running locally, the parsed value from your env.py file will set DEBUG to True. On Heroku, it will be set to False:
+    ```
+    DEBUG = 'DEVELOPMENT' in os.environ
+    ```
+
+- Replace the default SECRET_KEY with the key you created in your env.py file:
+    ```
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    ```
+
+- To connect to the Heroku PostgreSQL database, comment out the default value of the DATABASES variable and replace with:
+    ```
+    DATABASES = {
+        'default': dj_database_url.parse('Paste in Heroku DATABASE_URL value')
+    }
+    ```
+
+- Since the PostgreSQL database is now being used, migrate the changes again:
+    ```
+    $ python manage.py migrate
+    ```
+
+- Modify the database settings to use the default SQLite locally and the PostgreSQL database on heroku by replacing the other database snippets with the following:
+    ```
+    if 'DATABASE_URL' in os.environ:
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': BASE_DIR / 'db.sqlite3',
+            }
+        }
+    ```
+    - **Note:** Remember to temporarily connect to the PostgreSQL database and migrate when you have made changes on your database that you want to add to the deployed version.
+
+- Add both the Heroku host and your localhost to the ALLOWED_HOSTS list close to the top of the file:
+    ```
+    ALLOWED_HOSTS = ['project_name.herokuapp.com', 'localhost']
+    ```
+
+- Create the following file and folders in the root directory of your project:
+
+    - 'media' (folder)
+    - 'static' (folder)
+    - 'templates' (folder)
+    - 'Procfile' (file)
+
+- Within the Procfile, add the following line:
+    ```
+    web: gunicorn project_name.wsgi
+    ```
+
+- To have the correct path for templates, add the following to the 'DIRS' key in the TEMPLATES dict:
+    ```
+    TEMPLATES = [
+        {
+            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+            'DIRS': [
+                os.path.join(BASE_DIR, 'templates'),
+            ],
+            'APP_DIRS': True,
+            'OPTIONS': {
+                'context_processors': [
+                    'django.template.context_processors.debug',
+                    'django.template.context_processors.request',
+                    'django.contrib.auth.context_processors.auth',
+                    'django.contrib.messages.context_processors.messages',
+                ],
+            },
+        },
+    ]
+    ```
+
+- Make sure all files are saved, then commit and push to GitHub:
+    ```
+    $ git add .
+    ```
+    ```
+    $ git commit -m "Deployment commit"
+    ```
+    ```
+    $ git push
+    ```
+
+## 8. Deploy to Heroku
+
+- Navigate to the Deploy tab on Heroku and under Deployment method, connect to your GitHub account.
+
+- Directly below Deployment method there is a search bar to search for your repository. Connect the correct one to Heroku by clicking the Connect button.
+
+- Scroll down to Manual deploy and click Deploy Branch, making sure that the main branch is selected.
+
+- To enable automatic updates to the project, simply scroll up to Automatic deploys and click the Enable Automatic Deploys button.
+
+- Your project is now hosted on Heroku.
+
+If you wish to deploy to Heroku using the CLI, follow these steps instead:
+
+- Login to Heroku by entering your credentials:
+    ```
+    $ heroku login -i
+    ```
+
+- Find your app name from your account:
+    ```
+    $ heroku apps
+    ```
+
+- Add Heroku remote:
+    ```
+    $ heroku git:remote -a app_name
+    ```
+
+- Push to Heroku
+    ```
+    $ git push heroku main
+    ```
+
+
+
 # Credits
 ## Code
 ## Content
