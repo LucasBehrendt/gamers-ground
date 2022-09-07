@@ -104,6 +104,8 @@ The user stories were implemented in an agile approach when creating the applica
 
   - As a site user I can delete my own review so that I can decide which of my own content is visible, and I can write a new review if I wish.
 
+  - As a Site User I can contact Gamers Ground so that I can ask questions or give feedback. *
+
 - #### EPIC: User Checkout
 
   - As a Site User I can view details of my order on the checkout page so that I can make sure everything is correct before placing my order.
@@ -121,6 +123,10 @@ The user stories were implemented in an agile approach when creating the applica
   - As a Site admin I can delete products on the site so that I can control the selection of products being sold.
 
   - As a Site Admin I can manage reviews posted by customers so that I can make sure no objectionable content is present.
+
+  - As a Site Admin I can manage and respond to inquiries so that I can communicate with customers. *
+
+* Added late in the project since time permitted it, and a simple contact system was implemented.
 
 ## Scope
 
@@ -167,6 +173,16 @@ To help facilitate a logical flow of the application during the development proc
 <summary>Flowchart / Site Map</summary>
 
 ![Flowchart](static/images/readme-images/flowchart.png)
+
+</details>
+
+After adding the contact page the flowchart was updated to include it. The addition can be seen below.
+
+<details>
+
+<summary>Updated Flowchart</summary>
+
+![Flowchart Updated](static/images/readme-images/flowchart-updated.png)
 
 </details>
 
@@ -237,6 +253,20 @@ Profile Page<br>
 
 Add Product Page (site admins)<br>
 ![Mobile wireframe add product](static/images/readme-images/wireframes/Mobile-add-product.png)
+
+</details>
+
+Wireframes for the contact page implemented in the late stages of the development process were created just before building the web page itself. For that reason, they are presented separately below.
+
+<details>
+
+<summary>Contact Page wireframes</summary>
+
+Contact Page Desktop<br>
+![Desktop wireframe contact](static/images/readme-images/wireframes/Desktop-contact.png)
+
+Contact Page Mobile<br>
+![Mobile wireframe contact](static/images/readme-images/wireframes/Mobile-contact.png)
 
 </details>
 

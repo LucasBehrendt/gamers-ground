@@ -30,7 +30,9 @@ class FAQ(generic.TemplateView):
 
 class SendInquiry(SuccessMessageMixin, generic.CreateView):
     """
-    Renders the contact page with inquiry form
+    Renders the contact page with inquiry form.
+    Sends an email with the inquiry to the site admin
+    and a copy to the users email.
     """
     model = Inquiry
     template_name = 'home/contact.html'
@@ -48,7 +50,7 @@ class SendInquiry(SuccessMessageMixin, generic.CreateView):
         phone_number = form.instance.phone_number
         subject = f'New inquiry from: {customer_email}'
         inquiry = form.instance.inquiry
-        body = f'{fname} {lname}, Phone: {phone_number} wrote:\n{inquiry}'
+        body = f'{fname} {lname}, phone no {phone_number} wrote:\n{inquiry}'
         send_mail(
             subject,
             body,
