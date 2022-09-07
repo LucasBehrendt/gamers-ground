@@ -307,7 +307,7 @@ The codebase includes the following apps and folders:
 
 - Checkout app, handles the payment system and orders.
 
-- Home app, renders home page and customer service pages.
+- Home app, renders home page, contact page, and customer service pages.
 
 - Products app, handles creating, storing and rendering products.
 
@@ -315,11 +315,11 @@ The codebase includes the following apps and folders:
 
 - Review app, lets users leave a rating and review on products.
 
+- Media  folder, holds product images.
+
 - Static folder, holds static files and images.
 
 - Templates folder, holds base, error, allauth and toasts templates.
-
-ADD MORE?? FIXBEFORESUB
 
 ## Models
 
@@ -402,6 +402,28 @@ To get an idea of the relationships and fields required in the models, an ERD (E
 - A review text field allow users to write some thoughts on a product along with their rating.
 
 - The created_on field tells users when a specific review was posted.
+
+## Model Addition
+
+An Inquiry model was added late in the development process, as time permitted a simple contact system. The model was added to the ERD (Entity Relationship Diagram), which can be seen below.
+
+<details>
+
+<summary>Updated ERD</summary>
+
+![Updated ERD](static/images/readme-images/erd-updated.png)
+
+</details>
+
+### Inquiry Model
+
+- Users are required to fill out their first and last name, along with their email address.
+
+- A phone number can be submitted, although it is optional.
+
+- The inquiry text field lets users ask questions, and the created_on field is automatically set.
+
+- Users do not need to be authenticated, but if they are, their info will be prefilled.
 
 # Agile Methodology
 
@@ -669,7 +691,9 @@ The following section will provide an overview of the features included in Gamer
 
 ## Header
 
- - The header holds a company logo to the left, along with links to the home page and the store. To the right, navigation links for authentication interaction and a shopping cart can be found.
+ - The header holds a company logo to the left, along with links that originally were 'Home' and 'Store', but after adding the contact page were updated to 'Store' and 'Contact'.
+ 
+ - To the right, navigation links for authentication interaction and a shopping cart can be found.
 
  - If a site visitor registers for an account, the authentication link will change appearance to notify the user they are signed in. They will then have access to new links to either visit their profile page or sign out. Additionally, site admins will have a link to add a new product.
 
@@ -1443,6 +1467,32 @@ The following section will provide an overview of the features included in Gamer
 <summary>Terms and Conditions</summary>
 
 ![Terms and Conditions](static/images/readme-images/features/terms-and-conditions.png)
+
+</details>
+
+## Contact Page
+
+ - Added late in the development process as time permitted it, the contact page serves as information on how to get in touch with the company.
+
+ - The form allows users to send an inquiry to the company directly, and they will receive a copy on their submitted email.
+
+ - Users do not need to be authenticated, but if they are, their info will be prefilled.
+
+<details>
+
+<summary>Contact Page</summary>
+
+![Contact Page](static/images/readme-images/features/contact-page.png)
+
+</details>
+
+<details>
+
+<summary>Contact Page - Mobile</summary>
+
+![Contact Page - Mobile 1](static/images/readme-images/features/contact-page-mobile-1.png)
+
+![Contact Page - Mobile 2](static/images/readme-images/features/contact-page-mobile-2.png)
 
 </details>
 
