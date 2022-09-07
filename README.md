@@ -1638,6 +1638,14 @@ Some minor warnings related to redundant type attributes on script tags were als
 
 </details>
 
+<details>
+
+<summary>Contact Page</summary>
+
+![Contact Page](static/images/readme-images/testing/html-contact.png)
+
+</details>
+
 ### CSS Validation
 
 All CSS code was checked with the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). No errors or warnings were found.
@@ -1689,6 +1697,30 @@ All JavaScript code was checked with the [JSHint Code Quality Tool](https://jshi
 ### Python Validation
 
 All Python code was checked with the [PEP8 Online Validator](http://pep8online.com/). No errors or warnings were found.
+
+<details>
+
+<summary>Home App admin.py</summary>
+
+![Home App admin.py](static/images/readme-images/testing/pep8-home-admin.png)
+
+</details>
+
+<details>
+
+<summary>Home App forms.py</summary>
+
+![Home App forms.py](static/images/readme-images/testing/pep8-home-forms.png)
+
+</details>
+
+<details>
+
+<summary>Home App models.py</summary>
+
+![Home App models.py](static/images/readme-images/testing/pep8-home-models.png)
+
+</details>
 
 <details>
 
@@ -2130,6 +2162,14 @@ The lighthouse tool also flagged the text-muted elements as having insufficient 
 
 </details>
 
+<details>
+
+<summary>Lighthouse - Contact Page</summary>
+
+![Lighthouse - Contact Page](static/images/readme-images/testing/lighthouse-contact.png)
+
+</details>
+
 ## Manual Testing
 
 To make sure all interactions and forms / links work as intended, extensive manual testing was performed.
@@ -2137,8 +2177,8 @@ To make sure all interactions and forms / links work as intended, extensive manu
 | Status | Home Page / Header |
 |:------:| ------------------ |
 | &check; | Clicking logo loads homepage |
-| &check; | Clicking Home loads homepage |
 | &check; | Clicking Store loads products page |
+| &check; | Clicking Contact loads contact page |
 | &check; | Submitting search form empty gives error message |
 | &check; | Submitting search form loads products page with correct query |
 | &check; | Clicking Sign In loads sign in page |
@@ -2157,7 +2197,7 @@ To make sure all interactions and forms / links work as intended, extensive manu
 | &check; | Clicking the other social links opens platform home page |
 
 | Status | Products Page |
-|:------:| ------------------ |
+|:------:| ------------- |
 | &check; | Clicking a category loads correct category page |
 | &check; | Clicking home link in breadcrumb navigation loads home page |
 | &check; | Using sort selection works as expected for all options |
@@ -2166,7 +2206,7 @@ To make sure all interactions and forms / links work as intended, extensive manu
 | &check; | Clicking back to top button scrolls to top of the page |
 
 | Status | Product Detail Page |
-|:------:| ------------------ |
+|:------:| ------------------- |
 | &check; | Clicking navigation links in breadcrumb loads correct page |
 | &check; | Clicking a product image loads the image in a separate page |
 | &check; | Clicking add to cart button adds the product to the users cart |
@@ -2187,7 +2227,7 @@ To make sure all interactions and forms / links work as intended, extensive manu
 | &check; | Not providing an image is accepted, placeholder is provided (site admin) |
 
 | Status | Update Product Page |
-|:------:| ---------------- |
+|:------:| ------------------- |
 | &check; | Clicking Back to products takes user back to products page (site admin) |
 | &check; | All fields are prepopulated with saved data (site admin) |
 | &check; | Filling out form incorrectly gives error message (site admin) |
@@ -2196,7 +2236,7 @@ To make sure all interactions and forms / links work as intended, extensive manu
 | &check; | Not providing an image is accepted, placeholder is provided (site admin) |
 
 | Status | Cart Page |
-|:------:| ---------------- |
+|:------:| --------- |
 | &check; | Clicking Continue shopping takes user back to products page |
 | &check; | Clicking a product image or name loads product detail page |
 | &check; | Clicking trash can icon removes product from cart |
@@ -2208,7 +2248,7 @@ To make sure all interactions and forms / links work as intended, extensive manu
 | &check; | Clicking back to top button scrolls to top of the page |
 
 | Status | Checkout Page |
-|:------:| ---------------- |
+|:------:| ------------- |
 | &check; | Clicking Back to cart takes user back to cart page |
 | &check; | Clicking trash can icon removes product from cart |
 | &check; | Filling out form incorrectly gives error message |
@@ -2217,9 +2257,9 @@ To make sure all interactions and forms / links work as intended, extensive manu
 | &check; | Clicking Complete order loads checkout success page after successful payment |
 
 | Status | Checkout Success Page |
-|:------:| ------------ |
+|:------:| --------------------- |
 | &check; | Clicking FAQ link loads FAQ page |
-| &check; | Clicking Customer Service link opens email to company CHANGE IF INQUIRY | FIXBEFORESUB
+| &check; | Clicking Customer Service link loads contact page |
 | &check; | Clicking Back to products loads products page |
 
 | Status | Sign In Page |
@@ -2230,12 +2270,12 @@ To make sure all interactions and forms / links work as intended, extensive manu
 | &check; | Clicking Sign Up loads register page |
 
 | Status | Password Reset Page |
-|:------:| ------------ |
+|:------:| ------------------- |
 | &check; | Filling out form incorrectly gives error message |
 | &check; | Clicking Reset My Password sends reset password email |
 
 | Status | Set Password Page |
-|:------:| ------------ |
+|:------:| ----------------- |
 | &check; | Filling out form incorrectly gives error message |
 | &check; | Setting new password works as expected |
 
@@ -2246,7 +2286,7 @@ To make sure all interactions and forms / links work as intended, extensive manu
 | &check; | User is informed that email verification is required |
 
 | Status | Confirm Email Page |
-|:------:| ------------- |
+|:------:| ------------------ |
 | &check; | Clicking Confirm loads sign in page |
 | &check; | Signing in with registered account works as expected |
 
@@ -2261,19 +2301,19 @@ To make sure all interactions and forms / links work as intended, extensive manu
 | &check; | Clicking a previous order loads specific order history page (signed in) |
 
 | Status | Change Password Page |
-|:------:| ------------ |
-| &check; | Filling out form incorrectly gives error message |
-| &check; | Changing password works as expected |
+|:------:| -------------------- |
+| &check; | Filling out form incorrectly gives error message (signed in) |
+| &check; | Changing password works as expected (signed in) |
 
 | Status | Order History Page |
-|:------:| ------------ |
-| &check; | Clicking FAQ link loads FAQ page |
-| &check; | Clicking Customer Service link opens email to company CHANGE IF INQUIRY | FIXBEFORESUB
-| &check; | Clicking Back to profile loads profile page |
+|:------:| ------------------ |
+| &check; | Clicking FAQ link loads FAQ page (signed in) |
+| &check; | Clicking Customer Service link loads contact page (signed in) |
+| &check; | Clicking Back to profile loads profile page (signed in) |
 
 | Status | Sign Out Page |
 |:------:| ------------- |
-| &check; | Clicking Sign Out signs user out and loads home page |
+| &check; | Clicking Sign Out signs user out and loads home page (signed in) |
 
 | Status | Error Pages |
 |:------:| ----------- |
@@ -2281,6 +2321,14 @@ To make sure all interactions and forms / links work as intended, extensive manu
 | &check; | Loads 404 page when a user gives an invalid url |
 | &check; | Loads 500 page when an error occurs |
 | &check; | Clicking Take me back to safety! loads home page |
+
+| Status | Contact Page |
+|:------:| ------------ |
+| &check; | Clicking Facebook link opens Gamers Ground Facebook page |
+| &check; | All fields are prepopulated with saved data (signed in) |
+| &check; | Filling out form incorrectly gives error message |
+| &check; | Filling out form correctly saves inquiry and redirects to home page |
+| &check; | Filling out form correctly automatically sends an email to site admin & the user |
 
 ## User Story Testing
 
@@ -2432,13 +2480,21 @@ To make sure all interactions and forms / links work as intended, extensive manu
     | &check; | I can easily find an option to rate / review a product I have bought |
     | &check; | When I leave a review, I can immediately see it reflected on the site |
 
-- As a site user I can delete my own review so that I can decide which of my own content is visible, and I can write a new review if I wish.
+- As a Site User I can delete my own review so that I can decide which of my own content is visible, and I can write a new review if I wish.
 
     | Status | Acceptance Criteria |
     |:------:| ----------- |
     | &check; | I can easily find a 'delete' link by my review |
     | &check; | When I click it, I am asked if I am sure if I wish to delete the review, so I don't delete something by accident |
     | &check; | When I delete my review, it is immediately removed from the site |
+
+- As a Site User I can contact Gamers Ground so that I can ask questions or give feedback.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I can easily find a link / button for a contact page |
+    | &check; | I can fill in the form and, if I am signed in, my info will be prefilled |
+    | &check; | When I submit the form, I receive a copy of the inquiry to my email |
 
 ### User Checkout
 
@@ -2501,6 +2557,13 @@ To make sure all interactions and forms / links work as intended, extensive manu
     | &check; | I can delete / edit reviews from there |
     | &check; | I can see who wrote the review so I can decide if I need to warn or remove the account |
 
+- As a Site Admin I can manage and respond to inquiries so that I can communicate with customers.
+
+    | Status | Acceptance Criteria |
+    |:------:| ----------- |
+    | &check; | I can see all submitted inquiries on the Django admin page |
+    | &check; | I receive all inquiries on the company email with all info |
+
 ## Automated Testing
 
 Using Django TestCase automated python testing was performed, which helped show the benefits of writing tests for code. For this project a Minimum Viable Product was prioritized, therefore the application was built before the tests were written. Due to time constraints not all code have been tested, but a large portion have been covered as evident by the coverage report below.
@@ -2509,7 +2572,7 @@ The local sqlite3 database provided the test database used. To achieve best prac
 
 When creating tests, the coverage package was used to generate an html report of the tests. From the report, the tested code can be reviewed and the exact lines of code not covered by written tests are marked. By utilizing this tool, a high coverage for the files tested was achieved.
 
-A total of 58 tests were written for the cart, checkout and products apps. A total coverage of 87% was achieved, while the tested apps all came close to 100% coverage. The result is presented below.
+A total of 58 tests were written for the cart, checkout and products apps. A total coverage of 86% was achieved, while the tested apps all came close to 100% coverage. The result is presented below.
 
 <details>
 
@@ -2560,6 +2623,8 @@ When a signed in user visited the checkout page and his account didn't have a st
 ## Known/Unfixed Bugs
 
 As of writing this readme, no known bugs remain unfixed. It is possible, however, that unknown / not found bugs are left within the project. If found in the future, these will be documented and fixes will be implemented.
+
+FIXBEFORESUB
 
 # Technologies Used
 
