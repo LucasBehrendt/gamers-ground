@@ -30,6 +30,7 @@ Gamers Ground is a B2C e-commerce website for people interested in pc gaming. If
   * [Meta Data](#meta-data)
   * [Sitemap.xml File](#sitemapxml-file)
   * [Robots.txt File](#robotstxt-file)
+- [Business Model](#business-model)
 - [Marketing](#marketing)
     + [Search Engine Optimization](#search-engine-optimization-1)
     + [Social Media Marketing](#social-media-marketing)
@@ -84,7 +85,7 @@ Gamers Ground is a B2C e-commerce website for people interested in pc gaming. If
 
 # User Experience (UX)
 
-The five planes of UX Design was implemented during the planning stage of the project. A summary of each stage is presented below.
+The five planes of UX Design were implemented during the planning stage of the project. A summary of each stage is presented below.
 
 ## Strategy
 
@@ -92,7 +93,7 @@ The five planes of UX Design was implemented during the planning stage of the pr
 
 - Younger men and women interested in tech
 
-- People with an interest in pc:s and gaming
+- People with an interest in PCs and gaming
 
 - Friends and family looking for gifts to purchase
 
@@ -190,7 +191,7 @@ The user stories were implemented in an agile approach when creating the applica
 
   - As a Site admin I can add products to the site so that I can control the selection of products being sold.
 
-  - As a Site admin I can ** edit products on the site** so that I can make sure the products being sold are correctly represented.
+  - As a Site admin I can edit products on the site so that I can make sure the products being sold are correctly represented.
 
   - As a Site admin I can delete products on the site so that I can control the selection of products being sold.
 
@@ -198,11 +199,11 @@ The user stories were implemented in an agile approach when creating the applica
 
   - As a Site Admin I can manage and respond to inquiries so that I can communicate with customers. *
 
-* Added late in the project since time permitted it, and a simple contact system was implemented.
+\* Added late in the project since time permitted it, and a simple contact system was implemented.
 
 ## Scope
 
-The scope of the project was determined by prioritizing to get a Minimum Viable Product deployed, and if time permits, add on additional features. A basic MoSCoW method was implemented on user stories where each user story received a label defining it as either 'Must Have', 'Should Have' or 'Could Have'. They were broken up into epics to gain better project overview and help plan the development process. Both tasks and acceptance criteria were given to each user story to assure that the intended feature was implemented correctly. For further details of tasks and acceptance criteria, and a list of all user stories, see this projects [GitHub Issues Tab](https://github.com/LucasBehrendt/gamers-ground/issues) In general, the higher priority user stories were implemented earlier.
+The scope of the project was determined by prioritizing to get a Minimum Viable Product deployed, and if time permits, add on additional features. A basic MoSCoW method was implemented on user stories where each user story received a label defining it as either 'Must Have', 'Should Have' or 'Could Have'. They were broken up into epics to gain better project overview and help plan the development process. Both tasks and acceptance criteria were given to each user story to assure that the intended feature was implemented correctly. For further details of tasks and acceptance criteria, and a list of all user stories, see this project's [GitHub Issues Tab](https://github.com/LucasBehrendt/gamers-ground/issues) In general, the higher priority user stories were implemented earlier.
 
 ### Core features
 
@@ -220,19 +221,15 @@ The scope of the project was determined by prioritizing to get a Minimum Viable 
 
 -	User feedback on all interactions with the site, such as adding to cart, signing up, updating cart etc
 
--	Site admin have full CRUD functionality over products and can control the selection of products entirely (Through site UI)
+-	Site admins have full CRUD functionality over products and can control the selection of products entirely (Through site UI)
 
 -	Ratings / review system for customers who wants to give feedback on purchased products
 
--	Site admin have full CRUD functionality over written reviews and can remove objectionable ones (Through Django Admin panel)
+-	Site admins have full CRUD functionality over written reviews and can remove objectionable ones (Through Django Admin panel)
 
 ## Structure
 
 The website is structured with simplicity and accessibility in mind, where both shoppers and site admins can intuitively navigate the site. Consistency in structure and layout is evident, to allow site users to gain a recognizable feel of the Gamers Ground brand. Combined with predictable behaviour and layout through all site pages, navigation through the site is a pleasing and positive experience.
-
-### Business Model
-
-The business model is centered around Business-to-Consumer (B2C), where emphasis has been put on provoking a positive response and an easy to use e-commerce platform. Where business customers usually do a lot of research and require large amounts of information about products, often the opposite is true for consumers. The shopping experience is often impulsive and emotionally driven, and a purchase should be as easy and frictionless as possible. To achieve this, a number of interaction designs were kept in mind when structuring the site. The flow of information is kept at a pleasing level to prevent cognitive overload with users. The review system uses a user-friendly star rating system to incentivize users to leave reviews on products. The checkout and payment process have been implemented with minimal friction in mind, and short clicking distances coupled with intuitive navigation are key in creating a frictionless and pleasing shopping experience. The site is fully resposive so users can choose to do their shopping from a device of their own choosing.
 
 ### Information Architecture
 
@@ -248,7 +245,7 @@ To help facilitate a logical flow of the application during the development proc
 
 </details>
 
-After adding the contact page the flowchart was updated to include it. The addition can be seen below.
+After adding the contact page, the flowchart was updated to include it. The addition can be seen below.
 
 <details>
 
@@ -344,12 +341,12 @@ Contact Page Mobile<br>
 
 ## Surface
 
-The websites surface is designed to be inviting and polished so as to invoke a positive response from users when they land on the home page. Several call to action buttons help incentivize the user to explore the site further. A balanced feel of simplicity and gaming themed design was prioritized, and low friction was always kept in mind during the designing phase.
+The website's surface is designed to be inviting and polished to invoke a positive response from users when they land on the home page. Several call-to-action buttons help incentivize the user to explore the site further. A balanced feel of simplicity and gaming themed design was prioritized, and low friction was always kept in mind during the designing phase.
 
 ### Design
 - #### Colours
 
-  The colours used on the site are meant to convey a theme of pc gaming with dark / mid grey, complemented with a popping lime / neon green colour for buttons and links. The main background colour is a mid grey colour (#33363f) that goes nicely with the theme and the palette chosen. Sections, cards and header / footer breaks off the background with a darker grey (#212228) that complements each other nicely. The green colour chosen for the buttons and links (#35C71E) help make the website feel more vibrant and catches the users attention straight upon landing on the home page. It also goes very nicely with the grey colours and give good contrast to text / elements. To help product cards and other module sized content stand out and feel more inviting, a solid black (#000) border was added in the later stages of development.
+  The colours used on the site are meant to convey a theme of pc gaming with dark / mid grey, complemented with a popping lime / neon green colour for buttons and links. The main background colour is a mid-grey colour (#33363f) that goes nicely with the theme and the palette chosen. Sections, cards, and header / footer breaks off the background with a darker grey (#212228) that complements each other nicely. The green colour chosen for the buttons and links (#35C71E) help make the website feel more vibrant and catches the user's attention straight upon landing on the home page. It also goes very nicely with the grey colours and give good contrast to text / elements. To help product cards and other module sized content stand out and feel more inviting, a solid black (#000) border was added in the later stages of development.
 
   Where necessary, a red 'danger' colour was implemented to alert users of an action where they would delete data, like a review or their account. The same goes for the site admin links / buttons where appropriate.
 
@@ -363,11 +360,11 @@ The websites surface is designed to be inviting and polished so as to invoke a p
 
 - #### Imagery
 
-  The images are an important part of mainly the landing page, where large gripping images are meant to convey a sense of gaming enthusiasm and excitement for shoppers. A bootstrap carousel at the very top of the home page shows three eye-catching images of gaming peripherals, and content hinting with a gaming desktop lies just underneath. A nicely laid out grid of categories with accompaning images is found further down, where users easily can find a quick route to their favourite category. Across the other pages, the product images are the main focus, to help keep a clean and minimalistic design. 
+  The images are an important part of mainly the landing page, where large gripping images are meant to convey a sense of gaming enthusiasm and excitement for shoppers. A bootstrap carousel at the very top of the home page shows three eye-catching images of gaming peripherals, and content hinting with a gaming desktop lies just underneath. A nicely laid out grid of categories with accompanying images is found further down, where users easily can find a quick route to their favourite category. Across the other pages, the product images are the main focus, to help keep a clean and minimalistic design.
 
 - #### Typography
 
-  The font chosen for the site is Rubik, a nicely edgy and well fitting font for gaming and tech content. Both different font sizes and weights have been user throughout the site, and consistency was always kept in mind. If the font isn't imported correctly, Sans-serif will serve as fallback.
+  The font chosen for the site is Rubik, a nicely edgy and well-fitting font for gaming and tech content. Both different font sizes and weights have been user throughout the site, and consistency was always kept in mind. If the font isn't imported correctly, Sans-serif will serve as fallback.
 
 # Data Model
 
@@ -381,7 +378,7 @@ The codebase includes the following apps and folders:
 
 - Home app, renders home page, contact page, and customer service pages.
 
-- Products app, handles creating, storing and rendering products.
+- Products app, handles creating, storing, and rendering products.
 
 - Profiles app, holds the profile model which extends user model.
 
@@ -391,7 +388,7 @@ The codebase includes the following apps and folders:
 
 - Static folder, holds static files and images.
 
-- Templates folder, holds base, error, allauth and toasts templates.
+- Templates folder, holds base, error, allauth, and toasts templates.
 
 ## Models
 
@@ -409,9 +406,9 @@ To get an idea of the relationships and fields required in the models, an ERD (E
 
 ### User Model
 
-- Provied by Django Allauth, users receive a unique ID which serve a FK (Foreign Key) to other models in the database.
+- Provided by Django Allauth, users receive a unique ID which will serve as FK (Foreign Key) to other models in the database.
 
-- Upon registration, users choose a username, email and password.
+- Upon registration, users choose a username, email, and password.
 
 - To improve user experience, registration was extended to also include users first and last name. These will then be visible on their profile, as well as pre-filled at checkout.
 
@@ -421,7 +418,7 @@ To get an idea of the relationships and fields required in the models, an ERD (E
 
 - Includes an OneToOneField to User model, which allows the UserProfile model to be created automatically when a new user registered with the help of a post_save signal.
 
-- The remaining fields are delivery information fields, namely phone_number, street_address_1, street_address_2, postcode, city and country.
+- The remaining fields are delivery information fields, namely phone_number, street_address_1, street_address_2, postcode, city, and country.
 
 ### Category Model
 
@@ -433,9 +430,9 @@ To get an idea of the relationships and fields required in the models, an ERD (E
 
 - Products are assigned a category through an FK to the Category model.
 
-- This model also includes an automatically generated slug field from the name field of the product. Again this makes the url easier to follow.
+- This model also includes an automatically generated slug field from the name field of the product. Again, this makes the url easier to follow.
 
-- A brand and a description field lets shoppers know more about the product and gives them the chance to find products of their favourite brand.
+- A brand and a description field let shoppers know more about the product and gives them the chance to find products of their favourite brand.
 
 - The product has an image field and price field, as well as a field for rating.
 
@@ -445,11 +442,11 @@ To get an idea of the relationships and fields required in the models, an ERD (E
 
 - The Order model features a randomly generated order number, and an FK to UserProfile to assign orders to authenticated users.
 
-- Personal info fields include first_name, last_name, email_address and phone_number. These are prefilled with authenticated users info at checkout.
+- Personal info fields include first_name, last_name, email_address and phone_number. These are prefilled with authenticated users' info at checkout.
 
-- Delivery info fields include street_address_1, street_address_2, postcode, city and country. Just like the personal info, these will be prefilled with available UserProfile data.
+- Delivery info fields include street_address_1, street_address_2, postcode, city, and country. Just like the personal info, these will be prefilled with available UserProfile data.
 
-- The fields delivery_cost, order_total and grand_total are set automatically through a method that calculates the total as products are added to the order, and for orders above a certain sum, the shipping fee is removed.
+- The fields delivery_cost, order_total, and grand_total are set automatically through a method that calculates the total as products are added to the order, and for orders above a certain sum, the shipping fee is removed.
 
 - Lastly a field to hold the Stripe payment intent ID, stripe_pid, makes sure no orders are confused with each other.
 
@@ -499,9 +496,9 @@ An Inquiry model was added late in the development process, as time permitted a 
 
 # Agile Methodology
 
-To better plan and understand the development process, an agile approach was taken when implementing features. GitHub Projects provides a great way of keeping track of progress made and user stories to develop. By creating a project board on a basic kanban template, the development process can be overviewed and tackled in a proficient and time-effective way. Epics were defined (as GitHub Milestones) to get a sense of the overall aim of the project. Each user story created was then assigned to an Epic and added to the project board. The board features three columns for every step of the development process, Todo, In Progress and Done. As user stories were added to the board, their status was automatically set to Todo. They were then moved to In Progress as the feature was being developed, and finally to Done when it was implemented on the application.
+To better plan and understand the development process, an agile approach was taken when implementing features. GitHub Projects provides a great way of keeping track of progress made and user stories to develop. By creating a project board on a basic Kanban template, the development process can be overviewed and tackled in a proficient and time-effective way. Epics were defined (as GitHub Milestones) to get a sense of the overall aim of the project. Each user story created was then assigned to an Epic and added to the project board. The board features three columns for every step of the development process, To-do, In Progress and Done. As user stories were added to the board, their status was automatically set to To-do. They were then moved to In Progress as the feature was being developed, and finally to Done when it was implemented on the application.
 
-For each user story created, a set of acceptance criteria were defined to help clarify what a specific feature is expected to fulfill for users. Coupled with the acceptance criterias, tasks were assigned as a way of keeping track on what steps would need to be taken in order to implement any given feature. This helped keep an organized and agile mindset on how to get the best result within a reasonable timeframe.
+For each user story created, a set of acceptance criteria were defined to help clarify what a specific feature is expected to fulfil for users. Coupled with the acceptance criteria, tasks were assigned as a way of keeping track on what steps would need to be taken in order to implement any given feature. This helped keep an organized and agile mindset on how to get the best result within a reasonable timeframe.
 
 Labels were created and assigned to each user story to help keep track of the importance. The MoSCoW method is a practical way of assigning priority to user stories and helps planning the development of the application. The labels define user stories as either 'Must Have', 'Should Have' or 'Could Have'. While all user stories were completed, this method provided a valuable way of ensuring that the most important features were implemented first.
 
@@ -603,7 +600,7 @@ To find as many keywords as possible, a brainstorming session was undertaken wit
 
 - Best gaming gear brand
 
-- Steelseries peripherals
+- SteelSeries peripherals
 
 - Razer mouse / keyboard
 
@@ -615,7 +612,7 @@ To find as many keywords as possible, a brainstorming session was undertaken wit
 
 - Razer blade laptop
 
-After careful consideration, and extensive research through both manual google searches and the site [WordTracker](https://www.wordtracker.com/), the list was narrowed down and divided in to short-tail and long-tail keywords. Many of the written down keywords were either too popular and competition-heavy, or not authoritative and relevant to the content of the site. These have not been used consciously for SEO reasons, but will still be present on the site in generic text / content.
+After careful consideration, and extensive research through both manual google searches and the site [WordTracker](https://www.wordtracker.com/), the list was narrowed down and divided in to short-tail and long-tail keywords. Many of the written down keywords were either too popular and competition-heavy, or not authoritative and relevant to the content of the site. These have not been used consciously for SEO reasons but might still be present on the site in generic text / content.
 
 The chosen keywords:
 
@@ -629,7 +626,7 @@ The chosen keywords:
 
 - Gaming laptop
 
-- Steelseries peripherals
+- SteelSeries peripherals
 
 - RGB lighting
 
@@ -667,13 +664,13 @@ An example of these implementations can be seen on the image below.
 
 When a user lands on Gamers Ground, the content of the website is meant to be relevant to what the user searched for to find the site. This means that keywords chosen for SEO, should be relevant to the content of the site, and users should expect to have their questions answered by the content. If the content is not useful to site visitors, they are more likely to exit the site as soon as they land on it.
 
-As the user clicks through the site, the layout needs to be easily navigated and pleasing to browse. The content must also be uncluttered and easily digested, and incentivize users to explore other pages of the site. Honest and clear information about products and any additional fees is also important, and gives the site trustworthiness.
+As the user clicks through the site, the layout needs to be easily navigated and pleasing to browse. The content must also be uncluttered, easily digested, and incentivize users to explore other pages of the site. Honest and clear information about products and any additional fees is also important and gives the site trustworthiness.
 
 Content on the site is free of typos and grammatical errors. Some additional pages for FAQs, Terms & Conditions and Privacy Policy were added to improve the professionalism and trustworthiness of the website.
 
 ## Images and Links
 
-To further increase search engine ranking, images used on the site are high quality, relevant and have clear motives. The `alt` attribute of images are, when applicable written with keywords in mind without stuffing or making the `alt` text irrelevant. The product images on the site include an `alt` text with the product name dynamically set. Links to other pages of the application are clear and predictable, while also being relevant to the content of the site. External links have the appropriate `rel` attribute and the only ones present are links to social media platforms. The Facebook link takes users to Gamers Grounds Facebook page created as part of this project, while the other links takes users to the home page of the platform.
+To further increase search engine ranking, images used on the site are high quality, relevant and have clear motives. The `alt` attribute of images is, when applicable written with keywords in mind without stuffing or making the `alt` text irrelevant. The product images on the site include an `alt` text with the product name dynamically set. Links to other pages of the application are clear and predictable, while also being relevant to the content of the site. External links have the appropriate `rel` attribute and the only ones present are links to social media platforms. The Facebook link takes users to Gamers Grounds Facebook page created as part of this project, while the other links takes users to the home page of the platform.
 
 ## Meta Data
 
@@ -682,7 +679,7 @@ By adding meta tags with keywords and a description for the website, search engi
 `
 <meta name="keywords" content="gaming peripherals, ergonomic gaming chairs, mechanical gaming keyboards,
     tkl keyboards, gaming pc, gaming laptops, rgb lighting, ultimate gaming rig, powerful gaming laptop,
-    steelseries peripherals, logitech mechanical keyboard, razer gaming peripherals, Razer blade laptop">
+    steelseries peripherals, logitech mechanical keyboard, razer gaming peripherals, razer blade laptop">
 `
 
 `
@@ -718,6 +715,10 @@ On a live project, the robots.txt file would need to be tested through the Googl
 
 </details>
 
+# Business Model
+
+The business model is centred around Business-to-Consumer (B2C), where emphasis has been put on provoking a positive response and an easy-to-use e-commerce platform. Where business customers usually do a lot of research and require large amounts of information about products, often the opposite is true for consumers. The shopping experience is often impulsive and emotionally driven, and a purchase should be as easy and frictionless as possible. To achieve this, a number of interaction designs were kept in mind when structuring the site. The flow of information is kept at a pleasing level to prevent cognitive overload with users. The review system uses a user-friendly star rating system to incentivize users to leave reviews on products. The checkout and payment process have been implemented with minimal friction in mind, and short clicking distances coupled with intuitive navigation are key in creating a frictionless and pleasing shopping experience. The site is fully responsive so users can choose to do their shopping from a device of their own choosing.
+
 # Marketing
 
 Marketing strategies used for Gamers Ground are SEO, social media marketing, and email marketing.
@@ -728,9 +729,9 @@ Several SEO marketing strategies were implemented on the site, which are all out
 
 ### Social Media Marketing
 
-A Facebook page was created for Gamers Ground to reach a wide and relevant range of potential customers. Social media marketing is free, easy to set up and reach large groups of people. This makes it ideal for a small online business, where a community can be formed and customer loyalty is rewarded. It is also a great way of promoting new products, campaigns and special offers. If there's a budget for it, paid advertisements are also a great way of reaching more consumers through social media. This will not be implemented for Gamers Ground though, since the project is educational.
+A Facebook page was created for Gamers Ground to reach a wide and relevant range of potential customers. Social media marketing is free, easy to set up and reach large groups of people. This makes it ideal for a small online business, where a community can be formed, and customer loyalty is rewarded. It is also a great way of promoting new products, campaigns, and special offers. If there's a budget for it, paid advertisements are also a great way of reaching more consumers through social media. This will not be implemented for Gamers Ground though since the project is educational.
 
-Gamers Grounds Facebook page can be viewed [here](https://www.facebook.com/Gamers-Ground-111472718360772). *This link may not work as facebook regularly removes inactive business pages.*
+Gamers Grounds Facebook page can be viewed [here](https://www.facebook.com/Gamers-Ground-111472718360772). *This link may not work as Facebook regularly removes inactive business pages.*
 <details>
 
 <summary>Gamers Ground Facebook Page</summary>
@@ -743,9 +744,9 @@ Gamers Grounds Facebook page can be viewed [here](https://www.facebook.com/Gamer
 
 ### Email Marketing
 
-Another great way of marketing a small low-bugdet business is through the use of a mailing list. This is also free, or low cost if the email list grows large, and is easy to implement. Emailing lists are also advantageous for businesses, since visitors who choose to sign up are more likely converted into customers through exclusive offers or similar. Steps to ensure that users do not percieve emails as spam or obtrusive would be taken. In the footer of Gamers Ground visitors can sign up for future newsletters, campaigns and special offers. 
+Another great way of marketing a small low-budget business is through the use of a mailing list. This is also free, or low cost if the email list grows large, and is easy to implement. Emailing lists are also advantageous for businesses since visitors who choose to sign up are more likely converted into customers through exclusive offers or similar. Steps to ensure that users do not perceive emails as spam or obtrusive would be taken. In the footer of Gamers Ground visitors can sign up for future newsletters, campaigns, and special offers. 
 
-The marketing platform [Mailchimp](https://mailchimp.com/) was used to implement the signup form. When a user submits the form, they receive a notification and their email address is added to the mailing list.
+The marketing platform [Mailchimp](https://mailchimp.com/) was used to implement the signup form. When a user submits the form, they receive a notification, and their email address is added to the mailing list.
 
 <details>
 
@@ -811,7 +812,7 @@ The following section will provide an overview of the features included in Gamer
 
  - The top part of the home page features a carousel with large, visually striking images, conveying the theme and purpose of the site. The section is designed to draw customers in and to clarify what type of products are sold.
 
- - Buttons on each slide funcions as calls to action, and directs visitors to products relevant to the image.
+ - Buttons on each slide functions as calls to action and directs visitors to products relevant to the image.
 
  - The images fit properly on all devices, and scales nicely on both mobile screens and desktops.
 
@@ -833,11 +834,11 @@ The following section will provide an overview of the features included in Gamer
 
 ### Products Rows
 
- - Below the carousel, rows of different product categories lets visitors easily find specific products they are looking for.
+ - Below the carousel, rows of different product categories let visitors easily find specific products they are looking for.
 
- - Each category have a corresponding button for viewing products in that category.
+ - Each category has a corresponding button for viewing products in that category.
 
- - Responsive design makes sure the images and content looks good across all devices.
+ - Responsive design makes sure the images and content look good across all devices.
 
 <details>
 
@@ -873,11 +874,11 @@ The following section will provide an overview of the features included in Gamer
 
 ### Useful Links & Contact Info
 
- - The mid section of the footer holds links to various useful pages / resources of the site. These include popular categories and customer service links.
+ - The mid-section of the footer holds links to various useful pages / resources of the site. These include popular categories and customer service links.
 
- - Fictional contact information is also found here, with a location, email and phone number for customers to get in touch with Gamers Ground.
+ - Fictional contact information is also found here, with a location, email, and phone number for customers to get in touch with Gamers Ground.
 
- - On larger screens, three columns holds the links and info, while on mobile devices, they are found in a single, easily readable column.
+ - On larger screens, three columns hold the links and info, while on mobile devices, they are found in a single, easily readable column.
 
 <details>
 
@@ -899,7 +900,7 @@ The following section will provide an overview of the features included in Gamer
 
  - The last section of the footer is a simple copyright text with the current year and links to social media sites.
 
- - Gamers Ground have a facebook page, created for marketing reasons, which is linked here. The other social media platform links directs to their respective home page.
+ - Gamers Ground have a Facebook page, created for marketing reasons, which is linked here. The other social media platform links directs to their respective home page.
 
  - All links open in a new tab, and have a relationship on noopener, to keep search engines from considering them in the SEO ranking.
 
@@ -923,7 +924,7 @@ The following section will provide an overview of the features included in Gamer
 
  - The products page holds all available products for sale on the site, and features options to view by category, sort products, and view searched products from the search bar in the header. Customers can also see how many products are available dynamically when searching or choosing a category.
 
- - Each listed product is represented in a card, where an image and important information, such as brand, name, rating, price and category is presented.
+ - Each listed product is represented in a card, where an image and important information, such as brand, name, rating, price, and category is presented.
 
  - For responsivity, products will be listed in rows of three, two or one, depending on what layout fits the screen size best.
 
@@ -970,9 +971,9 @@ The following section will provide an overview of the features included in Gamer
 
 ### Sort Products
 
- - Customers can sort products by price, rating, name, brand or category. This will let them control the list to suit their needs.
+ - Customers can sort products by price, rating, name, brand, or category. This will let them control the list to suit their needs.
 
- - The select dropdown has been styled to fit the rest of the site, although after some research, select dropdowns can't be styled freely, and relies on the specific browsers styling rules. Becase of this, the options in the dropdown have some unwanted styling attributes, such as a hover effect.
+ - The select dropdown has been styled to fit the rest of the site, although after some research, select dropdowns can't be styled freely, and relies on the specific browsers styling rules. Because of this, the options in the dropdown have some unwanted styling attributes, such as a hover effect.
 
 <details>
 
@@ -990,7 +991,7 @@ The following section will provide an overview of the features included in Gamer
 
  - The rating of the product is updated automatically as reviews are posted, and an average rating is calculated. The rating is rounded to the nearest half and shown as whole or half stars from 1 to 5.
 
- - An 'Add to cart' button is clearly visible and, if clicked, adds a quantity of one to the customers cart. The quantity can be edited from the cart page described further down in the 'Features' section, and was decided to be omitted from this page to keep the UX as frictionless as possible.
+ - An 'Add to cart' button is clearly visible and, if clicked, adds a quantity of one to the customer's cart. The quantity can be edited from the cart page described further down in the 'Features' section and was decided to be omitted from this page to keep the UX as frictionless as possible.
 
  - The layout adapts to fit the screen size and looks good across all devices.
 
@@ -1070,7 +1071,7 @@ The following section will provide an overview of the features included in Gamer
 
  - Any reviews posted on a product is seen adjacent to the form, to the left on larger screens, and below and mobile devices. 
  
- - They are listed in chronological order with the newest first, and shows the authors username, when they posted the review, their rating and the review text itself.
+ - They are listed in chronological order with the newest first, and shows the authors username, when they posted the review, their rating, and the review text itself.
 
  - The author of a posted review can delete it if they wish, by clicking the 'delete' link on the right side of the review. This will trigger a modal, asking for confirmation so deletion doesn't happen accidentally.
 
@@ -1096,7 +1097,7 @@ The following section will provide an overview of the features included in Gamer
 
  - A paragraph close to the top will alert the customer if they have qualified for free delivery or, if not, how much more they need to spend to receive it.
 
- - On larger screen sizes, the products are listed out on the left hand side, while price information is found to the right. When viewed on smaller screens, the price info is placed at the top part of the page, with the checkout button, so users easily and quickly navigate to the checkout page if they wish.
+ - On larger screen sizes, the products are listed out on the left-hand side, while price information is found to the right. When viewed on smaller screens, the price info is placed at the top part of the page, with the checkout button, so users easily and quickly navigate to the checkout page if they wish.
 
 <details>
 
@@ -1116,7 +1117,7 @@ The following section will provide an overview of the features included in Gamer
 
 ### Cart Items
 
- - Each item in the cart is represented with a card that holds the product image, brand, name, rating and price per unit.
+ - Each item in the cart is represented with a card that holds the product image, brand, name, rating, and price per unit.
 
  - Below the price, a form where the customer can edit the quantity they wish to purchase is found. This in turn will update the item total to reflect the price for the set number of quantities for a specific product.
 
@@ -1190,7 +1191,7 @@ The following section will provide an overview of the features included in Gamer
 
  - Below the order info, a table of the order items can be found. Here the customer sees the product info once again so they can be confident that their order is correct.
 
- - If the customer wishes to do any last-minute changes, they can remove items from the order straight from here. By simply clicking the trash can icon, the item is removed and the order info is updated.
+ - If the customer wishes to do any last-minute changes, they can remove items from the order straight from here. By simply clicking the trash can icon, the item is removed, and the order info is updated.
 
 <details>
 
@@ -1338,7 +1339,7 @@ The following section will provide an overview of the features included in Gamer
 
 ### Default Information
 
- - The form that holds users default information can be edited freely. When clicking 'Update profile' the altered info is saved to the users profile. 
+ - The form that holds users default information can be edited freely. When clicking 'Update profile' the altered info is saved to the user's profile. 
  
  - Removing info works fine as well, if the user doesn't want to share a specific part of information.
 
@@ -1354,7 +1355,7 @@ The following section will provide an overview of the features included in Gamer
 
  - Orders that the user has made is saved here and listed with basic info like order number, date and total.
 
- - These orders serves as links to view the order confirmation in its entirety on a different page. This page is similar to the checkout success page, but the title explains that it is a previously placed order. A button at the bottom takes the user back to their profile page.
+ - These orders serve as links to view the order confirmation in its entirety on a different page. This page is similar to the checkout success page, but the title explains that it is a previously placed order. A button at the bottom takes the user back to their profile page.
 
 <details>
 
@@ -1374,9 +1375,9 @@ The following section will provide an overview of the features included in Gamer
 
 ### Account Management
 
- - Below the default info form, two links lets users either change their password, or delete their account.
+ - Below the default info form, two links let users either change their password, or delete their account.
 
- - If they click 'Change Password', they are redirected to a separate page with a form form changing their chosen password.
+ - If they click 'Change Password', they are redirected to a separate page with a form for changing their chosen password.
 
  - If they click 'Delete Account', a modal pops up and asks for confirmation to prevent users accidentally deleting their account.
 
@@ -1406,7 +1407,7 @@ The following section will provide an overview of the features included in Gamer
 
 ## Product Management (Site Admin)
 
- - Users who have been given administrative privileges can access these pages. They are designed for letting admins add, update or delete products from the store without having to use the django admin panel.
+ - Users who have been given administrative privileges can access these pages. They are designed for letting admins add, update, or delete products from the store without having to use the Django admin panel.
 
  - From the authentication link in the header, admins can find a link to a page for adding products.
 
@@ -1480,7 +1481,7 @@ The following section will provide an overview of the features included in Gamer
 
  - As users interact with the website, they receive relevant notifications to confirm and acknowledge their actions.
 
- - The notifications take the form of Bootstrap Toasts and, depending on the interaction, shows either an informational message along with the contents in the users cart, or just a message for actions not related to products / shopping.
+ - The notifications take the form of Bootstrap Toasts and, depending on the interaction, shows either an informational message along with the contents in the user's cart, or just a message for actions not related to products / shopping.
 
  - Different toasts are shown for different types of messages, meaning that for an error, a red outline and an error title of the toast is shown. For successful interaction a success title and black outline is shown, and so on.
 
@@ -1516,7 +1517,7 @@ The following section will provide an overview of the features included in Gamer
 
  - For added professionalism and trustworthiness, some generic pages for FAQs, Privacy Policy and Terms of Conditions were implemented in the site.
 
- - Links to these pages can be found in the footer of the site, and redirects to separate corresponding pages.
+ - Links to these pages can be found in the footer of the site and redirects to separate corresponding pages.
 
 <details>
 
@@ -2110,7 +2111,7 @@ All Python code was checked with the [PEP8 Online Validator](http://pep8online.c
 
 You can open DevTools with keyboard shortcuts (CMD+Opt+I for Mac OS or Ctrl+Shift+I for Linux and Windows), through the menu bar in the top right corner and go to "More Tools" > "Developer Tools." or by right-clicking on any web page and select "Inspect". To test responsiveness, click on the "device" icon on the left side, above the source code window or with the keyboard shortcut CMD+Shift+M for Mac OS or Ctrl+Shift+M for Linux and Windows. Under "Dimensions" you can choose between different devices to emulate, or you can drag the handles to resize the window to your preferred screen width by choosing "Responsive".
 
-To test the responsiveness of the website multiple devices were used to browse and make payments, register accounts etc including a Desktop, Laptop, iPad Air, Samsung Galaxy S20, iPhone 12, iPhone X, and iPhone 8. The site was also tested on different browsers, such as Chrome, Edge, Safari and Firefox.
+To test the responsiveness of the website multiple devices were used to browse and make payments, register accounts etc including a Desktop, Laptop, iPad Air, Samsung Galaxy S20, iPhone 12, iPhone X, and iPhone 8. The site was also tested on different browsers, such as Chrome, Edge, Safari, and Firefox.
 
 Using Chrome DevTools, the site was optimized for all screen widths down to about 270px.
 
@@ -2124,7 +2125,7 @@ Using Chrome DevTools, the site was optimized for all screen widths down to abou
 
 ## Lighthouse Testing
 
-The Lighthouse tool in Chrome DevTools was used to test the sites performance, accessibility, best practices and SEO. The website performed well in the tests, indicating a well-structured, highly accessible site.
+The Lighthouse tool in Chrome DevTools was used to test the sites performance, accessibility, best practices, and SEO. The website performed well in the tests, indicating a well-structured, highly accessible site.
 
 Some performance enhancements could be made, mainly in serving images in a next-gen format instead of png or jpeg. This will be kept in mind for future updates, but since the performance still ranks relatively high, no immediate fix is deemed necessary. 
 
@@ -2281,7 +2282,7 @@ To make sure all interactions and forms / links work as intended, extensive manu
 |:------:| ------------------- |
 | &check; | Clicking navigation links in breadcrumb loads correct page |
 | &check; | Clicking a product image loads the image in a separate page |
-| &check; | Clicking add to cart button adds the product to the users cart |
+| &check; | Clicking add to cart button adds the product to the user's cart |
 | &check; | Clicking Update product loads update product page (site admin) |
 | &check; | Clicking Delete product loads confirm delete modal (site admin) |
 | &check; | Confirming delete product deletes it completely (site admin) |
@@ -2638,13 +2639,13 @@ To make sure all interactions and forms / links work as intended, extensive manu
 
 ## Automated Testing
 
-Using Django TestCase automated python testing was performed, which helped show the benefits of writing tests for code. For this project a Minimum Viable Product was prioritized, therefore the application was built before the tests were written. Due to time constraints not all code have been tested, but a large portion have been covered as evident by the coverage report below.
+Using Django TestCase automated python testing was performed, which helped show the benefits of writing tests for code. For this project a Minimum Viable Product was prioritized, therefore the application was built before the tests were written. Due to time constraints, not all code have been tested, but a large portion have been covered as evident by the coverage report below.
 
-The local sqlite3 database provided the test database used. To achieve best practices and the clearest test environment, the tests have been created in files named after the python file being tested, ie views.py tests live in test_views.py etc. The files are themself found in a 'tests' folder in each of the apps where testing was performed.
+The local sqlite3 database provided the test database used. To achieve best practices and the clearest test environment, the tests have been created in files named after the python file being tested, i.e. views.py tests live in test_views.py etc. The files are themself found in a 'tests' folder in each of the apps where testing was performed.
 
-When creating tests, the coverage package was used to generate an html report of the tests. From the report, the tested code can be reviewed and the exact lines of code not covered by written tests are marked. By utilizing this tool, a high coverage for the files tested was achieved.
+When creating tests, the coverage package was used to generate an html report of the tests. From the report, the tested code can be reviewed, and the exact lines of code not covered by written tests are marked. By utilizing this tool, a high coverage for the files tested was achieved.
 
-A total of 58 tests were written for the cart, checkout and products apps. A total coverage of 86% was achieved, while the tested apps all came close to 100% coverage. The result is presented below.
+A total of 58 tests were written for the cart, checkout, and products apps. A total coverage of 86% was achieved, while the tested apps all came close to 100% coverage. The result is presented below.
 
 <details>
 
@@ -2676,27 +2677,33 @@ When querying products model with user inputs, such as a search term & sorting o
 
 - **Solution:** By writing the logic for querying the database in the method get_context_data instead, the queries could be handled and passed to the front end as context to be used in the template.
 
-When a user would update an items quantity from the cart page, if more than one item was added to the cart, the application would crash. This was caused by an issue with the javascript code handling the increment / decrement buttons, where several products meant there would be several buttons available in the template, and the javascript only targeting one button.
+When a user would update an items quantity from the cart page, if more than one item was added to the cart, the application would crash. This was caused by an issue with the JavaScript code handling the increment / decrement buttons, where several products meant there would be several buttons available in the template, and the JavaScript only targeting one button.
 
 - **Solution:** By adding a foreach function to the logic handling the buttons, the issue was solved, and proper handling would be executed for all buttons on the cart page.
 
-If a site admin removed an item through the back or front end that was currently in the cart, the context processor in the cart app would try to get an object that no longer exists, and throw a 404 error. Since the context processor is global, this meant that the entire project would would crash, and ALL pages would throw a 404 error.
+If a site admin removed an item through the back or front end that was currently in the cart, the context processor in the cart app would try to get an object that no longer exists and throw a 404 error. Since the context processor is global, this meant that the entire project would crash, and ALL pages would throw a 404 error.
 
 - **Solution:** Instead of using the get_object_or_404 method, products added to the cart is retrieved by filtering for products with the correct id and grabbing the first (and only) product in the queryset. An if statement checks if the product exists, then continues with the logic.
 
-When placing an order at checkout, if the customer is not signed in, an issue occured and the payment was not processed. This was due to the save info box not existing in the dom, and the javascript code handling the checkout tried to set a variable to the element.checked, meaning a boolean value. Since it didn't exist, the value was set to null, which broke the payment process.
+When placing an order at checkout, if the customer is not signed in, an issue occurred, and the payment was not processed. This was due to the save info box not existing in the dom, and the JavaScript code handling the checkout tried to set a variable to the element.checked, meaning a boolean value. Since it didn't exist, the value was set to null, which broke the payment process.
 
 - **Solution:** The element itself was instead first assigned to a variable, and that variable is then evaluated with a ternary operator if it is truthy or falsy. If truthy, it is set to the value of the checkbox, true for checked and false for unchecked. If the element doesn't exist, and the variable is null, it is instead set to false.
 
-When a signed in user visited the checkout page and his account didn't have a store first and / or last name, an error would occur as the checkout form is prepopulated with the users info. The reason for this was that the first and last names were retrieved by the get_full_name method on the django User model, and then splitted at the space. If the value didn't exist, an index error would occur since the value couldn't be split.
+When a signed in user visited the checkout page and their account didn't have a stored first and / or last name, an error would occur as the checkout form is prepopulated with the user's info. The reason for this was that the first and last names were retrieved by the get_full_name method on the Django User model, and then split at the space. If the value didn't exist, an index error would occur since the value couldn't be split.
 
-- **Solution:** The method get_short_name on the User model was used to retrieve the first name. Since there is no corresponding method for last name, a simple custom one was added the the profile model which returns the users last name. By then prepopulating the fields one at a time, no issues remain, and users can choose to have only first or last name, or have no name saved at all.
+- **Solution:** The method get_short_name on the User model was used to retrieve the first name. Since there is no corresponding method for last name, a simple custom one was added to the profile model which returns the user's last name. By then prepopulating the fields one at a time, no issues remain, and users can choose to have only first or last name, or have no name saved at all.
 
 ## Known/Unfixed Bugs
 
-As of writing this readme, no known bugs remain unfixed. It is possible, however, that unknown / not found bugs are left within the project. If found in the future, these will be documented and fixes will be implemented.
+A few small bugs haven't been able to be fixed, mostly due to time constraints. However, these bugs are in no way crucial to the UX and the overall feel of the project. Since other bugs that was considered more important existed, those were prioritized.
 
-FIXBEFORESUB
+- On the cart page, when changing quantity manually by typing a number, the quantity is updated to the correct number if the user clicks outside the input field. If the user clicks the enter key however, the quantity is decremented by one. This is most likely due to a small bug in the JavaScript handing the quantity selector.
+
+- When querying the website for products, possible search keywords are checked for in a "title OR brand OR category" fashion. This prevents queries that have both the name and the brand in them from finding the product. For example, if a search is made for "razer", all razer products will be found. If a search is made for "nari essential", the razer nari essential headphones will be found. However, if a search is made for "razer nari essential", no products will be found.
+
+It is possible that other unknown / not found bugs are left within the project. If found in the future, these will be documented, and fixes will be implemented along with the bugs above.
+
+FIXBEFORESUB (save_info fixed / unfixed)
 
 # Technologies Used
 
@@ -2716,7 +2723,7 @@ All packages used in the application can be found in the [requirements.txt](http
 
 ## Programs & Libraries
 
-- [Amazon Web Sevices (AWS)](https://aws.amazon.com/) - Used to host all static and media files.
+- [Amazon Web Services (AWS)](https://aws.amazon.com/) - Used to host all static and media files.
 
 - [Balsamiq](https://balsamiq.com/) - The wireframes used for the site was created with Balsamiq.
 
@@ -2732,7 +2739,7 @@ All packages used in the application can be found in the [requirements.txt](http
 
 - [FreeLogoDesign](https://www.freelogodesign.org/) - Used to create the project logo in the header.
 
-- [Git](https://git-scm.com/) - Git was used through the GitPod terminal as version control to commit and push to GitHub.
+- [Git](https://git-scm.com/) - Git was used through the Gitpod terminal as version control to commit and push to GitHub.
 
 - [GitHub](https://github.com/) - All code for the site is stored on GitHub after being pushed from Git.
 
@@ -2756,7 +2763,7 @@ All packages used in the application can be found in the [requirements.txt](http
 
 - [Techsini](http://techsini.com/multi-mockup/index.php) - The responsive image at the top of the README came from Techsini.
 
-- [Terms & Conditions Generator](https://www.termsandconditionsgenerator.com/) - Used to generate the page for the projects terms and conditions.
+- [Terms & Conditions Generator](https://www.termsandconditionsgenerator.com/) - Used to generate the page for the project's terms and conditions.
 
 - [W3C](https://www.w3.org/) - Validation of HTML and CSS code was done with W3C.
 
@@ -2807,7 +2814,7 @@ The site was deployed using Heroku and Amazon Web Services. The steps for the de
 
 ## 2. Set up a virtual environment
 
-- **NOTE:** If you are using a remote environment, such as GitPod, you can skip these steps and go to chapter 3.
+- **NOTE:** If you are using a remote environment, such as Gitpod, you can skip these steps and go to chapter 3.
 
 - Open the project in your local code editor.
 
@@ -2854,7 +2861,7 @@ The site was deployed using Heroku and Amazon Web Services. The steps for the de
 
 ## 4. Create Django project
 
-- Create a new django project:
+- Create a new Django project:
     ```
     $ django-admin startproject project_name .
     ```
@@ -2945,7 +2952,7 @@ The site was deployed using Heroku and Amazon Web Services. The steps for the de
     $ python manage.py migrate
     ```
 
-- Modify the database settings to use the default SQLite locally and the PostgreSQL database on heroku by replacing the other database snippets with the following:
+- Modify the database settings to use the default SQLite locally and the PostgreSQL database on Heroku by replacing the other database snippets with the following:
     ```
     if 'DATABASE_URL' in os.environ:
         DATABASES = {
@@ -3052,17 +3059,17 @@ If you wish to deploy to Heroku using the CLI, follow these steps instead:
 
 - Click 'Create bucket' to get started setting up your bucket for static files.
 
-- Name the bucket, preferably the same as your project and choose your nearest timezone.
+- Name the bucket, preferably the same as your project and choose your nearest time zone.
 
 - Under 'Object Ownership', select 'ACLs enabled', and uncheck 'Block all public access' in the next section. 
 
 - To proceed, you must acknowledge that you have turned off blocking public access by checking a confirmation box. Then click 'Create bucket'.
 
-- Once created, click the bucket and go to the 'properties' tab. Scroll down to 'Static website hosting' and click 'Edit'.
+- Once created, click the bucket, and go to the 'properties' tab. Scroll down to 'Static website hosting' and click 'Edit'.
 
-- Change the static website hosting to 'enable' and fill out the two document fields with a default value of 'index.html' and 'error.html', and click 'Save changes'.
+- Change the static website hosting to 'enable' and fill out the two document fields with a default value of 'index.html' and 'error.html', then click 'Save changes'.
 
-- Go to the 'Permissions' tab, scroll down to 'Cross-origin resource sharing (CORS)' and click 'Edit'.
+- Go to the 'Permissions' tab, scroll down to 'Cross-origin resource sharing (CORS)', and click 'Edit'.
 
 - Paste in the following snippet and click 'Save changes'.
     ```
@@ -3082,11 +3089,11 @@ If you wish to deploy to Heroku using the CLI, follow these steps instead:
     ]
     ```
 
-- Scroll up and find 'Bucket policy', and click 'Edit'. Click the 'Policy generator', which opens in a new tab.
+- Scroll up and find 'Bucket policy' and click 'Edit'. Click the 'Policy generator', which opens in a new tab.
 
-- In step 1, select 'S3 Bucket Policy', in step 2 type an * in the 'Principal' field, select 'GetObject' from the 'Actions' dropdown, and paste in the 'Amazon Resource Name' by copying the Bucket ARN near the top of the previos page 'Edit bucket policy', where you clicked the 'Policy generator' link. As you will use your ARN later in the setup, it would be a good idea to write it down somewhere easily reachable.
+- In step 1, select 'S3 Bucket Policy', in step 2 type an * in the 'Principal' field, select 'GetObject' from the 'Actions' dropdown, and paste in the 'Amazon Resource Name' by copying the Bucket ARN near the top of the previous page 'Edit bucket policy', where you clicked the 'Policy generator' link. As you will use your ARN later in the setup, it would be a good idea to write it down somewhere easily reachable.
 
-- Click 'Add Statement', which will add it in a line below the button. Lastly click 'Generate Policy' to receive a code snippet to paste on the previos page 'Edit bucket policy'. It should resemble the following snippet. Before saving, add '/*' to the end of your Bucket ARN value in the 'Resource' key, like in the snippet below. Click 'Save changes'.
+- Click 'Add Statement', which will add it in a line below the button. Lastly click 'Generate Policy' to receive a code snippet to paste on the previous page 'Edit bucket policy'. It should resemble the following snippet. Before saving, add '/*' to the end of your Bucket ARN value in the 'Resource' key, like in the snippet below. Click 'Save changes'.
     ```
     {
         "Id": "Policy1662421416336",
@@ -3116,13 +3123,13 @@ If you wish to deploy to Heroku using the CLI, follow these steps instead:
 
 - In the left side bar, click 'User Groups', followed by 'Create group'.
 
-- Name the group, preferably your project name prefixed with 'manage-', ie 'manage-project-name'. Scoll down and click 'Create group'.
+- Name the group, preferably your project name prefixed with 'manage-', ie 'manage-project-name'. Scroll down and click 'Create group'.
 
 - In the left side bar, click 'Policies', then 'Create policy'.
 
-- Click the 'JSON' tab, and click 'Import managed policy'. Find the 'AmazonS3FullAccess' policy and select it. Then click 'Import'.
+- Click the 'JSON' tab and click 'Import managed policy'. Find the 'AmazonS3FullAccess' policy and select it. Then click 'Import'.
 
-- The code snippet imported must be edited slightly, so for the 'Resource' key, create a list and paste in your saved Bucket ARN from when setting up the bucket. If you didn't save it, simply go to your bucket in a new tab and copy it. Create a duplicate of the ARN in the 'Resource' list, so that you have to identical values in your list. Add a '/*' to the second value, so the snippet resembles the code below.
+- The code snippet imported must be edited slightly, so for the 'Resource' key, create a list, and paste in your saved Bucket ARN from when setting up the bucket. If you didn't save it, simply go to your bucket in a new tab and copy it. Create a duplicate of the ARN in the 'Resource' list, so that you have two identical values in your list. Add a '/*' to the second value, so the snippet resembles the code below.
     ```
     {
         "Version": "2012-10-17",
@@ -3192,7 +3199,7 @@ If you wish to deploy to Heroku using the CLI, follow these steps instead:
         AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
     ```
 
-- Go to your Heroku Config Variables for your project, and add the above 'USE_AWS' with a value of 'True' to use AWS on Heroku.
+- Go to your Heroku Config Variables for your project and add the above 'USE_AWS' with a value of 'True' to use AWS on Heroku.
 
 - Next, open the CSV file you saved earlier for your staticfiles user. There are two keys here you'll need.
 
@@ -3202,7 +3209,7 @@ If you wish to deploy to Heroku using the CLI, follow these steps instead:
 
 - Remove the 'DISABLE_COLLECTSTATIC' variable to allow Heroku to collect static files automatically and upload them to your AWS S3 bucket.
 
-- Next, create a file in the root directory of your project called 'custom_storages.py', where django will be told to use your custom settings for static and media files.
+- Next, create a file in the root directory of your project called 'custom_storages.py', where Django will be told to use your custom settings for static and media files.
 
 - Add the following imports at the top:
     ```
@@ -3237,7 +3244,7 @@ If you wish to deploy to Heroku using the CLI, follow these steps instead:
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
     ```
 
-- Your settings configuration is now complete, so add, commit and push your changes:
+- Your settings configuration is now complete, so add, commit, and push your changes:
     ```
     $ git add .
     ```
@@ -3247,7 +3254,7 @@ If you wish to deploy to Heroku using the CLI, follow these steps instead:
     ```
     $ git push
     ```
-    - **Note:** If you don't have automatic deploys setup to heroku, push to heroku as well:
+    - **Note:** If you don't have automatic deploys setup to Heroku, push to Heroku as well:
         ```
         $ git push heroku main
         ```
@@ -3261,9 +3268,9 @@ If you wish to deploy to Heroku using the CLI, follow these steps instead:
         }
         ```
 
-- Next, head back to your bucket and you'll see a 'static' folder with all your static files in it. To add media files, click 'Create folder', name it 'media' and click 'Save'.
+- Next, head back to your bucket and you'll see a 'static' folder with all your static files in it. To add media files, click 'Create folder', name it 'media', and click 'Save'.
 
-- You should now have two folders, one called 'static' and one called 'media'. Click your media folder and upload any media files you might have by clicking 'Upload', 'Add files' and selecting the media files you wish to uplod.
+- You should now have two folders, one called 'static', and one called 'media'. Click your media folder and upload any media files you might have by clicking 'Upload', 'Add files' and selecting the media files you wish to upload.
 
 - When you've added all the files you wish, click 'Permissions' and in the dropdown, check the 'Grant public-read access' and acknowledge your choice in the confirmation box and click 'Upload' at the bottom.
 
@@ -3295,7 +3302,7 @@ The live link to this project can be found [here](https://gamers-ground.herokuap
 
 - [This article](https://www.geeksforgeeks.org/python-extending-and-customizing-django-allauth/) gave an idea of how to customize the Django Allauth signup form.
 
-- [Hiding the scrollbar](https://blog.hubspot.com/website/hide-scrollbar-css) for the reviews section if there is many reviews was achieved with the help of this source.
+- [Hiding the scrollbar](https://blog.hubspot.com/website/hide-scrollbar-css) for the reviews section if there are many reviews was achieved with the help of this source.
 
 - [Quantize method](https://docs.python.org/3/library/decimal.html) was used to round the delivery cost.
 
@@ -3315,7 +3322,7 @@ The live link to this project can be found [here](https://gamers-ground.herokuap
 
 - [Privacy Policy Generator](https://www.privacypolicygenerator.info/) provided the Privacy Policy page content.
 
-- Descriptions for the products were mostly taken from [Media Markt](https://www.mediamarkt.se/) and translated into english.
+- Descriptions for the products were mostly taken from [Media Markt](https://www.mediamarkt.se/) and translated into English.
 
 - All other text content was written by the developer.
 
@@ -3323,7 +3330,7 @@ The live link to this project can be found [here](https://gamers-ground.herokuap
 
 - The logo image was generated with [FreeLogoDesign](https://www.freelogodesign.org/).
 
-- Carousel images on the home page came from [Razer](https://www.razer.com/technology), [Steelseries](https://www.steelseries.com/gaming-headsets/arctis-9) and [Logitech](https://blog.logitech.com/2019/08/15/g915-g815-gaming-keyboard/).
+- Carousel images on the home page came from [Razer](https://www.razer.com/technology), [SteelSeries](https://www.steelseries.com/gaming-headsets/arctis-9) and [Logitech](https://blog.logitech.com/2019/08/15/g915-g815-gaming-keyboard/).
 
 - [Pixabay](https://pixabay.com/) provided several images, all credited in the code.
 
