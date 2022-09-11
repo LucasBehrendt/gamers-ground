@@ -2693,6 +2693,10 @@ When a signed in user visited the checkout page and their account didn't have a 
 
 - **Solution:** The method get_short_name on the User model was used to retrieve the first name. Since there is no corresponding method for last name, a simple custom one was added to the profile model which returns the user's last name. By then prepopulating the fields one at a time, no issues remain, and users can choose to have only first or last name, or have no name saved at all.
 
+When placing an order at checkout, the save info for signed in users had no effect on the process, and the users info would be saved even if the box was unchecked. This was due to the JavaScript handling the checkbox and setting it to false if unchecked, and true if checked. When passed to the python code in the webhook handler, these values would be evaluated as strings of 'false' or 'true' which, of course, both as truthy. The if statement checking the save_info values therefore always evaluated to true, and the info would be saved either way.
+
+- **Solution:** A simple solution of using the python if statement to check if save_info == 'true' explicitly was implemented and solved the issue completely.
+
 ## Known/Unfixed Bugs
 
 A few small bugs haven't been able to be fixed, mostly due to time constraints. However, these bugs are in no way crucial to the UX and the overall feel of the project. Since other bugs that was considered more important existed, those were prioritized.
@@ -2702,8 +2706,6 @@ A few small bugs haven't been able to be fixed, mostly due to time constraints. 
 - When querying the website for products, possible search keywords are checked for in a "title OR brand OR category" fashion. This prevents queries that have both the name and the brand in them from finding the product. For example, if a search is made for "razer", all razer products will be found. If a search is made for "nari essential", the razer nari essential headphones will be found. However, if a search is made for "razer nari essential", no products will be found.
 
 It is possible that other unknown / not found bugs are left within the project. If found in the future, these will be documented, and fixes will be implemented along with the bugs above.
-
-FIXBEFORESUB (save_info fixed / unfixed)
 
 # Technologies Used
 
@@ -3310,7 +3312,7 @@ The live link to this project can be found [here](https://gamers-ground.herokuap
 
 - [The Bootstrap documentation](https://getbootstrap.com/docs/5.1/getting-started/introduction/) was also a big help when creating the front end with the Bootstrap framework.
 
-- Code Institute Tutor Support helped with solving some issues, including FIXBEFORESUB
+- Code Institute Tutor Support helped with solving some issues, including a few bugfixes and clarification on how to implement some of the project features.
 
 - The Code Institute Boutique Ado walkthrough project was of great help and some snippets have been taken from it. They are all credited in the code.
 

@@ -63,7 +63,7 @@ class StripeWebhookHandler:
         username = intent.metadata.username
         if username != 'AnonymousUser':
             profile = UserProfile.objects.get(user__username=username)
-            if save_info:
+            if save_info == 'true':
                 profile.phone_number = shipping_details.phone
                 profile.street_address_1 = shipping_details.address.line1
                 profile.street_address_2 = shipping_details.address.line2
